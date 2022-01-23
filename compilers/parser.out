@@ -1,0 +1,551 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    AND
+    AS
+    ASSERT
+    BREAK
+    CLASS
+    COMMENT
+    CONTINUE
+    DEDENT
+    DEF
+    ELIF
+    ELSE
+    EXCEPT
+    FINALLY
+    FOR
+    FROM
+    GLOBAL
+    IF
+    IMPORT
+    IN
+    INDENT
+    IS
+    LAMBDA
+    NONLOCAL
+    NOT
+    OR
+    PASS
+    RETURN
+    TRY
+    WHILE
+    YIELD
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> ID = expression
+Rule 2     statement -> expression
+Rule 3     expression -> STRING
+Rule 4     expression -> NUMBER
+Rule 5     expression -> ID
+Rule 6     expression -> expression . ID
+Rule 7     expression -> expression ( commaseparated )
+Rule 8     expression -> expression OP expression
+Rule 9     expression -> ( expression )
+Rule 10    expression -> [ commaseparated ]
+Rule 11    expression -> ( commaseparated )
+Rule 12    commaseparated -> expression
+Rule 13    commaseparated -> commaseparated , expression
+Rule 14    commaseparated -> empty
+Rule 15    empty -> <empty>
+
+Terminals, with rules where they appear
+
+(                    : 7 9 11
+)                    : 7 9 11
+,                    : 13
+.                    : 6
+=                    : 1
+AND                  : 
+AS                   : 
+ASSERT               : 
+BREAK                : 
+CLASS                : 
+COMMENT              : 
+CONTINUE             : 
+DEDENT               : 
+DEF                  : 
+ELIF                 : 
+ELSE                 : 
+EXCEPT               : 
+FINALLY              : 
+FOR                  : 
+FROM                 : 
+GLOBAL               : 
+ID                   : 1 5 6
+IF                   : 
+IMPORT               : 
+IN                   : 
+INDENT               : 
+IS                   : 
+LAMBDA               : 
+NONLOCAL             : 
+NOT                  : 
+NUMBER               : 4
+OP                   : 8
+OR                   : 
+PASS                 : 
+RETURN               : 
+STRING               : 3
+TRY                  : 
+WHILE                : 
+YIELD                : 
+[                    : 10
+]                    : 10
+error                : 
+
+Nonterminals, with rules where they appear
+
+commaseparated       : 7 10 11 13
+empty                : 14
+expression           : 1 2 6 7 8 8 9 12 13
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . ID = expression
+    (2) statement -> . expression
+    (3) expression -> . STRING
+    (4) expression -> . NUMBER
+    (5) expression -> . ID
+    (6) expression -> . expression . ID
+    (7) expression -> . expression ( commaseparated )
+    (8) expression -> . expression OP expression
+    (9) expression -> . ( expression )
+    (10) expression -> . [ commaseparated ]
+    (11) expression -> . ( commaseparated )
+
+    ID              shift and go to state 2
+    STRING          shift and go to state 4
+    NUMBER          shift and go to state 5
+    (               shift and go to state 6
+    [               shift and go to state 7
+
+    statement                      shift and go to state 1
+    expression                     shift and go to state 3
+
+state 1
+
+    (0) S' -> statement .
+
+
+
+state 2
+
+    (1) statement -> ID . = expression
+    (5) expression -> ID .
+
+    =               shift and go to state 8
+    .               reduce using rule 5 (expression -> ID .)
+    (               reduce using rule 5 (expression -> ID .)
+    OP              reduce using rule 5 (expression -> ID .)
+    $end            reduce using rule 5 (expression -> ID .)
+
+
+state 3
+
+    (2) statement -> expression .
+    (6) expression -> expression . . ID
+    (7) expression -> expression . ( commaseparated )
+    (8) expression -> expression . OP expression
+
+    $end            reduce using rule 2 (statement -> expression .)
+    .               shift and go to state 9
+    (               shift and go to state 10
+    OP              shift and go to state 11
+
+
+state 4
+
+    (3) expression -> STRING .
+
+    .               reduce using rule 3 (expression -> STRING .)
+    (               reduce using rule 3 (expression -> STRING .)
+    OP              reduce using rule 3 (expression -> STRING .)
+    $end            reduce using rule 3 (expression -> STRING .)
+    )               reduce using rule 3 (expression -> STRING .)
+    ,               reduce using rule 3 (expression -> STRING .)
+    ]               reduce using rule 3 (expression -> STRING .)
+
+
+state 5
+
+    (4) expression -> NUMBER .
+
+    .               reduce using rule 4 (expression -> NUMBER .)
+    (               reduce using rule 4 (expression -> NUMBER .)
+    OP              reduce using rule 4 (expression -> NUMBER .)
+    $end            reduce using rule 4 (expression -> NUMBER .)
+    )               reduce using rule 4 (expression -> NUMBER .)
+    ,               reduce using rule 4 (expression -> NUMBER .)
+    ]               reduce using rule 4 (expression -> NUMBER .)
+
+
+state 6
+
+    (9) expression -> ( . expression )
+    (11) expression -> ( . commaseparated )
+    (3) expression -> . STRING
+    (4) expression -> . NUMBER
+    (5) expression -> . ID
+    (6) expression -> . expression . ID
+    (7) expression -> . expression ( commaseparated )
+    (8) expression -> . expression OP expression
+    (9) expression -> . ( expression )
+    (10) expression -> . [ commaseparated ]
+    (11) expression -> . ( commaseparated )
+    (12) commaseparated -> . expression
+    (13) commaseparated -> . commaseparated , expression
+    (14) commaseparated -> . empty
+    (15) empty -> .
+
+    STRING          shift and go to state 4
+    NUMBER          shift and go to state 5
+    ID              shift and go to state 14
+    (               shift and go to state 6
+    [               shift and go to state 7
+    )               reduce using rule 15 (empty -> .)
+    ,               reduce using rule 15 (empty -> .)
+
+    expression                     shift and go to state 12
+    commaseparated                 shift and go to state 13
+    empty                          shift and go to state 15
+
+state 7
+
+    (10) expression -> [ . commaseparated ]
+    (12) commaseparated -> . expression
+    (13) commaseparated -> . commaseparated , expression
+    (14) commaseparated -> . empty
+    (3) expression -> . STRING
+    (4) expression -> . NUMBER
+    (5) expression -> . ID
+    (6) expression -> . expression . ID
+    (7) expression -> . expression ( commaseparated )
+    (8) expression -> . expression OP expression
+    (9) expression -> . ( expression )
+    (10) expression -> . [ commaseparated ]
+    (11) expression -> . ( commaseparated )
+    (15) empty -> .
+
+    STRING          shift and go to state 4
+    NUMBER          shift and go to state 5
+    ID              shift and go to state 14
+    (               shift and go to state 6
+    [               shift and go to state 7
+    ]               reduce using rule 15 (empty -> .)
+    ,               reduce using rule 15 (empty -> .)
+
+    commaseparated                 shift and go to state 16
+    expression                     shift and go to state 17
+    empty                          shift and go to state 15
+
+state 8
+
+    (1) statement -> ID = . expression
+    (3) expression -> . STRING
+    (4) expression -> . NUMBER
+    (5) expression -> . ID
+    (6) expression -> . expression . ID
+    (7) expression -> . expression ( commaseparated )
+    (8) expression -> . expression OP expression
+    (9) expression -> . ( expression )
+    (10) expression -> . [ commaseparated ]
+    (11) expression -> . ( commaseparated )
+
+    STRING          shift and go to state 4
+    NUMBER          shift and go to state 5
+    ID              shift and go to state 14
+    (               shift and go to state 6
+    [               shift and go to state 7
+
+    expression                     shift and go to state 18
+
+state 9
+
+    (6) expression -> expression . . ID
+
+    ID              shift and go to state 19
+
+
+state 10
+
+    (7) expression -> expression ( . commaseparated )
+    (12) commaseparated -> . expression
+    (13) commaseparated -> . commaseparated , expression
+    (14) commaseparated -> . empty
+    (3) expression -> . STRING
+    (4) expression -> . NUMBER
+    (5) expression -> . ID
+    (6) expression -> . expression . ID
+    (7) expression -> . expression ( commaseparated )
+    (8) expression -> . expression OP expression
+    (9) expression -> . ( expression )
+    (10) expression -> . [ commaseparated ]
+    (11) expression -> . ( commaseparated )
+    (15) empty -> .
+
+    STRING          shift and go to state 4
+    NUMBER          shift and go to state 5
+    ID              shift and go to state 14
+    (               shift and go to state 6
+    [               shift and go to state 7
+    )               reduce using rule 15 (empty -> .)
+    ,               reduce using rule 15 (empty -> .)
+
+    expression                     shift and go to state 17
+    commaseparated                 shift and go to state 20
+    empty                          shift and go to state 15
+
+state 11
+
+    (8) expression -> expression OP . expression
+    (3) expression -> . STRING
+    (4) expression -> . NUMBER
+    (5) expression -> . ID
+    (6) expression -> . expression . ID
+    (7) expression -> . expression ( commaseparated )
+    (8) expression -> . expression OP expression
+    (9) expression -> . ( expression )
+    (10) expression -> . [ commaseparated ]
+    (11) expression -> . ( commaseparated )
+
+    STRING          shift and go to state 4
+    NUMBER          shift and go to state 5
+    ID              shift and go to state 14
+    (               shift and go to state 6
+    [               shift and go to state 7
+
+    expression                     shift and go to state 21
+
+state 12
+
+    (9) expression -> ( expression . )
+    (6) expression -> expression . . ID
+    (7) expression -> expression . ( commaseparated )
+    (8) expression -> expression . OP expression
+    (12) commaseparated -> expression .
+
+  ! shift/reduce conflict for ) resolved as shift
+    )               shift and go to state 22
+    .               shift and go to state 9
+    (               shift and go to state 10
+    OP              shift and go to state 11
+    ,               reduce using rule 12 (commaseparated -> expression .)
+
+  ! )               [ reduce using rule 12 (commaseparated -> expression .) ]
+
+
+state 13
+
+    (11) expression -> ( commaseparated . )
+    (13) commaseparated -> commaseparated . , expression
+
+    )               shift and go to state 23
+    ,               shift and go to state 24
+
+
+state 14
+
+    (5) expression -> ID .
+
+    )               reduce using rule 5 (expression -> ID .)
+    .               reduce using rule 5 (expression -> ID .)
+    (               reduce using rule 5 (expression -> ID .)
+    OP              reduce using rule 5 (expression -> ID .)
+    ,               reduce using rule 5 (expression -> ID .)
+    ]               reduce using rule 5 (expression -> ID .)
+    $end            reduce using rule 5 (expression -> ID .)
+
+
+state 15
+
+    (14) commaseparated -> empty .
+
+    )               reduce using rule 14 (commaseparated -> empty .)
+    ,               reduce using rule 14 (commaseparated -> empty .)
+    ]               reduce using rule 14 (commaseparated -> empty .)
+
+
+state 16
+
+    (10) expression -> [ commaseparated . ]
+    (13) commaseparated -> commaseparated . , expression
+
+    ]               shift and go to state 25
+    ,               shift and go to state 24
+
+
+state 17
+
+    (12) commaseparated -> expression .
+    (6) expression -> expression . . ID
+    (7) expression -> expression . ( commaseparated )
+    (8) expression -> expression . OP expression
+
+    ]               reduce using rule 12 (commaseparated -> expression .)
+    ,               reduce using rule 12 (commaseparated -> expression .)
+    )               reduce using rule 12 (commaseparated -> expression .)
+    .               shift and go to state 9
+    (               shift and go to state 10
+    OP              shift and go to state 11
+
+
+state 18
+
+    (1) statement -> ID = expression .
+    (6) expression -> expression . . ID
+    (7) expression -> expression . ( commaseparated )
+    (8) expression -> expression . OP expression
+
+    $end            reduce using rule 1 (statement -> ID = expression .)
+    .               shift and go to state 9
+    (               shift and go to state 10
+    OP              shift and go to state 11
+
+
+state 19
+
+    (6) expression -> expression . ID .
+
+    .               reduce using rule 6 (expression -> expression . ID .)
+    (               reduce using rule 6 (expression -> expression . ID .)
+    OP              reduce using rule 6 (expression -> expression . ID .)
+    $end            reduce using rule 6 (expression -> expression . ID .)
+    )               reduce using rule 6 (expression -> expression . ID .)
+    ,               reduce using rule 6 (expression -> expression . ID .)
+    ]               reduce using rule 6 (expression -> expression . ID .)
+
+
+state 20
+
+    (7) expression -> expression ( commaseparated . )
+    (13) commaseparated -> commaseparated . , expression
+
+    )               shift and go to state 26
+    ,               shift and go to state 24
+
+
+state 21
+
+    (8) expression -> expression OP expression .
+    (6) expression -> expression . . ID
+    (7) expression -> expression . ( commaseparated )
+    (8) expression -> expression . OP expression
+
+  ! shift/reduce conflict for . resolved as shift
+  ! shift/reduce conflict for ( resolved as shift
+  ! shift/reduce conflict for OP resolved as shift
+    $end            reduce using rule 8 (expression -> expression OP expression .)
+    )               reduce using rule 8 (expression -> expression OP expression .)
+    ,               reduce using rule 8 (expression -> expression OP expression .)
+    ]               reduce using rule 8 (expression -> expression OP expression .)
+    .               shift and go to state 9
+    (               shift and go to state 10
+    OP              shift and go to state 11
+
+  ! .               [ reduce using rule 8 (expression -> expression OP expression .) ]
+  ! (               [ reduce using rule 8 (expression -> expression OP expression .) ]
+  ! OP              [ reduce using rule 8 (expression -> expression OP expression .) ]
+
+
+state 22
+
+    (9) expression -> ( expression ) .
+
+    .               reduce using rule 9 (expression -> ( expression ) .)
+    (               reduce using rule 9 (expression -> ( expression ) .)
+    OP              reduce using rule 9 (expression -> ( expression ) .)
+    $end            reduce using rule 9 (expression -> ( expression ) .)
+    )               reduce using rule 9 (expression -> ( expression ) .)
+    ,               reduce using rule 9 (expression -> ( expression ) .)
+    ]               reduce using rule 9 (expression -> ( expression ) .)
+
+
+state 23
+
+    (11) expression -> ( commaseparated ) .
+
+    .               reduce using rule 11 (expression -> ( commaseparated ) .)
+    (               reduce using rule 11 (expression -> ( commaseparated ) .)
+    OP              reduce using rule 11 (expression -> ( commaseparated ) .)
+    $end            reduce using rule 11 (expression -> ( commaseparated ) .)
+    )               reduce using rule 11 (expression -> ( commaseparated ) .)
+    ,               reduce using rule 11 (expression -> ( commaseparated ) .)
+    ]               reduce using rule 11 (expression -> ( commaseparated ) .)
+
+
+state 24
+
+    (13) commaseparated -> commaseparated , . expression
+    (3) expression -> . STRING
+    (4) expression -> . NUMBER
+    (5) expression -> . ID
+    (6) expression -> . expression . ID
+    (7) expression -> . expression ( commaseparated )
+    (8) expression -> . expression OP expression
+    (9) expression -> . ( expression )
+    (10) expression -> . [ commaseparated ]
+    (11) expression -> . ( commaseparated )
+
+    STRING          shift and go to state 4
+    NUMBER          shift and go to state 5
+    ID              shift and go to state 14
+    (               shift and go to state 6
+    [               shift and go to state 7
+
+    expression                     shift and go to state 27
+
+state 25
+
+    (10) expression -> [ commaseparated ] .
+
+    .               reduce using rule 10 (expression -> [ commaseparated ] .)
+    (               reduce using rule 10 (expression -> [ commaseparated ] .)
+    OP              reduce using rule 10 (expression -> [ commaseparated ] .)
+    $end            reduce using rule 10 (expression -> [ commaseparated ] .)
+    )               reduce using rule 10 (expression -> [ commaseparated ] .)
+    ,               reduce using rule 10 (expression -> [ commaseparated ] .)
+    ]               reduce using rule 10 (expression -> [ commaseparated ] .)
+
+
+state 26
+
+    (7) expression -> expression ( commaseparated ) .
+
+    .               reduce using rule 7 (expression -> expression ( commaseparated ) .)
+    (               reduce using rule 7 (expression -> expression ( commaseparated ) .)
+    OP              reduce using rule 7 (expression -> expression ( commaseparated ) .)
+    $end            reduce using rule 7 (expression -> expression ( commaseparated ) .)
+    )               reduce using rule 7 (expression -> expression ( commaseparated ) .)
+    ,               reduce using rule 7 (expression -> expression ( commaseparated ) .)
+    ]               reduce using rule 7 (expression -> expression ( commaseparated ) .)
+
+
+state 27
+
+    (13) commaseparated -> commaseparated , expression .
+    (6) expression -> expression . . ID
+    (7) expression -> expression . ( commaseparated )
+    (8) expression -> expression . OP expression
+
+    )               reduce using rule 13 (commaseparated -> commaseparated , expression .)
+    ,               reduce using rule 13 (commaseparated -> commaseparated , expression .)
+    ]               reduce using rule 13 (commaseparated -> commaseparated , expression .)
+    .               shift and go to state 9
+    (               shift and go to state 10
+    OP              shift and go to state 11
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for ) in state 12 resolved as shift
+WARNING: shift/reduce conflict for . in state 21 resolved as shift
+WARNING: shift/reduce conflict for ( in state 21 resolved as shift
+WARNING: shift/reduce conflict for OP in state 21 resolved as shift

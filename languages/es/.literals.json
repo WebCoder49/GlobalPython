@@ -1,0 +1,15 @@
+{
+  "STRING": [
+    ["str"]
+  ],
+  "NUMBER": [
+    ["int"],
+    ["float"]
+  ],
+  "LIST": [
+    ["list"]
+  ],
+  "TUPLE": [
+    ["tuple"]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "si": "IF",
+  "sino": "ELSE",
+  "osi": "ELIF",
+  "mientras": "WHILE",
+  "para": "FOR",
+  "en": "IN",
+  "romper": "BREAK",
+  "próxima_vez": "CONTINUE",
+  
+  "función": "DEF",
+  "retornar": "RETURN",
+  "cambiar": "LAMBDA",
+  "producir": "YIELD",
+  
+  "de": "FROM",
+  "importar": "IMPORT",
+  "como": "AS",
+  
+  "assert": "ASSERT",
+  "try": "TRY",
+  "except": "EXCEPT",
+  "finally": "FINALLY",
+  
+  "clase": "CLASS",
+  "global": "GLOBAL",
+  "nonlocal": "NONLOCAL",
+  "hacer_nada": "PASS",
+
+  "y": "AND",
+  "o": "OR",
+  "no": "NOT",
+  "es": "IS"
+}

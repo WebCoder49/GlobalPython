@@ -11,5 +11,9 @@
   ],
   "TUPLE": [
     ["tuple"]
+  ],
+
+  "_UNKNOWN": [
+    ["object"]
   ]
 }

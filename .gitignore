@@ -4,3 +4,7 @@
 # Python
 */__pycache__/
 */*.pyc
+
+# PLY
+*/parser.out
+*/parsetab.py

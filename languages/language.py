@@ -5,23 +5,43 @@ from collections import deque
 class LanguageEnv:
     """Class for loading language files into an environment and keeping variable names"""
 
-    def print_data(self, name, data):
+    def print_data(self, path, data):
         """Get documentation data to display about an object"""
-        # Compiled name, properties, args (None if not callable), Inherits from / returns
+        # Translated name, properties, args (None if not callable), Inherits from / returns
         # Details
+
+        # Translated Name
+        translated_name = data[0]
+        # Properties
+        property_names = []
+        if(len(data) > 1 and type(data[1]) is dict):
+            for key in data[1]:
+                prop = data[1][key]
+                property_names.append(prop[0])
+
+        # Arguments
+        callable = False
         call_syntax = ""
-        if len(data) >= 3 and type(data[2]) == list:  # Args
-            args = ", ".join(data[2])
-            call_syntax = f"({args})"
+        if (len(data) > 2 and type(data[2]) is list):
+            callable = True
+            params = data[2]
+            call_syntax = f'({",".join(params)})'
+
+        # Base classes / Inheritance
+        inherits_from = []
+        if (len(data) > 3 and type(data[3]) is list):
+            for base_path in data[3]:
+                inherits_from.append(".".join(base_path))
+
 
         return f"""
-{name}{call_syntax}
-{"-" * len(name)}
-Callable: {("✔️" if len(data) >= 3 and type(data[2]) == list else "❌")}
-Properties: {(", ".join(data[1].keys()) if len(data) >= 2 and type(data[1]) == dict and data[1] != {} else "None")}
-Inherits from: {(",".join(map(".".join(data[3]))) if len(data) >= 4 and type(data[3]) == list else "None")}
+{translated_name}{call_syntax}
+{"-" * len(translated_name)}
+Callable: {("✔️" if callable else "❌")}
+Properties: {", ".join(property_names) if len(property_names) > 0 else None}
+Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
-[Compiled Name (English): {data[0]}]
+[Compiled Path (English): {" > ".join(path)}]
 """
 
     def __init__(self, data_dir):  # Programming language, e.g. py
@@ -49,6 +69,10 @@ Inherits from: {(",".join(map(".".join(data[3]))) if len(data) >= 4 and type(dat
     def raw_path_to_data(self, path: tuple):
         """From a raw (English) path, get the translation data"""
         possible_paths = deque([path])
+
+
+
+        # Global
         while (len(possible_paths) > 0):
             # Get compilation data by path
             data = self.data
@@ -74,7 +98,7 @@ Inherits from: {(",".join(map(".".join(data[3]))) if len(data) >= 4 and type(dat
 
         return None  # Not found, most likely custom
 
-    def get_properties(self, property, parents=None):  # Automatically self.data for parents = root
+    def get_properties(self, property:str, parents:list=None):  # Automatically self.data for parents = root
         """Get a property from a translated name and list of possible parents"""
 
         if(parents == None):
@@ -101,7 +125,7 @@ Inherits from: {(",".join(map(".".join(data[3]))) if len(data) >= 4 and type(dat
                 # Add base classes to queue
                 if(len(parent) >= 4):
                     for base_class in parent[3]:
-                        parent_queue.append((base_class, self.raw_path_to_data(base_class)))
+                        parent_queue.append((p_path, self.raw_path_to_data(base_class))) # From base class, but compiled w/ parent path
 
             else:
                 # Not in parent
@@ -109,29 +133,23 @@ Inherits from: {(",".join(map(".".join(data[3]))) if len(data) >= 4 and type(dat
 
         return results
 
-    # def print_docs(self, find_str):
-    #   find = find_str.split(".")
-    #   compiled = [] # English name
-    #   obj = (0, 0, self.data)
-    #   # Follow hierarchy
-    #   for property in find:
-    #     if(type(obj[2]) != dict):
-    #       # Hierarchy does not continue
-    #       print(f"'{property}' not found")
-    #       break
-    #     elif(property in obj[2]):
-    #       obj = obj[2][property] # Inner property
-    #       compiled.append(obj[0])
-    #     else:
-    #       print(f"'{property}' not found")
-    #       break
-    #   else:
-    #     print(self.print_data(find_str, obj))
+    """Variables and Scoping"""
+    scope_stack = []
+    def scope_in(self, msg):
+        """Add one more to stack"""
+        self.scope_stack.append(msg)
+        print("Scope: ", msg, ">", self.scope_stack)
+    def scope_out(self):
+        """Remove one from stack"""
+        msg = self.scope_stack.pop()
+        print("Scope: ", self.scope_stack, "<", msg)
 
-    def local_assign(self, iden_path, type_path):
-        print("Assign", iden_path, "=", type_path)
-        if (iden_path != type_path):
-            # Assign a custom local variable name (so type can be remembered)
+    def assign(self, iden_path, src):
+        """Assign the value src to the destination iden_path"""
+
+        print("Assign", iden_path, "=", src)
+        if (iden_path != src[0][0]):
+            # Assign a variable name (so type can be remembered)
             dest = self.data
             for node in iden_path:
                 properties = dest[1]
@@ -139,4 +157,12 @@ Inherits from: {(",".join(map(".".join(data[3]))) if len(data) >= 4 and type(dat
                     properties[node] = (node, {}, None, [])
                 dest = properties[node]
 
-            dest[3].append(type_path)
+            # New type
+            for type in dest[3]:
+                del type
+
+            for src_type in src:
+                src_path = src_type[0]
+                dest[3].append(list(src_path))
+
+        print(dest)

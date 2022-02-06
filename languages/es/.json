@@ -230,7 +230,7 @@
           ]
         ],
         "errno": [
-          "<name>",
+          "número_de_error",
           null,
           null,
           [
@@ -294,7 +294,7 @@
       ]
     ],
     "False": [
-      "<name>",
+      "Falso",
       null,
       null,
       [
@@ -378,7 +378,7 @@
           ]
         ],
         "errno": [
-          "<name>",
+          "número_de_error",
           null,
           null,
           [
@@ -618,7 +618,7 @@
       ]
     ],
     "NotADirectoryError": [
-      "<name>",
+      "NotADirectoryError",
       {},
       [
         "args",
@@ -663,7 +663,7 @@
           ]
         ],
         "errno": [
-          "<name>",
+          "número_de_error",
           null,
           null,
           [
@@ -1002,7 +1002,7 @@
       ]
     ],
     "True": [
-      "<name>",
+      "Verdadero",
       null,
       null,
       [
@@ -1274,7 +1274,7 @@
           ]
         ],
         "errno": [
-          "<name>",
+          "número_de_error",
           null,
           null,
           [
@@ -2507,7 +2507,7 @@
           ]
         ],
         "imag": [
-          "<name>",
+          "parte_imag",
           null,
           null,
           [
@@ -2523,7 +2523,7 @@
           ]
         ],
         "real": [
-          "<name>",
+          "parte_real",
           null,
           null,
           [

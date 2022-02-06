@@ -1,5 +1,11 @@
-nombre = preguntar("¿Cómo te llamas? ")
-años = entero(preguntar("¿Cuántos años tienes, " + nombre + "? "))
-mensaje = nombre + ", vas a tener " + texto(años + 1) + " años el año que viene."
-escribir(mensaje)
-escribir(" ".unir(["Hola",nombre,"!"]))
+en_bucle = True
+nombre = input("¿Cómo te llamas?")
+if nombre == "Oliver" :
+  print("Ah, Hola Oliver!")
+elif nombre == "WebCoder49" :
+  print("Bienvenido, WebCoder49!")
+else :
+  print("No te he conocido antes.")
+respuesta = input("¿Quieres jugar otra vez?")
+en_bucle = respuesta.upper() == "SI"
+print(nombre,en_bucle)

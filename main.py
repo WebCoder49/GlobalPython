@@ -1,3 +1,5 @@
+import json
+
 import compilers.python
 import languages.language
 import time
@@ -6,6 +8,15 @@ from os import system
 # Get language files
 start = time.time()
 language = languages.language.LanguageEnv("languages/es")
+
+# language.scope_in("Hello")
+# language.scope_in("World")
+# language.scope_out()
+# language.scope_in("Global")
+# language.scope_in("Python")
+# language.scope_out()
+# language.scope_out()
+# language.scope_out()
 
 # Build the lexer and parser
 lexer = compilers.python.PythonLexer(language)
@@ -19,7 +30,6 @@ with open("source.py", "r", encoding='utf8') as reader:
 result = parser.parse(src)
 end = time.time()
 
-print("Vars: ", language.vars)
 
 print(f"T: {end-start} (1/{int(1/(end-start))} of a second)")
 # Write compiled code

@@ -1,8 +1,9 @@
+from languages.language import LanguageEnv
 from ._template import Lexer, Parser
 
 class PythonLexer(Lexer):
 
-  def __init__(self, lang):
+  def __init__(self, lang:LanguageEnv):
     super().__init__(lang)
     # Register keywords
     self.keywords = lang.kw
@@ -118,14 +119,61 @@ class PythonParser(Parser):
     p[0] = result
   
   # Statement syntaxes
+
+  # Large
+
+  indentation = 2
+  def indent(self, text):
+    # Indent text
+    result = ""
+    for row in text.split("\n"):
+      result += (" "*self.indentation) + row
+
+    return result
+
+  def p_noexpkw(self, p):
+    """noexpkw : ELSE"""
+    p[0] = p[1] # No expression needed for these statements
+
+  def p_withexpkw(self, p):
+    """withexpkw : IF
+                | ELIF
+                | WHILE"""
+    p[0] = p[1] # Expression needed for these statements
+
+  def p_statement_withexpression(self, p):
+      """statement : withexpkw expression ':' INDENT codeblock DEDENT"""
+      # If statement
+      p[0] = self.ParsingStruct()
+      # Add main statement
+      p[0].compiled = p[0].compiled = " ".join(map(str, p[1:4]))
+      # Add codeblock
+      p[0].compiled += "\n" + self.indent(p[5].compiled)
+
+  def p_statement_noexpression(self, p):
+      """statement : noexpkw ':' INDENT codeblock DEDENT"""
+      # If statement
+      p[0] = self.ParsingStruct()
+      # Add main statement
+      p[0].compiled = p[0].compiled = " ".join(map(str, p[1:3]))
+      # Add codeblock
+      p[0].compiled += "\n" + self.indent(p[4].compiled)
+
+  # Small
   def p_statement_assignment(self, p):
-    '''statement : ID '=' expression'''
+    '''statement : path '=' expression'''
     
     p[0] = self.ParsingStruct() # No expression data kept as structure, not expression
+
+    # Evaluate path
+    buffer = [None, p[1]] # Store evaluation in
+    self.p_expression_path(buffer)
+    p[1] = buffer[0]
+
     p[0].compiled = " ".join(map(str, p[1:]))
     
     # Save variable name and type
-    self.lang.local_assign((p[1],), p[3].possible_paths[0][0][0])
+    self.lang.assign(p[1].possible_paths[0][0], p[3].possible_paths)  # Path of language then dest
 
   def p_statement_expression(self, p):
     '''statement : expression'''
@@ -133,10 +181,12 @@ class PythonParser(Parser):
 
   def p_statement_parsertest(self, p):
     '''statement : '=' expression '=' '''
-    print(f"Testing on line {self.lexer.lineno}: ", p[2], "is of type", p[2].possible_paths)
+    print(f"\033[95mTesting on line {self.lexer.lineno}: {p[2]} is of type {p[2].possible_paths}\033[0m")
     
     p[0] = self.ParsingStruct()
     p[0].compiled = ""
+
+
   
   """Expressions"""
 
@@ -168,36 +218,66 @@ class PythonParser(Parser):
     p[0] = result
   
   # Main property hierarchy for linking to language env
-  def p_expression_top(self, p):
-    """expression : ID"""
+  def p_path_top(self, p):
+    """path : ID"""
 
     # Terminal node of expression start - new expression struct
     result = self.ParsingStruct()
+    result.compiled = "" # To add later
 
     result.possible_paths = self.lang.get_properties(p[1]) # Property p[1] from ROOT
 
     if(len(result.possible_paths) == 0):
       # Not defined - pass through unchanged anyway (in case is unindexed module var)
-      result.compiled = p[1] # Name unchanged
+      # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
+      result.possible_paths.append(((p[1],), [p[1], None, None, [self.literal_paths["_UNKNOWN"]]]))
     else:
-      result.compiled = result.possible_paths[0][1][0] # First path > data > compiled name
+      pass # Wait later for compilation
 
     p[0] = result
+
+  def p_path_expr_branch(self, p):
+    """path : expression '.' ID"""
+    paths = p[1].possible_paths
+    for i in range(len(paths)):
+      # Reset path of each path so only part after expression is added
+      paths[i] = (tuple(), paths[i][1])
+    self.p_path_branch(p)
   
-  def p_expression_branch(self, p):
-    """expression : expression '.' ID"""
+  def p_path_branch(self, p):
+    """path : path '.' ID"""
     
     # Expression hierarchy - w/ dot
     result = p[1]
 
     print(p[1], ".", p[3], result.possible_paths)
+    old_poss_paths = result.possible_paths
     result.possible_paths = self.lang.get_properties(p[3], result.possible_paths) # Property p[3] from p[1]'s result
 
     if(len(result.possible_paths) == 0):
       # Not defined - pass through unchanged anyway (in case is unindexed module var)
-      result.compiled += "." + p[3] # Name unchanged
+      for path in old_poss_paths:
+        # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
+        result.possible_paths.append((path[0] + (p[3],), [p[3], None, None, [self.literal_paths["_UNKNOWN"]]]))
     else:
-      result.compiled += "." + result.possible_paths[0][1][0] # First path > data > compiled name
+      pass  # Wait later for compilation
+
+    p[0] = result
+
+  def p_expression_path(self, p):
+    """expression : path"""
+    # Need to compile now
+    result = p[1]
+
+    # Choose arbitrary
+    chosen = result.possible_paths[0] # Arbitrary
+    chosen_path = chosen[0]
+
+    result.possible_paths = [chosen]
+
+    if(len(result.compiled) > 0):
+      result.compiled += "." # After current compiled data
+    result.compiled += ".".join(chosen_path)
 
     p[0] = result
 
@@ -207,6 +287,7 @@ class PythonParser(Parser):
     """expression : expression '(' commaseparated ')' """
     # Call expression (e.g. str(3.14))
     result = p[1]
+
     result.compiled += "".join(map(str, p[2:]))
     p[0] = result
 
@@ -221,7 +302,6 @@ class PythonParser(Parser):
     result = p[2]
     result.compiled = "(" + result.compiled + ")"
     p[0] = result
-
     
   # Structured Literals
   def p_expression_literal_list(self, p):

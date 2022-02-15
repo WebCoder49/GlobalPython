@@ -16,12 +16,12 @@
 
 nombre = ""
 
-frase_de_escribir = 12 # Número en este "scope"
+frase_para_escribir = 12 # Número aquí
 
 función letras_de_palabra(palabra):
-    frase_de_escribir = nombre + ", Tienes un"
+    frase_para_escribir = nombre + ", Tienes un"
     función escribir_letra(letra):
-        escribir(frase_de_escribir.mayúsculo(), letra)
+        escribir(frase_para_escribir.mayúsculo(), letra)
 
     función con_cada_letra(palabra, func):
         para letra en palabra:
@@ -29,7 +29,7 @@ función letras_de_palabra(palabra):
 
     con_cada_letra(palabra, escribir_letra)
 
-escribir("Doce es", frase_de_escribir.parte_real)
+escribir("Doce es", frase_para_escribir.parte_real)
 
 en_bucle = Verdadero
 mientras(en_bucle):

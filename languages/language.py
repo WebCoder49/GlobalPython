@@ -51,8 +51,10 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         self.data_dir = data_dir
 
         # Load built-in files and keywords
-        self.data = self.load_lib("")  # Built-in
-        self.vars = ("", {})  # Empty - local vars
+        # Globals
+        self.scope_stack[0] = self.load_lib("")  # Built-in
+
+        # print(f"Globals: {self.scope_stack[0]}")
         self.kw = self.load_lib(".kw")  # Keywords
         self.literals = self.load_lib(".literals")  # Literals
 
@@ -73,13 +75,13 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         for scope in scopes:
             data = self.raw_path_to_data_scoped(path, scope)  # Local
             if(data != None):
+                # print(f"Found {path} in scope {scope}")
                 return data
             else:
                 # print(f"Could not find path {path} in scope {scope}")
                 pass
 
-        # print(f"Looking for {path} in globals.")
-        return self.raw_path_to_data_scoped(path, self.data)  # Global
+        return None # Not in scopes
 
     def raw_path_to_data_scoped(self, path: tuple, scope):
         """From a raw (English) path, get the translation data (for specific scope)"""
@@ -114,12 +116,12 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
         return None  # Not found, most likely custom
 
-    def get_properties(self, property:str, parents:list=None):  # Automatically self.data for parents = root
+    def get_properties(self, property:str, parents:list=None):  # Automatically scope for parents = root
         """Get a property from a translated name and list of possible parents"""
 
         if(parents == None):
             # Path then data
-            parents = self.scope_stack + [tuple(self.data)] # Locals then globals
+            parents = self.scope_stack[::-1]  # All scopes, up tree
             parents = list(map(lambda parent: ("", parent), parents)) # Blank paths
             # print(f"Parents of scope are {parents}")
 
@@ -152,7 +154,9 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         return results
 
     """Variables and Scoping"""
-    scope_stack = [("local", {}, None, [])]
+    # Specific scopes identified via names
+    scope_stack = [("", {}, None, [])]
+
     def scope_push(self, msg):
         """Add one more to stack"""
         self.scope_stack.append((msg, {}, None, []))
@@ -170,7 +174,6 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             # Assign a variable name (so type can be remembered)
 
             dest = self.scope_stack[-1]  # Local
-            # dest = self.data # Global
 
             for node in iden_path:
                 properties = dest[1]

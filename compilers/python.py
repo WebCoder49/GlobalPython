@@ -143,8 +143,12 @@ class PythonParser(Parser):
     # Register keywords
     self.literal_paths = lang.literals
 
-
   # Main structure
+  def p_module(self, p):
+    '''module : scope_push codeblock scope_pop'''
+    # With scope
+    p[0] = p[2]
+
   def p_codeblock(self, p):
     '''codeblock : statement
                 | codeblock statement
@@ -219,11 +223,12 @@ class PythonParser(Parser):
       # Add codeblock
       p[0].compiled += "\n" + self.indent(p[9].compiled)
 
-  # Scoping
+  # Scoping - link to LanguageEnv
+
   def p_scope_push(self, p):
     """scope_push :"""
     self.lang.scope_push("Pushed")
-    p[0] = "# Scope" + str(self.lang.scope_stack)
+    p[0] = "# Scope(" + str(self.lang.scope_stack) + ")"
 
   def p_scope_pop(self, p):
     """scope_pop :"""

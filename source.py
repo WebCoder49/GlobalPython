@@ -13,37 +13,48 @@
 # escribir(" ".unir(["Hola", nombre, "!"]))
 
 # Una programa sencilla (es):
+#
+# nombre = ""
+#
+# frase_para_escribir = 12 # Número aquí
+#
+# función letras_de_palabra(palabra):
+#     frase_para_escribir = nombre + ", Tienes un"
+#     función escribir_letra(letra):
+#         escribir(frase_para_escribir.mayúsculo(), letra)
+#
+#     función con_cada_letra(palabra, func):
+#         para letra en palabra:
+#             func(letra)
+#
+#     con_cada_letra(palabra, escribir_letra)
+#
+# escribir("Doce es", frase_para_escribir.parte_real)
+#
+# en_bucle = Verdadero
+# mientras(en_bucle):
+#     nombre = preguntar("¿Cómo te llamas?")
+#     si nombre == "Oliver":
+#         escribir("Ah, Hola Oliver!")
+#     osi nombre == "WebCoder49":
+#         escribir("Bienvenido, WebCoder49!")
+#     sino:
+#         escribir("No te he conocido antes.")
+#
+#     letras_de_palabra(nombre)
+#
+#     respuesta = preguntar("¿Quieres jugar otra vez?")
+#     en_bucle = (respuesta.mayúsculo() == "SI")
+#
+# escribir("Adiós!")
 
-nombre = ""
+# Tortuga
+importar turtle como tortuga
 
-frase_para_escribir = 12 # Número aquí
+número_lados = entero(preguntar("Cuantos lados tenerá?: "))
+largura_de_lado = entero(preguntar("Largura de cada lado: "))
 
-función letras_de_palabra(palabra):
-    frase_para_escribir = nombre + ", Tienes un"
-    función escribir_letra(letra):
-        escribir(frase_para_escribir.mayúsculo(), letra)
+para i en rango(número_lados):
+    tortuga.avanzar(largura_de_lado)
+    tortuga.girarderecha(360 / número_lados)
 
-    función con_cada_letra(palabra, func):
-        para letra en palabra:
-            func(letra)
-
-    con_cada_letra(palabra, escribir_letra)
-
-escribir("Doce es", frase_para_escribir.parte_real)
-
-en_bucle = Verdadero
-mientras(en_bucle):
-    nombre = preguntar("¿Cómo te llamas?")
-    si nombre == "Oliver":
-        escribir("Ah, Hola Oliver!")
-    osi nombre == "WebCoder49":
-        escribir("Bienvenido, WebCoder49!")
-    sino:
-        escribir("No te he conocido antes.")
-
-    letras_de_palabra(nombre)
-
-    respuesta = preguntar("¿Quieres jugar otra vez?")
-    en_bucle = (respuesta.mayúsculo() == "SI")
-
-escribir("Adiós!")

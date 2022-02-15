@@ -6,8 +6,9 @@ from collections import deque
 
 class PushableLexer(): # Supports pushing of tokens for a lexer
   lexer = None
-  def __init__(self, lexer:Lexer):
+  def __init__(self, lexer:Lexer, eof_function):
     self.lexer = lexer
+    self.eof_function = eof_function # For end-of-file
 
     # Add methods
     self.input = self.lexer.input
@@ -29,6 +30,9 @@ class PushableLexer(): # Supports pushing of tokens for a lexer
     else:
       # Ask for next token from lexer
       tok = self.lexer.token()
+      if(tok == None):
+        # EOF
+        tok = self.eof_function()
 
     return tok
 
@@ -42,7 +46,7 @@ class Lexer:
   
   # Build the lexer
   def build(self, **kwargs):
-    self.lexer = PushableLexer(lex.lex(module=self, **kwargs))
+    self.lexer = PushableLexer(lex.lex(module=self, **kwargs), self.eof)
 
   # Test output
   def test(self, data):

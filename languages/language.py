@@ -52,18 +52,21 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
         # Load built-in files and keywords
         # Globals
-        self.scope_stack[0] = self.load_lib("")  # Built-in
+        self.scope_stack[0] = self.load_lib("")  # Built-in > Globals
 
         # print(f"Globals: {self.scope_stack[0]}")
         self.kw = self.load_lib(".kw")  # Keywords
         self.literals = self.load_lib(".literals")  # Literals
 
-    def load_lib(self, library):
-        # Find library file
-        lib_file = os.path.join(self.data_dir, library + ".json")
+    def load_lib(self, filename):
+        """Get the parsed JSON data from the language folder with the specific filename (don't include the .json)."""
+        # Find data file
+        data_file = os.path.join(self.data_dir, filename + ".json")
+
         # Load as JSON
-        with open(lib_file, encoding='utf8') as reader:
+        with open(data_file, encoding='utf8') as reader:
             data = json.load(reader)
+
         return data
 
     """Getting properties"""
@@ -155,7 +158,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
     """Variables and Scoping"""
     # Specific scopes identified via names
-    scope_stack = [("", {}, None, [])]
+    scope_stack = [("", {}, None, [])]  # Global scope contains builtins and imported packages
 
     def scope_push(self, msg):
         """Add one more to stack"""
@@ -190,3 +193,18 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                 dest[3].append(list(src_path))
 
         # print(dest)
+
+    """Importing packages"""
+    def import_lib(self, library, alias):
+        """Import a library path and give a reference to it in alias"""
+
+        # Import package (first part) hidden in globals
+        package = library[0]
+        package_location = "." + package
+        if(not package_location in self.scope_stack[0][1]):
+            # Add package (hidden with .) to global scope
+            self.scope_stack[0][1][package_location] = self.load_lib(package)
+
+        # Assign whole path to alias
+        self.assign(alias, ([(package_location,) + library[1:]],))  # 1 possible path; no data needed
+        print(self.raw_path_to_data(alias))

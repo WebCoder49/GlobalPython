@@ -1,6 +1,8 @@
 import copy
 
 from ply import lex, yacc
+from ply.lex import LexToken
+
 from languages.language import LanguageEnv
 from ._template import Lexer, Parser
 
@@ -85,7 +87,7 @@ class PythonLexer(Lexer):
   def t_newline(self, t):
     r'\n[ \t]*(?=[^ \t\n])' # $ means End Of File
     t.lexer.lineno += 1
-    new_indent = len(t.value)-1
+    new_indent = max(0, len(t.value)-1)
 
     indent_type = self.indent_type(new_indent)
 
@@ -105,6 +107,24 @@ class PythonLexer(Lexer):
     else: return None
 
     return t
+
+  def eof(self):
+    # End-of-file - indent to 0
+    num_dedents = self.indent_type(0)
+    for i in range(num_dedents):
+
+      # Set up dedent token
+      tok = LexToken()
+      tok.value = ""
+      tok.type = "DEDENT"
+
+      # Indent type is now dedent count
+      if (num_dedents > 1):
+        dedent_tok = copy.copy(tok)
+        dedent_tok.value = ""
+        for i in range(num_dedents - 1):
+          self.lexer.push(dedent_tok)
+      return tok
   
   t_ignore = " \t"
   
@@ -205,9 +225,7 @@ class PythonParser(Parser):
       p[0] = self.ParsingStruct()
 
       # Evaluate path
-      buffer = [None, p[2]]  # Store evaluation in
-      self.p_expression_path(buffer)
-      p[2] = buffer[0]
+      p[2] = self.evaluate_path(p[2])
 
       # Add main statement
       p[0].compiled = p[0].compiled = " ".join(map(str, p[1:6]))
@@ -235,6 +253,20 @@ class PythonParser(Parser):
     self.lang.scope_pop()
 
   # Small
+  def p_statement_import(self, p):
+    '''statement : IMPORT path
+                  | IMPORT path AS path'''
+
+    p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
+
+    # Evaluate paths
+    library = p[2].possible_paths[0][0]  # As tuple path
+    alias = p[4].possible_paths[0][0] if len(p) >= 5 else library # Default import alias is package name
+
+    p[0].compiled = " ".join(map(str, p[1:]))
+
+    self.lang.import_lib(library, alias)
+
   def p_statement_assignment(self, p):
     '''statement : path '=' expression'''
     
@@ -339,22 +371,25 @@ class PythonParser(Parser):
 
     p[0] = result
 
+  def evaluate_path(self, path:ParsingStruct):
+    """Choose an arbitrary option of the possible paths and add it to the compiled result of a path Struct"""
+
+    # Choose arbitrary
+    chosen = path.possible_paths[0]  # Arbitrary
+    chosen_path = chosen[0]
+
+    path.possible_paths = [chosen]
+
+    if (len(path.compiled) > 0):
+      path.compiled += "."  # After current compiled data
+    path.compiled += ".".join(chosen_path)
+
+    return path
+
   def p_expression_path(self, p):
     """expression : path"""
     # Need to compile now
-    result = p[1]
-
-    # Choose arbitrary
-    chosen = result.possible_paths[0] # Arbitrary
-    chosen_path = chosen[0]
-
-    result.possible_paths = [chosen]
-
-    if(len(result.compiled) > 0):
-      result.compiled += "." # After current compiled data
-    result.compiled += ".".join(chosen_path)
-
-    p[0] = result
+    p[0] = self.evaluate_path(p[1])
 
   # Expression-based syntaxes - no need to validate as Python does this
     

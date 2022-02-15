@@ -1,0 +1,8194 @@
+[
+  "turtle",
+  {
+    "Canvas": [
+      "<name>",
+      {
+        "addtag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_above": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_all": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_below": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_closest": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_enclosed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_overlapping": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_withtag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "after": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "after_cancel": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "after_idle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "anchor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bbox": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bell": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bind": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bind_all": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bind_class": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bindtags": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "canvasx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "canvasy": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "cget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clipboard_append": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clipboard_clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clipboard_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "columnconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "config": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "configure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "coords": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_arc": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_bitmap": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_image": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_line": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_oval": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_polygon": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_rectangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_text": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_window": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "dchars": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "delete": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "deletecommand": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "destroy": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "dtag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "event_add": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "event_delete": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "event_generate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "event_info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_above": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_all": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_below": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_closest": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_enclosed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_overlapping": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_withtag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_displayof": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_force": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_lastfor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_set": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "forget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getboolean": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getdouble": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getint": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "gettags": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getvar": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_current": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_release": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_set": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_set_global": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_status": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_anchor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_bbox": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_columnconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_configure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_forget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_location": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_propagate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_remove": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_rowconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_size": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_slaves": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "icursor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "image_names": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "image_types": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "index": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "insert": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "itemcget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "itemconfig": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "itemconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "keys": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lift": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "location": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lower": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "mainloop": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "move": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "moveto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "nametowidget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "option_add": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "option_clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "option_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "option_readfile": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_configure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_forget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_propagate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_slaves": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place_configure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place_forget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place_info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place_slaves": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "postscript": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "propagate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "quit": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "register": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "rowconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "scale": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "scan_dragto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "scan_mark": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_adjust": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_from": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_item": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_to": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_handle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_own": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_own_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "send": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setvar": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "size": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "slaves": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tag_bind": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tag_lower": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tag_raise": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tag_unbind": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_bisque": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_focusFollowsMouse": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_focusNext": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_focusPrev": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_setPalette": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_strictMotif": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tkraise": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "type": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "unbind": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "unbind_all": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "unbind_class": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "update": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "update_idletasks": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "wait_variable": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "wait_visibility": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "wait_window": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "waitvar": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_atom": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_atomname": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_cells": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_children": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_class": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_colormapfull": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_containing": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_depth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_exists": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_fpixels": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_geometry": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_height": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_id": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_interps": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_ismapped": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_manager": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_name": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_parent": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pathname": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pixels": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pointerx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pointerxy": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pointery": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_reqheight": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_reqwidth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_rgb": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_rootx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_rooty": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screencells": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screendepth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenheight": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenmmheight": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenmmwidth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenvisual": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenwidth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_server": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_toplevel": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_viewable": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_visual": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_visualid": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_visualsavailable": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_vrootheight": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_vrootwidth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_vrootx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_vrooty": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_width": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_x": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_y": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xview": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xview_moveto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xview_scroll": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "yview": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "yview_moveto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "yview_scroll": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "master",
+        "cnf",
+        "kw"
+      ],
+      [
+        [
+          "Widget"
+        ],
+        [
+          "XView"
+        ],
+        [
+          "YView"
+        ]
+      ]
+    ],
+    "Pen": [
+      "<name>",
+      {
+        "DEFAULT_ANGLEOFFSET": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_ANGLEORIENT": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_MODE": [
+          "<name>",
+          null,
+          null,
+          [
+            "str"
+          ]
+        ],
+        "START_ORIENTATION": [
+          "<name>",
+          null,
+          null,
+          [
+            "dict"
+          ]
+        ],
+        "back": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "backward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "begin_fill": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "begin_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bk": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "circle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearstamp": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearstamps": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clone": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "color": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "degrees": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "distance": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "dot": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "down": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "end_fill": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "end_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fillcolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "filling": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "forward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "get_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "get_shapepoly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getpen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getscreen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "goto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "heading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "hideturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "home": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ht": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isdown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isvisible": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "left": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onclick": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ondrag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onrelease": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pencolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pendown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pensize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "penup": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "position": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pu": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "radians": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "reset": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "resizemode": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "right": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "rt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "screens": [
+          "<name>",
+          null,
+          null,
+          [
+            "list"
+          ]
+        ],
+        "seth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setheading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setpos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setposition": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "settiltangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setundobuffer": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "sety": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shape": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shapesize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shapetransform": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shearfactor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "showturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "speed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "st": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "stamp": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tilt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tiltangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "towards": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "turtlesize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "undo": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "undobufferentries": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "up": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "width": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "write": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xcor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ycor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "shape",
+        "undobuffersize",
+        "visible"
+      ],
+      [
+        [
+          "RawTurtle"
+        ]
+      ]
+    ],
+    "RawPen": [
+      "<name>",
+      {
+        "DEFAULT_ANGLEOFFSET": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_ANGLEORIENT": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_MODE": [
+          "<name>",
+          null,
+          null,
+          [
+            "str"
+          ]
+        ],
+        "START_ORIENTATION": [
+          "<name>",
+          null,
+          null,
+          [
+            "dict"
+          ]
+        ],
+        "back": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "backward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "begin_fill": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "begin_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bk": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "circle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearstamp": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearstamps": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clone": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "color": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "degrees": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "distance": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "dot": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "down": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "end_fill": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "end_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fillcolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "filling": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "forward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "get_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "get_shapepoly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getpen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getscreen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "goto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "heading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "hideturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "home": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ht": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isdown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isvisible": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "left": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onclick": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ondrag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onrelease": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pencolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pendown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pensize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "penup": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "position": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pu": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "radians": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "reset": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "resizemode": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "right": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "rt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "screens": [
+          "<name>",
+          null,
+          null,
+          [
+            "list"
+          ]
+        ],
+        "seth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setheading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setpos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setposition": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "settiltangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setundobuffer": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "sety": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shape": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shapesize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shapetransform": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shearfactor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "showturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "speed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "st": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "stamp": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tilt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tiltangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "towards": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "turtlesize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "undo": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "undobufferentries": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "up": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "width": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "write": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xcor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ycor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "canvas",
+        "shape",
+        "undobuffersize",
+        "visible"
+      ],
+      [
+        [
+          "TPen"
+        ],
+        [
+          "TNavigator"
+        ]
+      ]
+    ],
+    "RawTurtle": [
+      "<name>",
+      {
+        "DEFAULT_ANGLEOFFSET": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_ANGLEORIENT": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_MODE": [
+          "<name>",
+          null,
+          null,
+          [
+            "str"
+          ]
+        ],
+        "START_ORIENTATION": [
+          "<name>",
+          null,
+          null,
+          [
+            "dict"
+          ]
+        ],
+        "back": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "backward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "begin_fill": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "begin_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bk": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "circle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearstamp": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearstamps": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clone": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "color": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "degrees": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "distance": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "dot": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "down": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "end_fill": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "end_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fillcolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "filling": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "forward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "get_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "get_shapepoly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getpen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getscreen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "goto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "heading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "hideturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "home": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ht": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isdown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isvisible": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "left": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onclick": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ondrag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onrelease": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pencolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pendown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pensize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "penup": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "position": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pu": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "radians": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "reset": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "resizemode": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "right": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "rt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "screens": [
+          "<name>",
+          null,
+          null,
+          [
+            "list"
+          ]
+        ],
+        "seth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setheading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setpos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setposition": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "settiltangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setundobuffer": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "sety": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shape": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shapesize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shapetransform": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shearfactor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "showturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "speed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "st": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "stamp": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tilt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tiltangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "towards": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "turtlesize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "undo": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "undobufferentries": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "up": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "width": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "write": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xcor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ycor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "canvas",
+        "shape",
+        "undobuffersize",
+        "visible"
+      ],
+      [
+        [
+          "TPen"
+        ],
+        [
+          "TNavigator"
+        ]
+      ]
+    ],
+    "Screen": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "ScrolledCanvas": [
+      "<name>",
+      {
+        "addtag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_above": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_all": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_below": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_closest": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_enclosed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_overlapping": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "addtag_withtag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "adjustScrolls": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "after": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "after_cancel": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "after_idle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "anchor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bbox": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bell": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bind": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bind_all": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bind_class": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bindtags": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "canvasx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "canvasy": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "cget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clipboard_append": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clipboard_clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clipboard_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "columnconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "config": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "configure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "coords": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_arc": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_bitmap": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_image": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_line": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_oval": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_polygon": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_rectangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_text": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "create_window": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "dchars": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "delete": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "deletecommand": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "destroy": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "dtag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "event_add": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "event_delete": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "event_generate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "event_info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_above": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_all": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_below": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_closest": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_enclosed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_overlapping": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "find_withtag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_displayof": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_force": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_lastfor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "focus_set": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "forget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getboolean": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getdouble": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getint": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "gettags": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getvar": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_current": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_release": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_set": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_set_global": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grab_status": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_anchor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_bbox": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_columnconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_configure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_forget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_location": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_propagate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_remove": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_rowconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_size": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "grid_slaves": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "icursor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "image_names": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "image_types": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "index": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "insert": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "itemcget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "itemconfig": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "itemconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "keys": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lift": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "location": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lower": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "mainloop": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "move": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "moveto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "nametowidget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onResize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "option_add": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "option_clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "option_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "option_readfile": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_configure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_forget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_propagate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pack_slaves": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place_configure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place_forget": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place_info": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "place_slaves": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "postscript": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "propagate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "quit": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "register": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "reset": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "rowconfigure": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "scale": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "scan_dragto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "scan_mark": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_adjust": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_from": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_item": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "select_to": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_handle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_own": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "selection_own_get": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "send": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setvar": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "size": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "slaves": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tag_bind": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tag_lower": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tag_raise": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tag_unbind": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_bisque": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_focusFollowsMouse": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_focusNext": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_focusPrev": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_setPalette": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tk_strictMotif": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tkraise": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "type": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "unbind": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "unbind_all": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "unbind_class": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "update": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "update_idletasks": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "wait_variable": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "wait_visibility": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "wait_window": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "waitvar": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_atom": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_atomname": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_cells": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_children": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_class": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_colormapfull": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_containing": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_depth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_exists": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_fpixels": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_geometry": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_height": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_id": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_interps": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_ismapped": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_manager": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_name": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_parent": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pathname": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pixels": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pointerx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pointerxy": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_pointery": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_reqheight": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_reqwidth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_rgb": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_rootx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_rooty": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screencells": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screendepth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenheight": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenmmheight": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenmmwidth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenvisual": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_screenwidth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_server": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_toplevel": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_viewable": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_visual": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_visualid": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_visualsavailable": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_vrootheight": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_vrootwidth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_vrootx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_vrooty": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_width": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_x": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "winfo_y": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xview": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xview_moveto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xview_scroll": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "yview": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "yview_moveto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "yview_scroll": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "master",
+        "width",
+        "height",
+        "canvwidth",
+        "canvheight"
+      ],
+      [
+        [
+          "Frame"
+        ]
+      ]
+    ],
+    "Shape": [
+      "<name>",
+      {
+        "addcomponent": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "type_",
+        "data"
+      ],
+      [
+        [
+          "object"
+        ]
+      ]
+    ],
+    "TK": [
+      "<name>",
+      null,
+      null,
+      [
+        [
+          ".tkinter"
+        ]
+      ]
+    ],
+    "TNavigator": [
+      "<name>",
+      {
+        "DEFAULT_ANGLEOFFSET": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_ANGLEORIENT": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_MODE": [
+          "<name>",
+          null,
+          null,
+          [
+            "str"
+          ]
+        ],
+        "START_ORIENTATION": [
+          "<name>",
+          null,
+          null,
+          [
+            "dict"
+          ]
+        ],
+        "back": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "backward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bk": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "circle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "degrees": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "distance": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "forward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "goto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "heading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "home": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "left": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "position": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "radians": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "reset": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "right": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "rt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "seth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setheading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setpos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setposition": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "sety": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "speed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "towards": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xcor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ycor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "mode"
+      ],
+      [
+        [
+          "object"
+        ]
+      ]
+    ],
+    "TPen": [
+      "<name>",
+      {
+        "color": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "down": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fillcolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "hideturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ht": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isdown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isvisible": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pencolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pendown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pensize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "penup": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pu": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "resizemode": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "showturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "speed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "st": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "up": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "width": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "resizemode"
+      ],
+      [
+        [
+          "object"
+        ]
+      ]
+    ],
+    "Tbuffer": [
+      "<name>",
+      {
+        "nr_of_items": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pop": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "push": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "reset": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "bufsize"
+      ],
+      [
+        [
+          "object"
+        ]
+      ]
+    ],
+    "Terminator": [
+      "<name>",
+      {
+        "args": [
+          "<name>",
+          null,
+          null,
+          [
+            "getset_descriptor"
+          ]
+        ],
+        "with_traceback": [
+          "<name>",
+          null,
+          null,
+          [
+            "method_descriptor"
+          ]
+        ]
+      },
+      [
+        "args",
+        "kwargs"
+      ],
+      [
+        [
+          "Exception"
+        ]
+      ]
+    ],
+    "Turtle": [
+      "<name>",
+      {
+        "DEFAULT_ANGLEOFFSET": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_ANGLEORIENT": [
+          "<name>",
+          null,
+          null,
+          [
+            "int"
+          ]
+        ],
+        "DEFAULT_MODE": [
+          "<name>",
+          null,
+          null,
+          [
+            "str"
+          ]
+        ],
+        "START_ORIENTATION": [
+          "<name>",
+          null,
+          null,
+          [
+            "dict"
+          ]
+        ],
+        "back": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "backward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "begin_fill": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "begin_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bk": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "circle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearstamp": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearstamps": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clone": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "color": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "degrees": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "distance": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "dot": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "down": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "end_fill": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "end_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "fillcolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "filling": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "forward": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "get_poly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "get_shapepoly": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getpen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getscreen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "goto": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "heading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "hideturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "home": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ht": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isdown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "isvisible": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "left": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "lt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onclick": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ondrag": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onrelease": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pd": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pencolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pendown": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pensize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "penup": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "position": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "pu": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "radians": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "reset": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "resizemode": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "right": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "rt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "screens": [
+          "<name>",
+          null,
+          null,
+          [
+            "list"
+          ]
+        ],
+        "seth": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setheading": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setpos": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setposition": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "settiltangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setundobuffer": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setx": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "sety": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shape": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shapesize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shapetransform": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "shearfactor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "showturtle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "speed": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "st": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "stamp": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tilt": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tiltangle": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "towards": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "turtlesize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "undo": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "undobufferentries": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "up": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "width": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "write": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "xcor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ycor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "shape",
+        "undobuffersize",
+        "visible"
+      ],
+      [
+        [
+          "RawTurtle"
+        ]
+      ]
+    ],
+    "TurtleGraphicsError": [
+      "<name>",
+      {
+        "args": [
+          "<name>",
+          null,
+          null,
+          [
+            "getset_descriptor"
+          ]
+        ],
+        "with_traceback": [
+          "<name>",
+          null,
+          null,
+          [
+            "method_descriptor"
+          ]
+        ]
+      },
+      [
+        "args",
+        "kwargs"
+      ],
+      [
+        [
+          "Exception"
+        ]
+      ]
+    ],
+    "TurtleScreen": [
+      "<name>",
+      {
+        "addshape": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bgcolor": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "bgpic": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clear": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "clearscreen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "colormode": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "delay": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getcanvas": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "getshapes": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "listen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "mainloop": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "mode": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "numinput": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onclick": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onkey": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onkeypress": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onkeyrelease": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "onscreenclick": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "ontimer": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "register_shape": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "reset": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "resetscreen": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "screensize": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "setworldcoordinates": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "textinput": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "tracer": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "turtles": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "update": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "window_height": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "window_width": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "cv",
+        "mode",
+        "colormode",
+        "delay"
+      ],
+      [
+        [
+          "TurtleScreenBase"
+        ]
+      ]
+    ],
+    "TurtleScreenBase": [
+      "<name>",
+      {
+        "mainloop": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "numinput": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ],
+        "textinput": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "cv"
+      ],
+      [
+        [
+          "object"
+        ]
+      ]
+    ],
+    "Vec2D": [
+      "<name>",
+      {
+        "count": [
+          "<name>",
+          null,
+          null,
+          [
+            "method_descriptor"
+          ]
+        ],
+        "index": [
+          "<name>",
+          null,
+          null,
+          [
+            "method_descriptor"
+          ]
+        ],
+        "rotate": [
+          "<name>",
+          null,
+          null,
+          [
+            "function"
+          ]
+        ]
+      },
+      [
+        "args",
+        "kwargs"
+      ],
+      [
+        [
+          "tuple"
+        ]
+      ]
+    ],
+    "addshape": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "back": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "backward": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "begin_fill": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "begin_poly": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "bgcolor": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "bgpic": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "bk": [
+      "regresar",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "bye": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "circle": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "clear": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "clearscreen": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "clearstamp": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "clearstamps": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "clone": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "color": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "colormode": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "config_dict": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "deepcopy": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "degrees": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "delay": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "distance": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "done": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "dot": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "down": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "end_fill": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "end_poly": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "exitonclick": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "fd": [
+      "avanzar",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "fillcolor": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "filling": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "forward": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "get_poly": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "get_shapepoly": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "getcanvas": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "getmethparlist": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "getpen": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "getscreen": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "getshapes": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "getturtle": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "goto": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "heading": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "hideturtle": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "home": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "ht": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "inspect": [
+      "<name>",
+      null,
+      null,
+      [
+        [
+          ".inspect"
+        ]
+      ]
+    ],
+    "isdown": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "isfile": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "isvisible": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "join": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "left": [
+      "girarizquierda",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "listen": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "lt": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "mainloop": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "math": [
+      "<name>",
+      null,
+      null,
+      [
+        [
+          ".math"
+        ]
+      ]
+    ],
+    "mode": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "numinput": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "onclick": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "ondrag": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "onkey": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "onkeypress": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "onkeyrelease": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "onrelease": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "onscreenclick": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "ontimer": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "pd": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "pen": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "pencolor": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "pendown": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "pensize": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "penup": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "pos": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "position": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "pu": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "radians": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "read_docstrings": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "readconfig": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "register_shape": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "reset": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "resetscreen": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "resizemode": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "right": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "rt": [
+      "girarderecha",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "screensize": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "seth": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "setheading": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "setpos": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "setposition": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "settiltangle": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "setundobuffer": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "setup": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "setworldcoordinates": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "setx": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "sety": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "shape": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "shapesize": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "shapetransform": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "shearfactor": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "showturtle": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "simpledialog": [
+      "<name>",
+      null,
+      null,
+      [
+        [
+          ".tkinter",
+          "simpledialog"
+        ]
+      ]
+    ],
+    "speed": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "split": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "st": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "stamp": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "sys": [
+      "<name>",
+      null,
+      null,
+      [
+        [
+          ".sys"
+        ]
+      ]
+    ],
+    "textinput": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "tilt": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "tiltangle": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "time": [
+      "<name>",
+      null,
+      null,
+      [
+        [
+          ".time"
+        ]
+      ]
+    ],
+    "title": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "towards": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "tracer": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "turtles": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "turtlesize": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "types": [
+      "<name>",
+      null,
+      null,
+      [
+        [
+          ".types"
+        ]
+      ]
+    ],
+    "undo": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "undobufferentries": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "up": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "update": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "width": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "window_height": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "window_width": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "write": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "write_docstringdict": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "xcor": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ],
+    "ycor": [
+      "<name>",
+      null,
+      null,
+      [
+        "function"
+      ]
+    ]
+  }
+]

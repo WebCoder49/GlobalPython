@@ -230,7 +230,7 @@
           ]
         ],
         "errno": [
-          "número_de_error",
+          "<name>",
           null,
           null,
           [
@@ -294,7 +294,7 @@
       ]
     ],
     "False": [
-      "Falso",
+      "<name>",
       null,
       null,
       [
@@ -378,7 +378,7 @@
           ]
         ],
         "errno": [
-          "número_de_error",
+          "<name>",
           null,
           null,
           [
@@ -618,7 +618,7 @@
       ]
     ],
     "NotADirectoryError": [
-      "NotADirectoryError",
+      "<name>",
       {},
       [
         "args",
@@ -663,7 +663,7 @@
           ]
         ],
         "errno": [
-          "número_de_error",
+          "<name>",
           null,
           null,
           [
@@ -1002,7 +1002,7 @@
       ]
     ],
     "True": [
-      "Verdadero",
+      "<name>",
       null,
       null,
       [
@@ -1274,7 +1274,7 @@
           ]
         ],
         "errno": [
-          "número_de_error",
+          "<name>",
           null,
           null,
           [
@@ -2456,19 +2456,14 @@
       ]
     ],
     "input": [
-      "preguntar",
+      "<name>",
       null,
       [
         "prompt"
-      ],
-      [
-        [
-          "str"
-        ]
       ]
     ],
     "int": [
-      "entero",
+      "<name>",
       {
         "as_integer_ratio": [
           "<name>",
@@ -2507,7 +2502,7 @@
           ]
         ],
         "imag": [
-          "parte_imaginario",
+          "<name>",
           null,
           null,
           [
@@ -2523,7 +2518,7 @@
           ]
         ],
         "real": [
-          "parte_real",
+          "<name>",
           null,
           null,
           [
@@ -2585,7 +2580,7 @@
       []
     ],
     "list": [
-      "listo",
+      "<name>",
       {
         "append": [
           "<name>",
@@ -2920,7 +2915,7 @@
       ]
     ],
     "print": [
-      "escribir",
+      "<name>",
       null,
       []
     ],
@@ -2985,7 +2980,7 @@
       ]
     ],
     "range": [
-      "rango",
+      "<name>",
       {
         "count": [
           "<name>",
@@ -3234,7 +3229,7 @@
       ]
     ],
     "str": [
-      "texto",
+      "<name>",
       {
         "capitalize": [
           "<name>",
@@ -3391,7 +3386,7 @@
           ]
         ],
         "join": [
-          "unir",
+          "<name>",
           null,
           [
             "self",
@@ -3558,7 +3553,7 @@
           ]
         ],
         "upper": [
-          "mayúsculo",
+          "<name>",
           null,
           [
             "self"

@@ -66,16 +66,31 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
     """Getting properties"""
 
-    def raw_path_to_data(self, path: tuple):
-        """From a raw (English) path, get the translation data"""
+    def raw_path_to_data(self, path:tuple):
+        """From a raw (English) path, get the translation data (automatic scope)"""
+        scopes = self.scope_stack[::-1] # Local scopes up tree
+        # print("Scopes:", scopes)
+        for scope in scopes:
+            data = self.raw_path_to_data_scoped(path, scope)  # Local
+            if(data != None):
+                return data
+            else:
+                # print(f"Could not find path {path} in scope {scope}")
+                pass
+
+        # print(f"Looking for {path} in globals.")
+        return self.raw_path_to_data_scoped(path, self.data)  # Global
+
+    def raw_path_to_data_scoped(self, path: tuple, scope):
+        """From a raw (English) path, get the translation data (for specific scope)"""
         possible_paths = deque([path])
-
-
 
         # Global
         while (len(possible_paths) > 0):
             # Get compilation data by path
-            data = self.data
+            # scope = self.scope_stack[-1]  # Local
+
+            data = scope
 
             path = possible_paths.popleft()
 
@@ -83,6 +98,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             for prop in path:
                 # Get inner props
                 props = data[1] if len(data) >= 2 else []
+                # print("Prop", prop, props)
                 if prop in props:
                     # Found property
                     data = props[prop]
@@ -103,7 +119,10 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
         if(parents == None):
             # Path then data
-            parents = [(tuple(), self.data)]
+            parents = self.scope_stack + [tuple(self.data)] # Locals then globals
+            parents = list(map(lambda parent: ("", parent), parents)) # Blank paths
+            # print(f"Parents of scope are {parents}")
+
         results = []  # List of resulting possible properties
 
         parent_queue = deque(parents)
@@ -130,27 +149,29 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             else:
                 # Not in parent
                 continue
-
         return results
 
     """Variables and Scoping"""
-    scope_stack = []
-    def scope_in(self, msg):
+    scope_stack = [("local", {}, None, [])]
+    def scope_push(self, msg):
         """Add one more to stack"""
-        self.scope_stack.append(msg)
-        print("Scope: ", msg, ">", self.scope_stack)
-    def scope_out(self):
+        self.scope_stack.append((msg, {}, None, []))
+        # print("Scope push: ", msg, ">", self.scope_stack)
+    def scope_pop(self):
         """Remove one from stack"""
         msg = self.scope_stack.pop()
-        print("Scope: ", self.scope_stack, "<", msg)
+        # print("Scope pop: ", self.scope_stack, "<", msg)
 
     def assign(self, iden_path, src):
-        """Assign the value src to the destination iden_path"""
+        """Assign the value src to the destination iden_path, in the local scope"""
 
-        print("Assign", iden_path, "=", src)
+        # print("Assign", iden_path, "=", src)
         if (iden_path != src[0][0]):
             # Assign a variable name (so type can be remembered)
-            dest = self.data
+
+            dest = self.scope_stack[-1]  # Local
+            # dest = self.data # Global
+
             for node in iden_path:
                 properties = dest[1]
                 if (not node in properties):
@@ -165,4 +186,4 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                 src_path = src_type[0]
                 dest[3].append(list(src_path))
 
-        print(dest)
+        # print(dest)

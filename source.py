@@ -14,10 +14,26 @@
 
 # Una programa sencilla (es):
 
+nombre = ""
+
+frase_de_escribir = 12 # Número en este "scope"
+
+función letras_de_palabra(palabra):
+    frase_de_escribir = nombre + ", Tienes un"
+    función escribir_letra(letra):
+        escribir(frase_de_escribir.mayúsculo(), letra)
+
+    función con_cada_letra(palabra, func):
+        para letra en palabra:
+            func(letra)
+
+    con_cada_letra(palabra, escribir_letra)
+
+escribir("Doce es", frase_de_escribir.parte_real)
+
 en_bucle = Verdadero
 mientras(en_bucle):
     nombre = preguntar("¿Cómo te llamas?")
-
     si nombre == "Oliver":
         escribir("Ah, Hola Oliver!")
     osi nombre == "WebCoder49":
@@ -25,10 +41,9 @@ mientras(en_bucle):
     sino:
         escribir("No te he conocido antes.")
 
-    # para letra en nombre:
-    #   escribir("Tienes un"+letra)
+    letras_de_palabra(nombre)
 
     respuesta = preguntar("¿Quieres jugar otra vez?")
-    en_bucle = respuesta.mayúsculo() == "SI"
+    en_bucle = (respuesta.mayúsculo() == "SI")
 
-escribir(nombre, en_bucle)
+escribir("Adiós!")

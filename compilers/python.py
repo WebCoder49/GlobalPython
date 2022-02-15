@@ -1,5 +1,9 @@
+import copy
+
+from ply import lex, yacc
 from languages.language import LanguageEnv
 from ._template import Lexer, Parser
+
 
 class PythonLexer(Lexer):
 
@@ -8,7 +12,7 @@ class PythonLexer(Lexer):
     # Register keywords
     self.keywords = lang.kw
     self.tokens += list(self.keywords.values())
-    print(self.tokens)
+    # print(self.tokens)
   
   attributes = {
     "indentation": 0
@@ -55,16 +59,48 @@ class PythonLexer(Lexer):
     return t
 
   # Indentation
+  indent_stack = [0]
+
+  def indent_type(self, ind_size):
+    last_indent = self.indent_stack[-1]
+    if(ind_size > last_indent):
+      self.indent_stack.append(ind_size)
+      return -1 # Indent
+
+    elif(ind_size < last_indent):
+      # All dedents
+      num_dedents = 0
+      while(self.indent_stack[-1] > ind_size):
+        self.indent_stack.pop()
+        num_dedents += 1
+      return num_dedents
+
+    else:
+      return 0
+
+  def t_newline_blank(self, t): # Blank newline - don't interpret as indentation
+    r'\n[ \t]*(?=\n|\#|$)'
+    return None
+
   def t_newline(self, t):
-    r'\n[ \t]*(?=[^ \t]|$)' # $ means End Of File
+    r'\n[ \t]*(?=[^ \t\n])' # $ means End Of File
     t.lexer.lineno += 1
     new_indent = len(t.value)-1
 
-    if(new_indent > self.attributes["indentation"]):
+    indent_type = self.indent_type(new_indent)
+
+    if(indent_type == -1):
       t.type = "INDENT"
       self.attributes["indentation"] = new_indent
-    elif(new_indent < self.attributes["indentation"]):
+    elif(indent_type > 0):
       t.type = "DEDENT"
+      # Indent type is now dedent count
+      if(indent_type > 1):
+        dedent_tok = copy.copy(t)
+        dedent_tok.value = ""
+        for i in range(indent_type-1):
+          self.lexer.push(dedent_tok)
+
       self.attributes["indentation"] = new_indent
     else: return None
 
@@ -122,12 +158,12 @@ class PythonParser(Parser):
 
   # Large
 
-  indentation = 2
+  indentation = 4
   def indent(self, text):
     # Indent text
     result = ""
     for row in text.split("\n"):
-      result += (" "*self.indentation) + row
+      result += (" "*self.indentation) + row + "\n"
 
     return result
 
@@ -143,7 +179,7 @@ class PythonParser(Parser):
 
   def p_statement_withexpression(self, p):
       """statement : withexpkw expression ':' INDENT codeblock DEDENT"""
-      # If statement
+      # Block statement which needs expression
       p[0] = self.ParsingStruct()
       # Add main statement
       p[0].compiled = p[0].compiled = " ".join(map(str, p[1:4]))
@@ -152,12 +188,46 @@ class PythonParser(Parser):
 
   def p_statement_noexpression(self, p):
       """statement : noexpkw ':' INDENT codeblock DEDENT"""
-      # If statement
+      # Block statement which does not need expression
       p[0] = self.ParsingStruct()
       # Add main statement
       p[0].compiled = p[0].compiled = " ".join(map(str, p[1:3]))
       # Add codeblock
       p[0].compiled += "\n" + self.indent(p[4].compiled)
+
+  def p_statement_for(self, p):
+      """statement : FOR path IN expression ':' INDENT codeblock DEDENT"""
+      # For loop
+      p[0] = self.ParsingStruct()
+
+      # Evaluate path
+      buffer = [None, p[2]]  # Store evaluation in
+      self.p_expression_path(buffer)
+      p[2] = buffer[0]
+
+      # Add main statement
+      p[0].compiled = p[0].compiled = " ".join(map(str, p[1:6]))
+      # Add codeblock
+      p[0].compiled += "\n" + self.indent(p[7].compiled)
+
+  def p_statement_def(self, p):
+      """statement : DEF expression '(' commaseparated ')' ':' scope_push INDENT codeblock DEDENT scope_pop"""
+      # Function definition
+      p[0] = self.ParsingStruct()
+      # Add main statement
+      p[0].compiled = p[0].compiled = " ".join(map(str, p[1:8]))
+      # Add codeblock
+      p[0].compiled += "\n" + self.indent(p[9].compiled)
+
+  # Scoping
+  def p_scope_push(self, p):
+    """scope_push :"""
+    self.lang.scope_push("Pushed")
+    p[0] = "# Scope" + str(self.lang.scope_stack)
+
+  def p_scope_pop(self, p):
+    """scope_pop :"""
+    self.lang.scope_pop()
 
   # Small
   def p_statement_assignment(self, p):
@@ -181,7 +251,7 @@ class PythonParser(Parser):
 
   def p_statement_parsertest(self, p):
     '''statement : '=' expression '=' '''
-    print(f"\033[95mTesting on line {self.lexer.lineno}: {p[2]} is of type {p[2].possible_paths}\033[0m")
+    # print(f"\033[95mTesting on line {self.lexer.lineno}: {p[2]} is of type {p[2].possible_paths}\033[0m")
     
     p[0] = self.ParsingStruct()
     p[0].compiled = ""
@@ -230,7 +300,7 @@ class PythonParser(Parser):
     if(len(result.possible_paths) == 0):
       # Not defined - pass through unchanged anyway (in case is unindexed module var)
       # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
-      result.possible_paths.append(((p[1],), [p[1], None, None, [self.literal_paths["_UNKNOWN"]]]))
+      result.possible_paths.append(((p[1],), [p[1], None, None, self.literal_paths["_UNKNOWN"]]))
     else:
       pass # Wait later for compilation
 
@@ -250,7 +320,7 @@ class PythonParser(Parser):
     # Expression hierarchy - w/ dot
     result = p[1]
 
-    print(p[1], ".", p[3], result.possible_paths)
+    # print(p[1], ".", p[3], result.possible_paths)
     old_poss_paths = result.possible_paths
     result.possible_paths = self.lang.get_properties(p[3], result.possible_paths) # Property p[3] from p[1]'s result
 
@@ -258,7 +328,7 @@ class PythonParser(Parser):
       # Not defined - pass through unchanged anyway (in case is unindexed module var)
       for path in old_poss_paths:
         # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
-        result.possible_paths.append((path[0] + (p[3],), [p[3], None, None, [self.literal_paths["_UNKNOWN"]]]))
+        result.possible_paths.append((path[0] + (p[3],), [p[3], None, None, self.literal_paths["_UNKNOWN"]]))
     else:
       pass  # Wait later for compilation
 

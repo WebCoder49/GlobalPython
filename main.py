@@ -9,15 +9,6 @@ from os import system
 start = time.time()
 language = languages.language.LanguageEnv("languages/es")
 
-# language.scope_in("Hello")
-# language.scope_in("World")
-# language.scope_out()
-# language.scope_in("Global")
-# language.scope_in("Python")
-# language.scope_out()
-# language.scope_out()
-# language.scope_out()
-
 # Build the lexer and parser
 lexer = compilers.python.PythonLexer(language)
 lexer.build()
@@ -31,7 +22,7 @@ result = parser.parse(src)
 end = time.time()
 
 
-print(f"T: {end-start} (1/{int(1/(end-start))} of a second)")
+print(f"T: {end-start}s")
 # Write compiled code
 with open("out.py", "w", encoding='utf8') as writer:
 	writer.write(str(result))

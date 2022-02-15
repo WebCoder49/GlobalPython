@@ -1,4 +1,40 @@
 from ply import lex, yacc
+from ply.lex import Lexer
+
+from collections import deque
+
+
+class PushableLexer(): # Supports pushing of tokens for a lexer
+  lexer = None
+  def __init__(self, lexer:Lexer):
+    self.lexer = lexer
+
+    # Add methods
+    self.input = self.lexer.input
+    self.lineno = self.lexer.lineno
+
+  """Pushable"""
+  pushed_queue = deque()
+  queue_not_empty = False
+
+  def token(self):
+    # Either get from queue or lexer
+    if(self.queue_not_empty):
+      # Get new token from queue
+      tok = self.pushed_queue.popleft()
+
+      if(len(self.pushed_queue) <= 0):
+        self.queue_not_empty = False
+
+    else:
+      # Ask for next token from lexer
+      tok = self.lexer.token()
+
+    return tok
+
+  def push(self, tok):
+    self.pushed_queue.append(tok)
+    self.queue_not_empty = True
 
 class Lexer:
   def __init__(self, lang):
@@ -6,11 +42,12 @@ class Lexer:
   
   # Build the lexer
   def build(self, **kwargs):
-    self.lexer = lex.lex(module=self, **kwargs)
+    self.lexer = PushableLexer(lex.lex(module=self, **kwargs))
 
   # Test output
   def test(self, data):
     self.lexer.input(data)
+    whitespace = ["INDENT", "DEDENT"]
     colors = {
       "ID": 96,
       "STRING": 95,
@@ -28,6 +65,9 @@ class Lexer:
       elif(tok.type in colors):
         color = colors[tok.type]
       print(f"\033[{color}m" + tok.value + "\033[0m", end=" ")
+
+      if (tok.type in whitespace):
+        print(f"\033[90m[" + tok.type + "]\033[0m", end="")
 
   # Newlines
   def t_newline(self,t):

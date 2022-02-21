@@ -2527,7 +2527,7 @@
           null,
           null,
           [
-            "getset_descriptor"
+            ["int"]
           ]
         ],
         "to_bytes": [
@@ -3562,6 +3562,9 @@
           null,
           [
             "self"
+          ],
+          [
+            ["str"]
           ]
         ],
         "zfill": [

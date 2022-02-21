@@ -77,6 +77,7 @@ class Lexer:
   def t_newline(self,t):
     r'\n+'
     t.lexer.lineno += len(t.value)
+    t.lexer
 
   # Error handling
   def t_error(self,t):

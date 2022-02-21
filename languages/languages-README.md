@@ -15,6 +15,7 @@ Path      |Description
 ----------|-----------
 `.kw.json`|Keywords and their localized names
 `.literals.json`|Literal datatype [lexer/parser](../compilers) names and their corresponding paths
+`.pkgs.json`|Translated package names
 `.json`|Built-in module localized names
 `<module-name>.json`|Localized name mapping for external from PyPI/local-but-need-to-be-imported modules (including `os`, `turtle`... as well as `pygame`, `matplotlib`...)
 
@@ -24,6 +25,13 @@ Path      |Description
 {
   "translated_token": "ENGLISH_TOKEN_ID",
   "translated_token_2": "ENGLISH_TOKEN_ID_2",
+  ...
+}
+```
+#### `.pkgs.json`
+```json
+{
+  "translated_pkg_name": "official_pkg_name",
   ...
 }
 ```

@@ -8,3 +8,6 @@
 # PLY
 */parser.out
 */parsetab.py
+
+# Debugging files
+/compilation_dump.json

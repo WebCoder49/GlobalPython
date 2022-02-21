@@ -93,7 +93,7 @@ def index(obj, level, this_pkg_name, dependencies, imported_modules={}, base_cla
 
         else:
           # Other data - inherits type
-          output[property] = ("<name>", None, None, type(value).__qualname__.split(".")) # Compiled name, Properties, Parameters, Type
+          output[property] = ("<name>", None, None, [type(value).__qualname__.split(".")]) # Compiled name, Properties, Parameters, Type
 
     
   return output

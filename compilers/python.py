@@ -9,442 +9,541 @@ from ._template import Lexer, Parser
 
 class PythonLexer(Lexer):
 
-  def __init__(self, lang:LanguageEnv):
-    super().__init__(lang)
-    # Register keywords
-    self.keywords = lang.kw
-    self.tokens += list(self.keywords.values())
-    # print(self.tokens)
-  
-  attributes = {
-    "indentation": 0
-  }
+    def __init__(self, lang: LanguageEnv):
+        super().__init__(lang)
+        # Register keywords
+        self.keywords = lang.kw
+        self.tokens += list(self.keywords.values())
+        # print(self.tokens)
 
-  # Literals
-  literals = "()[]{}:,.="
+    attributes = {
+        "indentation": 0
+    }
 
-  # Tokens
-  tokens = [
-    # Structure
-    "INDENT",
-    "DEDENT",
-    "COMMENT",
     # Literals
-    "STRING",
-    "NUMBER",
-    # Identifiers; Operators
-    "ID",
-    "OP"
-  ]
-  
-  # Keywords
-  def t_ID(self, t):
-    r'(?!\d)(\w)(\w)*' # Using \w allows accents, characters, etc. - not starting w/ digit
-    if(t.value in self.keywords):
-      # Is a keyword
-      t.type = self.keywords[t.value]
-      t.value = t.type.lower()
-      # Word operators
-      if(t.type in ["AND", "OR", "NOT", "IS"]):
-        t.type = "OP"
-    else:
-      # Is an identifier
-      t.type = 'ID'
-    return t
-  
-  # Operators
-  def t_OP(self, t):
-    r'[+\-*/%=]+'
-    if(t.value == "="):
-      # Assignment - not normal operator
-      t.type = "="
-    return t
+    literals = "()[]{}:,.="
 
-  # Indentation
-  indent_stack = [0]
+    # Tokens
+    tokens = [
+        # Structure
+        "INDENT",
+        "DEDENT",
+        "COMMENT",
+        # Literals
+        "STRING",
+        "NUMBER",
+        # Identifiers; Operators
+        "ID",
+        "OP"
+    ]
 
-  def indent_type(self, ind_size):
-    last_indent = self.indent_stack[-1]
-    if(ind_size > last_indent):
-      self.indent_stack.append(ind_size)
-      return -1 # Indent
+    # Keywords
+    def t_ID(self, t):
+        r'(?!\d)(\w)(\w)*'  # Using \w allows accents, characters, etc. - not starting w/ digit
+        if (t.value in self.keywords):
+            # Is a keyword
+            t.type = self.keywords[t.value]
+            t.value = t.type.lower()
+            # Word operators
+            if (t.type in ["AND", "OR", "NOT", "IS"]):
+                t.type = "OP"
+        else:
+            # Is an identifier
+            t.type = 'ID'
+        return t
 
-    elif(ind_size < last_indent):
-      # All dedents
-      num_dedents = 0
-      while(self.indent_stack[-1] > ind_size):
-        self.indent_stack.pop()
-        num_dedents += 1
-      return num_dedents
+    # Operators
+    def t_OP(self, t):
+        r'[+\-*/%=<>]+'
+        if (t.value == "="):
+            # Assignment - not normal operator
+            t.type = "="
+        return t
 
-    else:
-      return 0
+    # Indentation
+    indent_stack = [0]
 
-  def t_newline_blank(self, t): # Blank newline - don't interpret as indentation
-    r'\n[ \t]*(?=\n|\#|$)'
-    return None
+    def indent_type(self, ind_size):
+        last_indent = self.indent_stack[-1]
+        if (ind_size > last_indent):
+            self.indent_stack.append(ind_size)
+            return -1  # Indent
 
-  def t_newline(self, t):
-    r'\n[ \t]*(?=[^ \t\n])' # $ means End Of File
-    t.lexer.lineno += 1
-    new_indent = max(0, len(t.value)-1)
+        elif (ind_size < last_indent):
+            # All dedents
+            num_dedents = 0
+            while (self.indent_stack[-1] > ind_size):
+                self.indent_stack.pop()
+                num_dedents += 1
+            return num_dedents
 
-    indent_type = self.indent_type(new_indent)
+        else:
+            return 0
 
-    if(indent_type == -1):
-      t.type = "INDENT"
-      self.attributes["indentation"] = new_indent
-    elif(indent_type > 0):
-      t.type = "DEDENT"
-      # Indent type is now dedent count
-      if(indent_type > 1):
-        dedent_tok = copy.copy(t)
-        dedent_tok.value = ""
-        for i in range(indent_type-1):
-          self.lexer.push(dedent_tok)
+    def t_newline_blank(self, t):  # Blank newline - don't interpret as indentation
+        r'\n[ \t]*(?=\n|\#|$)'
+        t.lexer.lineno += 1
+        return None
 
-      self.attributes["indentation"] = new_indent
-    else: return None
+    def t_newline(self, t):
+        r'\n[ \t]*(?=[^ \t\n])'  # $ means End Of File
+        t.lexer.lineno += 1
+        new_indent = max(0, len(t.value) - 1)
 
-    return t
+        indent_type = self.indent_type(new_indent)
 
-  def eof(self):
-    # End-of-file - indent to 0
-    num_dedents = self.indent_type(0)
-    for i in range(num_dedents):
+        if (indent_type == -1):
+            t.type = "INDENT"
+            self.attributes["indentation"] = new_indent
+        elif (indent_type > 0):
+            t.type = "DEDENT"
+            # Indent type is now dedent count
+            if (indent_type > 1):
+                dedent_tok = copy.copy(t)
+                dedent_tok.value = ""
+                for i in range(indent_type - 1):
+                    self.lexer.push(dedent_tok)
 
-      # Set up dedent token
-      tok = LexToken()
-      tok.value = ""
-      tok.type = "DEDENT"
+            self.attributes["indentation"] = new_indent
+        else:
+            return None
 
-      # Indent type is now dedent count
-      if (num_dedents > 1):
-        dedent_tok = copy.copy(tok)
-        dedent_tok.value = ""
-        for i in range(num_dedents - 1):
-          self.lexer.push(dedent_tok)
-      return tok
-  
-  t_ignore = " \t"
-  
-  # Comments
-  def t_COMMENT(self, t):
-    r'\#.*(?=\n|$)' # $ means End Of File
-    # Don't return to parser
+        return t
 
-  # Literals - Simple Datatypes
+    def eof(self):
+        # End-of-file - indent to 0
+        num_dedents = self.indent_type(0)
+        for i in range(num_dedents):
 
-  # Booleans in identifiers
-  # String
-  def t_STRING(self, t):
-    r'("""((.|\n))*?""")|(\'\'\'(.|\n)*?\'\'\')|(".*?")|(\'.*?\')' # Non-greedy - find shortest possible outcome
-    return t
+            # Set up dedent token
+            tok = LexToken()
+            tok.value = ""
+            tok.type = "DEDENT"
 
-  # Number
-  def t_NUMBER(self, t):
-    r'\d+(\.\d*)?j?'
-    return t
+            # Indent type is now dedent count
+            if (num_dedents > 1):
+                dedent_tok = copy.copy(tok)
+                dedent_tok.value = ""
+                for i in range(num_dedents - 1):
+                    self.lexer.push(dedent_tok)
+            return tok
 
+    t_ignore = " \t"
 
+    # Comments
+    def t_COMMENT(self, t):
+        r'\#.*(?=\n|$)'  # $ means End Of File
+        t.lexer.lineno += 1
+        LexToken
+        # Don't return to parser
 
+    # Literals - Simple Datatypes
+
+    # Booleans in identifiers
+    # String
+    def t_STRING(self, t):
+        r'("""((.|\n))*?""")|(\'\'\'(.|\n)*?\'\'\')|(".*?")|(\'.*?\')'  # Non-greedy - find shortest possible outcome
+        return t
+
+    # Number
+    def t_NUMBER(self, t):
+        r'\d+(\.\d*)?j?'
+        return t
 
 
 class PythonParser(Parser):
-  # Parsing object backbone for data storage
-  class ParsingStruct():
-    def __str__(self):
-      # Compiled code
-      return getattr(self, "compiled", "")
-    pass
+    # Parsing object backbone for data storage
+    class ParsingStruct():
+        def __str__(self):
+            # Compiled code
+            return getattr(self, "compiled", "")
 
-  def __init__(self, lang, lexer):
-    super().__init__(lang, lexer)
-    # Register keywords
-    self.literal_paths = lang.literals
+        pass
 
-  # Main structure
-  def p_module(self, p):
-    '''module : scope_push codeblock scope_pop'''
-    # With scope
-    p[0] = p[2]
+    def __init__(self, lang, lexer):
+        super().__init__(lang, lexer)
+        # Register keywords
+        self.literal_paths = lang.literals
 
-  def p_codeblock(self, p):
-    '''codeblock : statement
+    # Main structure
+    def p_module(self, p):
+        '''module : scope_push codeblock scope_pop'''
+        # With scope
+        p[0] = p[2]
+
+    def p_codeblock(self, p):
+        '''codeblock : statement
                 | codeblock statement
                 | empty'''
-    result = p[1]
-    if(len(p) > 2):
-      result.compiled += "\n" + p[2].compiled
-    p[0] = result
-  
-  # Statement syntaxes
+        result = p[1]
+        if (len(p) > 2):
+            result.compiled += "\n" + p[2].compiled
+        p[0] = result
 
-  # Large
+    # Statement syntaxes
 
-  indentation = 4
-  def indent(self, text):
-    # Indent text
-    result = ""
-    for row in text.split("\n"):
-      result += (" "*self.indentation) + row + "\n"
+    # Large
 
-    return result
+    indentation = 4
 
-  def p_noexpkw(self, p):
-    """noexpkw : ELSE"""
-    p[0] = p[1] # No expression needed for these statements
+    def indent(self, text):
+        # Indent text
+        result = ""
+        for row in text.split("\n"):
+            result += (" " * self.indentation) + row + "\n"
 
-  def p_withexpkw(self, p):
-    """withexpkw : IF
+        return result
+
+    def p_noexpkw(self, p):
+        """noexpkw : ELSE"""
+        p[0] = p[1]  # No expression needed for these statements
+
+    def p_withexpkw(self, p):
+        """withexpkw : IF
                 | ELIF
                 | WHILE"""
-    p[0] = p[1] # Expression needed for these statements
+        p[0] = p[1]  # Expression needed for these statements
 
-  def p_statement_withexpression(self, p):
-      """statement : withexpkw expression ':' INDENT codeblock DEDENT"""
-      # Block statement which needs expression
-      p[0] = self.ParsingStruct()
-      # Add main statement
-      p[0].compiled = p[0].compiled = " ".join(map(str, p[1:4]))
-      # Add codeblock
-      p[0].compiled += "\n" + self.indent(p[5].compiled)
+    def p_statement_withexpression(self, p):
+        """statement : withexpkw expression ':' INDENT codeblock DEDENT"""
+        # Block statement which needs expression
+        p[0] = self.ParsingStruct()
+        # Add main statement
+        p[0].compiled = p[0].compiled = " ".join(map(str, p[1:4]))
+        # Add codeblock
+        p[0].compiled += "\n" + self.indent(p[5].compiled)
 
-  def p_statement_noexpression(self, p):
-      """statement : noexpkw ':' INDENT codeblock DEDENT"""
-      # Block statement which does not need expression
-      p[0] = self.ParsingStruct()
-      # Add main statement
-      p[0].compiled = p[0].compiled = " ".join(map(str, p[1:3]))
-      # Add codeblock
-      p[0].compiled += "\n" + self.indent(p[4].compiled)
+    def p_statement_noexpression(self, p):
+        """statement : noexpkw ':' INDENT codeblock DEDENT"""
+        # Block statement which does not need expression
+        p[0] = self.ParsingStruct()
+        # Add main statement
+        p[0].compiled = p[0].compiled = " ".join(map(str, p[1:3]))
+        # Add codeblock
+        p[0].compiled += "\n" + self.indent(p[4].compiled)
 
-  def p_statement_for(self, p):
-      """statement : FOR path IN expression ':' INDENT codeblock DEDENT"""
-      # For loop
-      p[0] = self.ParsingStruct()
 
-      # Evaluate path
-      p[2] = self.evaluate_path(p[2])
+    def p_statement_for(self, p):
+        """statement : start_for INDENT codeblock DEDENT"""
+        # For loop
+        p[0] = self.ParsingStruct()
 
-      # Add main statement
-      p[0].compiled = p[0].compiled = " ".join(map(str, p[1:6]))
-      # Add codeblock
-      p[0].compiled += "\n" + self.indent(p[7].compiled)
+        # Add main statement
+        print(p[4])
+        p[0].compiled = str(p[1])
+        # Add codeblock
+        p[0].compiled += "\n" + self.indent(p[3].compiled)
 
-  def p_statement_def(self, p):
-      """statement : DEF expression '(' commaseparated ')' ':' scope_push INDENT codeblock DEDENT scope_pop"""
-      # Function definition
-      p[0] = self.ParsingStruct()
-      # Add main statement
-      p[0].compiled = p[0].compiled = " ".join(map(str, p[1:8]))
-      # Add codeblock
-      p[0].compiled += "\n" + self.indent(p[9].compiled)
+    def p_start_for(self, p):
+        """start_for : FOR path IN expression ':'"""
+        p[0] = self.ParsingStruct()
 
-  # Scoping - link to LanguageEnv
+        # Evaluate path and add item type
+        p[2] = self.evaluate_path(p[2])
+        item_path = p[2].possible_paths[0][0]  # 1st > Path
+        item_type = self.lang.get_properties_raw(".item", p[4].possible_paths)  # .item hiddentype
+        self.lang.assign(item_path, item_type)
+        print(f"[For - Assign] {item_path} = {item_type}")
 
-  def p_scope_push(self, p):
-    """scope_push :"""
-    self.lang.scope_push("Pushed")
-    p[0] = "# Scope(" + str(self.lang.scope_stack) + ")"
+        p[0].compiled = " ".join(map(str, p[1:]))
 
-  def p_scope_pop(self, p):
-    """scope_pop :"""
-    self.lang.scope_pop()
 
-  # Small
-  def p_statement_import(self, p):
-    '''statement : IMPORT path
+    def p_statement_def(self, p):
+        """statement : DEF path '(' commaseparated ')' ':' scope_push INDENT codeblock DEDENT"""
+        # Function definition
+        p[0] = self.ParsingStruct()
+        # Add main statement
+
+        # Evaluate path
+        p[2] = self.evaluate_path(p[2])
+
+        p[0].compiled = p[0].compiled = " ".join(map(str, p[1:7]))
+        # Add codeblock
+        p[0].compiled += "\n" + self.indent(p[9].compiled)
+
+        # Inside scope
+        function_path = p[2].possible_paths[0][0]  # 1st > path
+        function_returns = (('.returns',), self.lang.raw_path_to_data(('.returns',)))  # Saved as hidden local variable
+        function_yields = (('.yields',), self.lang.raw_path_to_data(('.yields',)))  # Saved as hidden local variable
+
+        print(function_yields)
+
+        self.lang.scope_pop()  # Scope pop
+
+        # Save outside scope
+        if(function_returns[1] != None):
+            self.lang.assign(function_path, [function_returns], None, True, False)  # Simplify; don't override
+        if(function_yields[1] != None):
+            self.lang.assign(function_path + (".item",), [function_yields], None, True, False)  # Simplify; don't override
+
+    def p_statement_return(self, p):
+        '''statement : RETURN expression'''
+        p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
+        p[0].compiled = " ".join(map(str, p[1:]))
+
+        self.lang.assign((".returns",), p[2].possible_paths, None, True)
+
+    def p_statement_yield(self, p):
+        '''statement : YIELD expression'''  # For generator functions
+        p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
+        p[0].compiled = " ".join(map(str, p[1:]))
+
+        self.lang.assign((".yields",), p[2].possible_paths, None, True)
+
+    # Scoping - link to LanguageEnv
+
+    def p_scope_push(self, p):
+        """scope_push :"""
+        self.lang.scope_push("Pushed")
+
+    def p_scope_pop(self, p):
+        """scope_pop :"""
+        p[0] = "# Popped Scope(" + str(self.lang.scope_stack[-1]) + ")"
+        self.lang.scope_pop()
+
+    # Small
+    def p_statement_import(self, p):
+        '''statement : IMPORT path
                   | IMPORT path AS path'''
 
-    p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
+        p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
 
-    # Evaluate paths
-    library = p[2].possible_paths[0][0]  # As tuple path
-    alias = p[4].possible_paths[0][0] if len(p) >= 5 else library # Default import alias is package name
+        # Evaluate paths
+        library = p[2].possible_paths[0][0]  # As tuple path
+        alias = p[4].possible_paths[0][0] if len(
+            p) >= 5 else None  # Default import alias is package name - dictated by languageEnv
 
-    p[0].compiled = " ".join(map(str, p[1:]))
+        translated_pkg = self.lang.import_lib(library, alias)
+        print(translated_pkg)
+        p[2].possible_paths[0] = (translated_pkg, p[2].possible_paths[0][1])
 
-    self.lang.import_lib(library, alias)
+        # Paths compiled as text
+        p[2] = self.evaluate_path(p[2])
+        if (len(p) > 4):
+            p[4] = self.evaluate_path(p[4])
 
-  def p_statement_assignment(self, p):
-    '''statement : path '=' expression'''
-    
-    p[0] = self.ParsingStruct() # No expression data kept as structure, not expression
+        p[0].compiled = " ".join(map(str, p[1:]))
 
-    # Evaluate path
-    buffer = [None, p[1]] # Store evaluation in
-    self.p_expression_path(buffer)
-    p[1] = buffer[0]
+    def p_statement_assignment(self, p):
+        '''statement : path '=' expression'''
 
-    p[0].compiled = " ".join(map(str, p[1:]))
-    
-    # Save variable name and type
-    self.lang.assign(p[1].possible_paths[0][0], p[3].possible_paths)  # Path of language then dest
+        p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
 
-  def p_statement_expression(self, p):
-    '''statement : expression'''
-    p[0] = p[1]
+        # Evaluate path
+        p[1] = self.evaluate_path(p[1])
 
-  def p_statement_parsertest(self, p):
-    '''statement : '=' expression '=' '''
-    # print(f"\033[95mTesting on line {self.lexer.lineno}: {p[2]} is of type {p[2].possible_paths}\033[0m")
-    
-    p[0] = self.ParsingStruct()
-    p[0].compiled = ""
+        p[0].compiled = " ".join(map(str, p[1:]))
 
+        # Save variable name and type
+        self.lang.assign(p[1].possible_paths[0][0], p[3].possible_paths)  # Path of language then dest
 
-  
-  """Expressions"""
+    def p_statement_expression(self, p):
+        '''statement : expression'''
+        p[0] = p[1]
 
-  # Primitive Literals
-  def get_literal(self, lit_name):
-    # Return list of path, data
-    result = []
-    paths = self.literal_paths[lit_name]
-    for path in paths:
-        result.append((tuple(path), self.lang.raw_path_to_data(path)))
-    return result
+    def p_statement_parsertest(self, p):
+        '''statement : '=' expression '=' '''
+        print(f"\033[95mTesting on line {self.lexer.lineno}: {p[2]} is of type {p[2].possible_paths}\033[0m")
 
-  def p_expression_literal_string(self, p):
-    """expression : STRING"""
-    
-    # Terminal node of expression start (but literal) - new expression struct
-    result = self.ParsingStruct()
-    result.possible_paths = self.get_literal("STRING") # Turn lists into tuples and format
-    result.compiled = p[1]
-    p[0] = result
+        p[0] = self.ParsingStruct()
+        p[0].compiled = ""
 
-  def p_expression_literal_number(self, p):
-    """expression : NUMBER"""
-    
-    # Terminal node of expression start (but literal) - new expression struct
-    result = self.ParsingStruct()
-    result.possible_paths = self.get_literal("NUMBER") # Turn lists into tuples and format
-    result.compiled = p[1]
-    p[0] = result
-  
-  # Main property hierarchy for linking to language env
-  def p_path_top(self, p):
-    """path : ID"""
+    """Expressions"""
 
-    # Terminal node of expression start - new expression struct
-    result = self.ParsingStruct()
-    result.compiled = "" # To add later
+    # Primitive Literals
+    def get_literal(self, lit_name):
+        # Return list of path, data
+        result = []
+        paths = self.literal_paths[lit_name]
+        for path in paths:
+            result.append([tuple(path), self.lang.raw_path_to_data(path)])
+        return result
 
-    result.possible_paths = self.lang.get_properties(p[1]) # Property p[1] from ROOT
+    def p_expression_literal_string(self, p):
+        """expression : STRING"""
 
-    if(len(result.possible_paths) == 0):
-      # Not defined - pass through unchanged anyway (in case is unindexed module var)
-      # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
-      result.possible_paths.append(((p[1],), [p[1], None, None, self.literal_paths["_UNKNOWN"]]))
-    else:
-      pass # Wait later for compilation
+        # Terminal node of expression start (but literal) - new expression struct
+        result = self.ParsingStruct()
+        result.possible_paths = self.get_literal("STRING")  # Turn lists into tuples and format
+        result.compiled = p[1]
+        p[0] = result
 
-    p[0] = result
+    def p_expression_literal_number(self, p):
+        """expression : NUMBER"""
 
-  def p_path_expr_branch(self, p):
-    """path : expression '.' ID"""
-    paths = p[1].possible_paths
-    for i in range(len(paths)):
-      # Reset path of each path so only part after expression is added
-      paths[i] = (tuple(), paths[i][1])
-    self.p_path_branch(p)
-  
-  def p_path_branch(self, p):
-    """path : path '.' ID"""
-    
-    # Expression hierarchy - w/ dot
-    result = p[1]
+        # Terminal node of expression start (but literal) - new expression struct
+        result = self.ParsingStruct()
+        result.possible_paths = self.get_literal("NUMBER")  # Turn lists into tuples and format
+        result.compiled = p[1]
+        p[0] = result
 
-    # print(p[1], ".", p[3], result.possible_paths)
-    old_poss_paths = result.possible_paths
-    result.possible_paths = self.lang.get_properties(p[3], result.possible_paths) # Property p[3] from p[1]'s result
+    # Main property hierarchy for linking to language env
+    def p_path_top(self, p):
+        """path : ID"""
 
-    if(len(result.possible_paths) == 0):
-      # Not defined - pass through unchanged anyway (in case is unindexed module var)
-      for path in old_poss_paths:
-        # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
-        result.possible_paths.append((path[0] + (p[3],), [p[3], None, None, self.literal_paths["_UNKNOWN"]]))
-    else:
-      pass  # Wait later for compilation
+        # Terminal node of expression start - new expression struct
+        result = self.ParsingStruct()
+        result.compiled = ""  # To add later
 
-    p[0] = result
+        result.possible_paths = self.lang.get_properties(p[1])  # Property p[1] from ROOT
 
-  def evaluate_path(self, path:ParsingStruct):
-    """Choose an arbitrary option of the possible paths and add it to the compiled result of a path Struct"""
+        if (len(result.possible_paths) == 0):
+            # Not defined - pass through unchanged anyway (in case is unindexed module var)
+            # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
+            result.possible_paths.append(((p[1],), [p[1], None, None, self.literal_paths["_UNKNOWN"]]))
+        else:
+            pass  # Wait later for compilation
 
-    # Choose arbitrary
-    chosen = path.possible_paths[0]  # Arbitrary
-    chosen_path = chosen[0]
+        p[0] = result
 
-    path.possible_paths = [chosen]
+    def p_path_expr_branch(self, p):
+        """path : expression '.' ID"""
+        paths = p[1].possible_paths
+        for i in range(len(paths)):
+            # Reset path of each path so only part after expression is added
+            paths[i] = (tuple(), paths[i][1])
+        self.p_path_branch(p)
 
-    if (len(path.compiled) > 0):
-      path.compiled += "."  # After current compiled data
-    path.compiled += ".".join(chosen_path)
+    def p_path_branch(self, p):
+        """path : path '.' ID"""
 
-    return path
+        # Expression hierarchy - w/ dot
+        result = p[1]
 
-  def p_expression_path(self, p):
-    """expression : path"""
-    # Need to compile now
-    p[0] = self.evaluate_path(p[1])
+        # print(p[1], ".", p[3], result.possible_paths)
+        old_poss_paths = result.possible_paths
+        result.possible_paths = self.lang.get_properties(p[3],
+                                                         result.possible_paths)  # Property p[3] from p[1]'s result
 
-  # Expression-based syntaxes - no need to validate as Python does this
-    
-  def p_expression_call(self, p):
-    """expression : expression '(' commaseparated ')' """
-    # Call expression (e.g. str(3.14))
-    result = p[1]
+        if (len(result.possible_paths) == 0):
+            # Not defined - pass through unchanged anyway (in case is unindexed module var)
+            for path in old_poss_paths:
+                # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
+                result.possible_paths.append((path[0] + (p[3],), [p[3], None, None, self.literal_paths["_UNKNOWN"]]))
+        else:
+            pass  # Wait later for compilation
 
-    result.compiled += "".join(map(str, p[2:]))
-    p[0] = result
+        p[0] = result
 
-  def p_expression_op(self, p): # Operators
-    """expression : expression OP expression"""
-    result = p[1]
-    result.compiled += " " + " ".join(map(str, p[2:]))
-    p[0] = result
+    def evaluate_path(self, path: ParsingStruct):
+        """Choose an arbitrary option of the possible paths and add it to the compiled result of a path Struct"""
 
-  def p_expression_paren(self, p): # Parentheses
-    """expression : '(' expression ')' """
-    result = p[2]
-    result.compiled = "(" + result.compiled + ")"
-    p[0] = result
-    
-  # Structured Literals
-  def p_expression_literal_list(self, p):
-    """expression : '[' commaseparated ']' """
-    
-    # Terminal node of expression start (but literal) - new expression struct
-    result = self.ParsingStruct()
-    result.possible_paths = (tuple(map(tuple, self.literal_paths["LIST"])),) # Turn lists into tuples and formats
-    result.compiled = "".join(map(str, p[1:]))
-    p[0] = result
+        # Choose arbitrary
+        chosen = path.possible_paths[0]  # Arbitrary
+        chosen_path = chosen[0]
 
-  def p_expression_literal_tuple(self, p):
-    """expression : '(' commaseparated ')' """
-    
-    # Terminal node of expression start (but literal) - new expression struct
-    result = self.ParsingStruct()
-    result.possible_paths = (tuple(map(tuple, self.literal_paths["TUPLE"])),) # Turn lists into tuples and formats
-    result.compiled = "".join(map(str, p[1:]))
-    p[0] = result
-    
-  # Common syntax structures
-  def p_commaseparated(self, p):
-    """commaseparated : expression
+        path.possible_paths = [chosen]
+
+        if (len(path.compiled) > 0):
+            path.compiled += "."  # After current compiled data
+        path.compiled += ".".join(chosen_path)
+
+        return path
+
+    def p_expression_path(self, p):
+        """expression : path"""
+        # Need to compile now
+        p[0] = self.evaluate_path(p[1])
+
+    # Expression-based syntaxes - no need to validate as Python does this
+
+    def p_expression_call(self, p):
+        """expression : expression '(' commaseparated ')' """
+        # Call expression (e.g. str(3.14))
+        result = p[1]
+
+        # Remove parameters from paths as no need to call
+        for poss_path in result.possible_paths:
+            poss_path[1][2] = None  # Data > params
+
+        result.compiled += "".join(map(str, p[2:]))
+        p[0] = result
+
+    def p_expression_op(self, p):  # Operators
+        """expression : expression OP expression"""
+        result = p[1]
+        result.compiled += " " + " ".join(map(str, p[2:]))
+        p[0] = result
+
+    def p_expression_paren(self, p):  # Parentheses
+        """expression : '(' expression ')' """
+        result = p[2]
+        result.compiled = "(" + result.compiled + ")"
+        p[0] = result
+
+    # Structured Literals
+    def process_iterable(self, item_struct:ParsingStruct, structure_type:str, result:ParsingStruct):
+        """Create an iterable hiddentype with the correct item types using the commaseparated items, the type of structure needed and the result ParsingStruct to save it in."""
+        # Add sub-items' possible paths
+        item_poss_paths = []
+        for item in item_struct.commaseparated_items:
+            poss_paths = item.possible_paths
+            for poss_path in poss_paths:
+                if (not poss_path in item_poss_paths):
+                    item_poss_paths.append(poss_path)
+
+        print("[process_iterable] A", structure_type, "of", " or ".join(map(lambda item: ".".join(item[0]), item_poss_paths)))
+
+        # Change to base classes by removing data and leaving path
+        for i in range(len(item_poss_paths)):
+            item_poss_paths[i] = item_poss_paths[i][0]
+
+        # Add hiddentype to extend from
+        this_id = self.lang.hiddentype_get_next_ID(structure_type)
+        this_type = (this_id, {}, None, self.literal_paths[structure_type])  # Dynamic
+        this_type[1][".item"] = [".item", {}, None, item_poss_paths]  # Inner > Hidden local item
+        print(this_type)
+        self.lang.hiddentype_save(this_id, this_type)
+
+        # Extend from hiddentype
+        result.possible_paths = [[(this_id,), this_type]]  # 1 possible path - path then data
+
+    def p_expression_literal_list(self, p):
+        """expression : '[' commaseparated ']' """
+
+        # Terminal node of expression start (but literal) - new expression struct
+        result = self.ParsingStruct()
+
+        self.process_iterable(p[2], "LIST", result)
+
+        result.compiled = "".join(map(str, p[1:]))
+        p[0] = result
+
+    def p_expression_literal_tuple(self, p):
+        """expression : '(' commaseparated ')' """
+
+        # Terminal node of expression start (but literal) - new expression struct
+        result = self.ParsingStruct()
+
+        self.process_iterable(p[2], "TUPLE", result)
+
+        result.compiled = "".join(map(str, p[1:]))
+        p[0] = result
+
+    # Common syntax structures
+    def p_commaseparated(self, p):
+        """commaseparated : expression
                       | commaseparated ',' expression
+                      | commaseparated ','
                       | empty"""  # (Left)>Right
-    
-    result = self.ParsingStruct()
-    if(p[1] == None):
-      result.compiled = ""
-    else:
-      result.compiled = "".join(map(str, p[1:]))
-    p[0] = result
-  
-  def p_empty(self, p):
-    """empty :"""
-    pass
+
+        # Create result from first
+        if (len(p) < 4):
+            # From expression
+            result = self.ParsingStruct()
+            result.commaseparated_items = [p[1]]
+        else:
+            # Adding on to prev.
+            result = p[1]
+            result.commaseparated_items.append(p[3])
+
+        if (p[1] == None):
+            result.compiled = ""
+        else:
+            result.compiled = "".join(map(str, p[1:]))
+
+        p[0] = result
+
+    def p_empty(self, p):
+        """empty :"""
+        pass

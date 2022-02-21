@@ -9,8 +9,8 @@
   "próxima_vez": "CONTINUE",
   
   "función": "DEF",
-  "retornar": "RETURN",
-  "cambiar": "LAMBDA",
+  "devolver": "RETURN",
+  "función_pequeña": "LAMBDA",
   "producir": "YIELD",
   
   "de": "FROM",

@@ -14,6 +14,7 @@ class PythonLexer(Lexer):
         # Register keywords
         self.keywords = lang.kw
         self.tokens += list(self.keywords.values())
+        self.tokens += list(set(self.operators.values())) # Remove duplicates
         # print(self.tokens)
 
     attributes = {
@@ -46,18 +47,43 @@ class PythonLexer(Lexer):
             t.value = t.type.lower()
             # Word operators
             if (t.type in ["AND", "OR", "NOT", "IS"]):
-                t.type = "OP"
+                return self.t_OP(t)
         else:
             # Is an identifier
             t.type = 'ID'
         return t
 
     # Operators
+    operators = {
+        # Boolean
+        "not": "OP_BOOL_UNARY",
+        "and": "OP_BOOL",
+        "or": "OP_BOOL",
+        # Comparison
+        "<": "OP_COMP",
+        "<=": "OP_COMP",
+        "==": "OP_COMP",
+        ">=": "OP_COMP",
+        ">": "OP_COMP",
+        "is": "OP_COMP",
+        "in": "OP_COMP",
+        # Add
+        "+": "OP_ADD",
+        "-": "OP_ADD",
+        # Multiply
+        "*": "OP_MUL",
+        "/": "OP_MUL",
+        "%": "OP_MUL",
+        "//": "OP_MUL",
+        # Indices
+        "**": "OP_IND"
+    }
     def t_OP(self, t):
         r'[+\-*/%=<>]+'
-        if (t.value == "="):
-            # Assignment - not normal operator
-            t.type = "="
+        if(t.value == "="):
+            t.type = t.value
+        elif(t.value in self.operators):
+            t.type = self.operators[t.value] # Add type
         return t
 
     # Indentation
@@ -154,6 +180,9 @@ class PythonLexer(Lexer):
 class PythonParser(Parser):
     # Parsing object backbone for data storage
     class ParsingStruct():
+        def __init__(self):
+            self.possible_paths = [] # List of pairs of (tuple path, list/tuple data from LanguageEnv)
+
         def __str__(self):
             # Compiled code
             return getattr(self, "compiled", "")
@@ -241,7 +270,7 @@ class PythonParser(Parser):
         # Evaluate path and add item type
         p[2] = self.evaluate_path(p[2])
         item_path = p[2].possible_paths[0][0]  # 1st > Path
-        item_type = self.lang.get_properties_raw(".item", p[4].possible_paths)  # .item hiddentype
+        item_type = self.lang.get_properties(".item", p[4].possible_paths, raw=True)  # .item hiddentype
         self.lang.assign(item_path, item_type)
         print(f"[For - Assign] {item_path} = {item_type}")
 
@@ -266,15 +295,20 @@ class PythonParser(Parser):
         function_returns = (('.returns',), self.lang.raw_path_to_data(('.returns',)))  # Saved as hidden local variable
         function_yields = (('.yields',), self.lang.raw_path_to_data(('.yields',)))  # Saved as hidden local variable
 
-        print(function_yields)
+        # Process parameters
+
+        params = []
+        for param in p[4].commaseparated_items:
+            params.append(param.compiled)
 
         self.lang.scope_pop()  # Scope pop
 
         # Save outside scope
-        if(function_returns[1] != None):
-            self.lang.assign(function_path, [function_returns], None, True, False)  # Simplify; don't override
+        self.lang.assign(function_path, [function_returns], None, True, False, params=params)  # Simplify; don't override
         if(function_yields[1] != None):
             self.lang.assign(function_path + (".item",), [function_yields], None, True, False)  # Simplify; don't override
+
+        print(self.lang.raw_path_to_data(function_path))
 
     def p_statement_return(self, p):
         '''statement : RETURN expression'''
@@ -348,7 +382,7 @@ class PythonParser(Parser):
         p[0] = self.ParsingStruct()
         p[0].compiled = ""
 
-    """Expressions"""
+    """Expressions - `data` means w/o operations, whereas `expression` means with"""
 
     # Primitive Literals
     def get_literal(self, lit_name):
@@ -359,19 +393,19 @@ class PythonParser(Parser):
             result.append([tuple(path), self.lang.raw_path_to_data(path)])
         return result
 
-    def p_expression_literal_string(self, p):
-        """expression : STRING"""
+    def p_data_literal_string(self, p):
+        """data : STRING"""
 
-        # Terminal node of expression start (but literal) - new expression struct
+        # Terminal node of data start (but literal) - new data struct
         result = self.ParsingStruct()
         result.possible_paths = self.get_literal("STRING")  # Turn lists into tuples and format
         result.compiled = p[1]
         p[0] = result
 
-    def p_expression_literal_number(self, p):
-        """expression : NUMBER"""
+    def p_data_literal_number(self, p):
+        """data : NUMBER"""
 
-        # Terminal node of expression start (but literal) - new expression struct
+        # Terminal node of data start (but literal) - new data struct
         result = self.ParsingStruct()
         result.possible_paths = self.get_literal("NUMBER")  # Turn lists into tuples and format
         result.compiled = p[1]
@@ -381,13 +415,14 @@ class PythonParser(Parser):
     def p_path_top(self, p):
         """path : ID"""
 
-        # Terminal node of expression start - new expression struct
+        # Terminal node of data start - new data struct
         result = self.ParsingStruct()
         result.compiled = ""  # To add later
 
         result.possible_paths = self.lang.get_properties(p[1])  # Property p[1] from ROOT
 
         if (len(result.possible_paths) == 0):
+            print(f"⚠️{(p[1],)} not defined.")
             # Not defined - pass through unchanged anyway (in case is unindexed module var)
             # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
             result.possible_paths.append(((p[1],), [p[1], None, None, self.literal_paths["_UNKNOWN"]]))
@@ -396,11 +431,11 @@ class PythonParser(Parser):
 
         p[0] = result
 
-    def p_path_expr_branch(self, p):
-        """path : expression '.' ID"""
+    def p_path_data_branch(self, p):
+        """path : data '.' ID"""
         paths = p[1].possible_paths
         for i in range(len(paths)):
-            # Reset path of each path so only part after expression is added
+            # Reset path of each path so only part after data is added
             paths[i] = (tuple(), paths[i][1])
         self.p_path_branch(p)
 
@@ -417,6 +452,7 @@ class PythonParser(Parser):
 
         if (len(result.possible_paths) == 0):
             # Not defined - pass through unchanged anyway (in case is unindexed module var)
+            print(f"⚠️{p[1]}.{(p[3],)} not defined.")
             for path in old_poss_paths:
                 # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
                 result.possible_paths.append((path[0] + (p[3],), [p[3], None, None, self.literal_paths["_UNKNOWN"]]))
@@ -440,16 +476,16 @@ class PythonParser(Parser):
 
         return path
 
-    def p_expression_path(self, p):
-        """expression : path"""
+    def p_data_path(self, p):
+        """data : path"""
         # Need to compile now
         p[0] = self.evaluate_path(p[1])
 
     # Expression-based syntaxes - no need to validate as Python does this
 
-    def p_expression_call(self, p):
-        """expression : expression '(' commaseparated ')' """
-        # Call expression (e.g. str(3.14))
+    def p_data_call(self, p):
+        """data : data '(' commaseparated ')' """
+        # Call data (e.g. str(3.14))
         result = p[1]
 
         # Remove parameters from paths as no need to call
@@ -459,17 +495,90 @@ class PythonParser(Parser):
         result.compiled += "".join(map(str, p[2:]))
         p[0] = result
 
-    def p_expression_op(self, p):  # Operators
-        """expression : expression OP expression"""
-        result = p[1]
-        result.compiled += " " + " ".join(map(str, p[2:]))
-        p[0] = result
+    # Operators - TODO
+    def p_op_bool(self, p):
+        """expression : bool OP_BOOL bool
+                      | OP_BOOL_UNARY bool
+                      | bool"""
 
-    def p_expression_paren(self, p):  # Parentheses
-        """expression : '(' expression ')' """
+        # HighExp : HighExp OP LowExp # Recurses on left of OP so evaluated from left
+        #         | LowExp # Deeper level of operators (will be eval'd first, e.g. B deeper than I < D,M < A,S)
+
+        self.op(p, type="OP_BOOL")
+
+    def p_op_comp(self, p):
+        """bool : sum OP_COMP sum
+             | sum"""
+        self.op(p, type="OP_COMP")
+
+    def p_op_add(self, p):
+        """sum : sum OP_ADD term
+               | term"""
+        self.op(p, type="OP_ADD")
+
+    def p_op_mul(self, p):
+        """term : term OP_MUL factor
+               | factor"""
+        self.op(p, type="OP_MUL")
+
+    def p_op_ind(self, p):
+        """factor : factor OP_IND data
+               | OP_ADD data
+               | data""" # Unary +/- or indices
+        self.op(p, type="OP_IND")
+
+    def p_data_paren(self, p):  # Parentheses
+        """data : '(' expression ')' """
         result = p[2]
         result.compiled = "(" + result.compiled + ")"
         p[0] = result
+
+    """Processing operators"""
+    def op(self, p, type):
+        """Process an operation to set the result."""
+        if (len(p) == 2):
+            p[0] = p[1]  # No processing
+        elif (len(p) == 3):
+            # Unary operator
+            p[0] = self.op_unary(operator=p[1], operand=p[2], type=type)
+        elif (len(p) == 4):
+            # Binary operator
+            p[0] = self.op_binary(operator=p[2], operand_1=p[1], operand_2=p[3], type=type)
+
+            # print(f"[{type}]", list(map(lambda path: path[0], p[0].possible_paths)))
+
+        # Add to compiled result
+        p[0].compiled = " ".join(map(str, p[1:]))
+
+
+    def op_unary(self, operator, operand, type):
+        """Get the type of the result once a unary operator has been applied."""
+        print(f"[Unary operator] [{type}: {operator}] {operand}")
+        return operand
+
+    def op_binary(self, operator, operand_1, operand_2, type): # TODO: Working on
+        """Get the type of the result once a binary operator has been applied."""
+        print(f"[Binary operator] {operand_1} [{type}: {operator}] {operand_2}")
+
+        result = self.ParsingStruct()
+
+        # Operators which return booleans
+        if(type == "OP_BOOL" or type == "OP_COMP"):
+            result.possible_paths = self.get_literal("BOOL")
+        else:
+            # Use heuristic rule:
+            #   If 1st is int, return second
+            #   Else return first
+            for first_path in operand_1.possible_paths:
+                for second_path in operand_2.possible_paths:
+                    if(len(first_path[0]) == 1 and first_path[0][0] == "int"): # integer
+                        if (not second_path in result.possible_paths):
+                            result.possible_paths.append(second_path)
+                    else:
+                        if (not first_path in result.possible_paths):
+                            result.possible_paths.append(first_path)
+
+        return result
 
     # Structured Literals
     def process_iterable(self, item_struct:ParsingStruct, structure_type:str, result:ParsingStruct):
@@ -489,19 +598,19 @@ class PythonParser(Parser):
             item_poss_paths[i] = item_poss_paths[i][0]
 
         # Add hiddentype to extend from
-        this_id = self.lang.hiddentype_get_next_ID(structure_type)
-        this_type = (this_id, {}, None, self.literal_paths[structure_type])  # Dynamic
+        this_id = self.lang.hiddentype_request_ID(structure_type)
+        this_type = (this_id[-1], {}, None, self.literal_paths[structure_type])  # Dynamic
         this_type[1][".item"] = [".item", {}, None, item_poss_paths]  # Inner > Hidden local item
         print(this_type)
         self.lang.hiddentype_save(this_id, this_type)
 
         # Extend from hiddentype
-        result.possible_paths = [[(this_id,), this_type]]  # 1 possible path - path then data
+        result.possible_paths = [[this_id, this_type]]  # 1 possible path - path then data
 
-    def p_expression_literal_list(self, p):
-        """expression : '[' commaseparated ']' """
+    def p_data_literal_list(self, p):
+        """data : '[' commaseparated ']' """
 
-        # Terminal node of expression start (but literal) - new expression struct
+        # Terminal node of data start (but literal) - new data struct
         result = self.ParsingStruct()
 
         self.process_iterable(p[2], "LIST", result)
@@ -509,10 +618,10 @@ class PythonParser(Parser):
         result.compiled = "".join(map(str, p[1:]))
         p[0] = result
 
-    def p_expression_literal_tuple(self, p):
-        """expression : '(' commaseparated ')' """
+    def p_data_literal_tuple(self, p):
+        """data : '(' commaseparated ')' """
 
-        # Terminal node of expression start (but literal) - new expression struct
+        # Terminal node of data start (but literal) - new data struct
         result = self.ParsingStruct()
 
         self.process_iterable(p[2], "TUPLE", result)

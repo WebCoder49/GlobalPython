@@ -120,8 +120,8 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
         return None  # Not found, most likely custom
 
-    def get_properties(self, property:str, parents:list=None):  # Automatically scope for parents = root
-        """Get a property from a translated name and list of possible parents"""
+    def get_properties(self, property:str, parents:list=None, raw=False):  # Automatically scope for parents = root
+        """Get a property from a translated (or raw - compiled) name and list of possible parents"""
 
         if(parents == None):
             # Path then data
@@ -141,11 +141,16 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                 props = parent[1] if len(parent) >= 2 and (not parent[1] is None) else []
 
                 # Get property
-                for key in props:
-                    if (props[key][0] == property):
-                        # Found property
-                        results.append((tuple(p_path) + (key,), props[key]))
-                        break
+                if(raw):
+                    if(property in props):
+                        # Found raw property - by key
+                        results.append((tuple(p_path) + (property,), props[property]))
+                else:
+                    for key in props:
+                        if (props[key][0] == property):
+                            # Found property
+                            results.append((tuple(p_path) + (key,), props[key]))
+                            break
 
                 # Add base classes to queue
                 if(len(parent) >= 4):
@@ -210,39 +215,42 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                 json.dump(self.scope_stack[1], writer, indent=2)
         self.scope_stack.pop()
 
-    def assign(self, iden_path, src, translated=None, simplify=True, override=True):
+    def assign(self, iden_path, src, translated=None, simplify=True, override=True, params=None, scope=-1): # Local by default
         """Assign the value src to the destination iden_path, in the local scope"""
-        # print(f"[Assign] {iden_path} = {src}")
+        print(f"[Assign] {iden_path} = {src}")
         if(simplify):
             new_src = []
             src_queue = deque(src)
 
             while(len(src_queue) > 0):
                 source = src_queue.popleft()
-                source_data = source[1]
-                if(len(source_data) >= 4) and (source_data[1] is None or len(source_data[1]) == 0) and (len(source_data) < 3 or source_data[2] is None):
-                    # Can simplify - Simplify source_data
-                    for base in source_data[3]:
-                        src_queue.append([base, self.raw_path_to_data(base)])
-                else:
-                    # Terminal - add to new_src
-                    new_src.append(source)
+                if(source != None):
+                    source_data = source[1]
+                    if(source_data != None):
+                        if(len(source_data) >= 4) and (source_data[1] is None or len(source_data[1]) == 0) and (len(source_data) < 3 or source_data[2] is None):
+                            # Can simplify - Simplify source_data
+                            for base in source_data[3]:
+                                src_queue.append([base, self.raw_path_to_data(base)])
+                        else:
+                            # Terminal - add to new_src
+                            new_src.append(source)
 
             # print("\tSrc: ", src)
             src = new_src
-            # print("\tNew Src: ", src)
+            print("\tNew Src: ", src)
 
-        print("Assign", iden_path, "=", src)
-        if (iden_path != src[0][0]):
+        # print("[Assign]", iden_path, "=", src)
+        if (len(src) == 0 or iden_path != src[0][0]):
             # Assign a variable name (so type can be remembered)
 
-            dest = self.scope_stack[-1]  # Local
+            dest = self.scope_stack[scope]
 
             for node in iden_path:
                 properties = dest[1]
                 if (not node in properties):
-                    properties[node] = [node, {}, None, []]
+                    properties[node] = [node, {}, None, []] # Translated name; properties; parameters; base classes
                 dest = properties[node]
+                print("\t", node, dest)
 
             if(override):
                 # New type
@@ -257,15 +265,21 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                     # Add to types if not in already
                     dest[3].append(src_path)
 
-                if(translated != None):
-                    dest[0] = translated # Add translated name
+            if(translated != None):
+                dest[0] = translated # Add translated name
+
+            if(params != None):
+                # Add parameters
+                dest[2] = params
+
+            print(iden_path, dest)
 
                 # print("\t", dest)
 
         # print(dest)
 
     hiddentype_IDs = {}
-    def hiddentype_get_next_ID(self, prefix):
+    def hiddentype_request_ID(self, prefix):
         """Get the next available ID number for the hidden global - used when wanting invisible types to inherit from"""
         if(not prefix in self.hiddentype_IDs):
             self.hiddentype_IDs[prefix] = 1
@@ -274,10 +288,36 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             id = self.hiddentype_IDs[prefix]
             self.hiddentype_IDs[prefix] += 1
 
-        return "." + prefix + "_" + str(id) # e.g. .list_0
+        return ["." + prefix, str(id)] # e.g. [".list", "0"]
 
     def hiddentype_save(self, id, data, scope=1):
-        self.scope_stack[scope][1][id] = data  # Save in module-wide scope by default
+        # Find node
+        dest = self.scope_stack[scope][1] # Save in module scope by default - inner
+        for node in id[:-1]: # Excluding last
+            if (not node in dest):
+                dest[node] = [node, {}, None, []]  # Create new
+            dest = dest[node]
+            # Each node in path
+            if(len(dest) < 2):
+                dest.append({})
+            dest = dest[1]
+
+        # Save data
+        dest[id[-1]] = data
+
+    def hiddentype_exists(self, id, scope=1):
+        # Find node
+        dest = self.scope_stack[scope][1] # Save in module scope by default - inner
+        for node in id:
+            if (not node in dest):
+                return False # Cannot exist
+            dest = dest[node]
+            # Each node in path
+            if(len(dest) < 2):
+                return False # Nothing inside
+            dest = dest[1]
+
+        return True
 
     """Importing packages"""
     def import_lib(self, library, alias):
@@ -296,12 +336,16 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             print(self.pkgs)
             raise Exception(f"Package {translated_package} could not be found.")
 
-        package_location = "." + package
-        if(not package_location in self.scope_stack[0][1]):
+        package_location = (".PKG", package)
+        if(self.hiddentype_exists(package_location)):
             # Add package (hidden with .) to global scope
-            self.scope_stack[0][1][package_location] = self.load_lib(package)
+            self.hiddentype_save(package_location, self.load_lib(package))
+        else:
+            print(f"Package {package} exists.")
+            pass
 
         # Assign whole path to alias
-        self.assign(alias, ([(package_location,) + library[1:]],), translated_package if auto_alias else None)  # 1 possible path; no data needed; keep translated name if no alias
+        imported_location = package_location + library[1:]
+        self.assign(alias, [[imported_location, []]], translated_package if auto_alias else None, simplify=False, scope=1)  # 1 possible path; no data needed; keep translated name if no alias
 
         return (package,) + library[1:]

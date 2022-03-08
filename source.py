@@ -13,7 +13,7 @@
 # escribir(" ".unir(["Hola", nombre, "!"]))
 
 # Una programa sencilla (es):
-#
+
 # nombre = ""
 #
 # frase_para_escribir = 12 # Número aquí
@@ -49,14 +49,14 @@
 # escribir("Adiós!")
 
 # # Tortuga
-# importar tortuga
+# importar tortuga como t
 #
 # número_lados = entero(preguntar("Cuantos lados tenerá?: "))
 # largura_de_lado = entero(preguntar("Largura de cada lado: "))
 #
 # para i en rango(número_lados):
-#     tortuga.avanzar(largura_de_lado)
-#     tortuga.girarderecha(360 / número_lados)
+#     t.avanzar(largura_de_lado)
+#     t.girarderecha(360 / número_lados)
 #
 
 # Funciónes
@@ -78,15 +78,19 @@
 
 # Listas
 
-función producir_números(factor):
-    número = 0
-    mientras (número < 100):
-        número = número + factor
-        producir número
+# función producir_números(factor):
+#     número = 0
+#     mientras (número < (100 - factor)):
+#         número = número + factor
+#         producir número
+#
+# =producir_números=
+#
+# para número en producir_números(3):
+#     número = número.parte_real
+#     escribir("Ha producido el número " + texto(número) + "!")
 
-para número en producir_números:
-número = número.parte_real
-    escribir("Ha producido el número " + número + "!")
+
 
 # números = (1, 7, 9, 21, 49)
 # =números=
@@ -103,3 +107,25 @@ número = número.parte_real
 #     comida = comida.mayúsculo()
 #     para número en números:
 #         escribir("Quiero " + texto(número) + " " + comida + ".")
+
+# Aritmética
+# a = 1 + 2*3 == (7).parte_real() y (1 == 0.4 + 0.3 * 0.2).parte_real() == 1 # Verdad
+# b = "Hola, " + "a".mayúsculo()*3 + " es una palabra." # "Hola, AAA es una palabra"
+
+# Tests
+=(1 == 2)=
+=(Verdadero y Falso)=
+
+=(1 + 2)=
+=(5 * 3.2)=
+=(3.2 * 6)=
+
+=(10 * "Wow")=
+=("Hey" * 12)=
+=("Hello, " + "World!")=
+
+=(10 * ["A", "C", "D"])=
+=([5.5, 3, 6.2] * 3)=
+
+escribir(a, b) # True Hola, AAA es una palabra
+

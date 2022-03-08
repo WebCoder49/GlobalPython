@@ -13,6 +13,13 @@
     ["tuple"]
   ],
 
+  "BOOL": [
+    ["bool"]
+  ],
+  "INT": [
+    ["int"]
+  ],
+
   "_UNKNOWN": [
     ["object"]
   ]

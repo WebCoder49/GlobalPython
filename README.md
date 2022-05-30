@@ -1,8 +1,6 @@
 ## TO DO:
 ### Working On / Current Bugs
 * Once-compiled tools:
-  * Join together line+col numbers
-    * Part of ParsingStruct
   * Error translation
 ### The Queue
 * Clean up

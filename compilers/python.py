@@ -4,7 +4,7 @@ from ply import lex, yacc
 from ply.lex import LexToken
 
 from languages.language import LanguageEnv
-from ._template import Lexer, Parser
+from ._template import Lexer, Parser, ParsingStruct
 
 
 class PythonLexer(Lexer):
@@ -18,7 +18,8 @@ class PythonLexer(Lexer):
         # print(self.tokens)
 
     attributes = {
-        "indentation": 0
+        # Knowing current pos in translated code
+        "indentation": 0,
     }
 
     # Literals
@@ -26,6 +27,8 @@ class PythonLexer(Lexer):
 
     # Tokens
     tokens = [
+        # Special
+        "_GETPOS",
         # Structure
         "INDENT",
         "DEDENT",
@@ -109,6 +112,7 @@ class PythonLexer(Lexer):
     def t_newline_blank(self, t):  # Blank newline - don't interpret as indentation
         r'\n[ \t]*(?=\n|\#|$)'
         t.lexer.lineno += 1
+        # t.lexer.lexpos = 0  # Start column
         return None
 
     def t_newline(self, t):
@@ -178,16 +182,6 @@ class PythonLexer(Lexer):
 
 
 class PythonParser(Parser):
-    # Parsing object backbone for data storage
-    class ParsingStruct():
-        def __init__(self):
-            self.possible_paths = [] # List of pairs of (tuple path, list/tuple data from LanguageEnv)
-
-        def __str__(self):
-            # Compiled code
-            return getattr(self, "compiled", "")
-
-        pass
 
     def __init__(self, lang, lexer):
         super().__init__(lang, lexer)
@@ -206,7 +200,7 @@ class PythonParser(Parser):
                 | empty'''
         result = p[1]
         if (len(p) > 2):
-            result.compiled += "\n" + p[2].compiled
+            result += "\n" + p[2]
         p[0] = result
 
     # Statement syntaxes
@@ -225,70 +219,68 @@ class PythonParser(Parser):
 
     def p_noexpkw(self, p):
         """noexpkw : ELSE"""
-        p[0] = p[1]  # No expression needed for these statements
+        p[0] = ParsingStruct(p[1], self.lexer.lexpos)  # No expression needed for these statements
 
     def p_withexpkw(self, p):
         """withexpkw : IF
                 | ELIF
                 | WHILE"""
-        p[0] = p[1]  # Expression needed for these statements
+        p[0] = ParsingStruct(p[1], self.lexer.lexpos)  # Expression needed for these statements
 
     def p_statement_withexpression(self, p):
         """statement : withexpkw expression ':' INDENT codeblock DEDENT"""
         # Block statement which needs expression
-        p[0] = self.ParsingStruct()
+        p[0] = ParsingStruct()
         # Add main statement
-        p[0].compiled = p[0].compiled = " ".join(map(str, p[1:4]))
+        p[0] = ParsingStruct.join(" ", p[1:4])
         # Add codeblock
-        p[0].compiled += "\n" + self.indent(p[5].compiled)
+        p[5].indent()
+        p[0] += "\n" + p[5]
 
     def p_statement_noexpression(self, p):
         """statement : noexpkw ':' INDENT codeblock DEDENT"""
         # Block statement which does not need expression
-        p[0] = self.ParsingStruct()
+        p[0] = ParsingStruct()
         # Add main statement
-        p[0].compiled = p[0].compiled = " ".join(map(str, p[1:3]))
+        p[0] = ParsingStruct.join(" ", p[1:3])
         # Add codeblock
-        p[0].compiled += "\n" + self.indent(p[4].compiled)
+        p[4].indent()
+        p[0] += "\n" + p[4]
 
 
     def p_statement_for(self, p):
         """statement : start_for INDENT codeblock DEDENT"""
         # For loop
-        p[0] = self.ParsingStruct()
+        p[0] = p[1]
 
-        # Add main statement
-        print(p[4])
-        p[0].compiled = str(p[1])
         # Add codeblock
-        p[0].compiled += "\n" + self.indent(p[3].compiled)
+        p[3].indent()
+        p[0] += "\n" + p[3]
 
     def p_start_for(self, p):
         """start_for : FOR path IN expression ':'"""
-        p[0] = self.ParsingStruct()
+        p[0] = ParsingStruct()
 
-        # Evaluate path and add item type
-        p[2] = self.evaluate_path(p[2])
+        # Add item type
         item_path = p[2].possible_paths[0][0]  # 1st > Path
         item_type = self.lang.get_properties(".item", p[4].possible_paths, raw=True)  # .item hiddentype
         self.lang.assign(item_path, item_type)
-        print(f"[For - Assign] {item_path} = {item_type}")
+        # print(f"[For - Assign] {item_path} = {item_type}")
 
-        p[0].compiled = " ".join(map(str, p[1:]))
+        p[0] = ParsingStruct.join(" ", p[1:])
 
 
     def p_statement_def(self, p):
         """statement : DEF path '(' commaseparated ')' ':' scope_push INDENT codeblock DEDENT"""
         # Function definition
-        p[0] = self.ParsingStruct()
+        p[0] = ParsingStruct()
         # Add main statement
 
-        # Evaluate path
-        p[2] = self.evaluate_path(p[2])
+        p[0] = ParsingStruct.join(" ", p[1:7])
 
-        p[0].compiled = p[0].compiled = " ".join(map(str, p[1:7]))
         # Add codeblock
-        p[0].compiled += "\n" + self.indent(p[9].compiled)
+        p[9].indent()
+        p[0] += "\n" + p[9]
 
         # Inside scope
         function_path = p[2].possible_paths[0][0]  # 1st > path
@@ -298,7 +290,7 @@ class PythonParser(Parser):
         # Process parameters
 
         params = []
-        for param in p[4].commaseparated_items:
+        for param in p[4].attr["commaseparated_items"]:
             params.append(param.compiled)
 
         self.lang.scope_pop()  # Scope pop
@@ -308,19 +300,19 @@ class PythonParser(Parser):
         if(function_yields[1] != None):
             self.lang.assign(function_path + (".item",), [function_yields], None, True, False)  # Simplify; don't override
 
-        print(self.lang.raw_path_to_data(function_path))
+        # print(self.lang.raw_path_to_data(function_path))
 
     def p_statement_return(self, p):
         '''statement : RETURN expression'''
-        p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
-        p[0].compiled = " ".join(map(str, p[1:]))
+        p[0] = ParsingStruct()  # No expression data kept as structure, not expression
+        p[0] = ParsingStruct.join(" ", p[1:])
 
         self.lang.assign((".returns",), p[2].possible_paths, None, True)
 
     def p_statement_yield(self, p):
         '''statement : YIELD expression'''  # For generator functions
-        p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
-        p[0].compiled = " ".join(map(str, p[1:]))
+        p[0] = ParsingStruct()  # No expression data kept as structure, not expression
+        p[0] = ParsingStruct.join(" ", p[1:])
 
         self.lang.assign((".yields",), p[2].possible_paths, None, True)
 
@@ -340,7 +332,7 @@ class PythonParser(Parser):
         '''statement : IMPORT path
                   | IMPORT path AS path'''
 
-        p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
+        p[0] = ParsingStruct()  # No expression data kept as structure, not expression
 
         # Evaluate paths
         library = p[2].possible_paths[0][0]  # As tuple path
@@ -348,25 +340,16 @@ class PythonParser(Parser):
             p) >= 5 else None  # Default import alias is package name - dictated by languageEnv
 
         translated_pkg = self.lang.import_lib(library, alias)
-        print(translated_pkg)
+        # print(translated_pkg)
         p[2].possible_paths[0] = (translated_pkg, p[2].possible_paths[0][1])
-
-        # Paths compiled as text
-        p[2] = self.evaluate_path(p[2])
-        if (len(p) > 4):
-            p[4] = self.evaluate_path(p[4])
-
-        p[0].compiled = " ".join(map(str, p[1:]))
+        p[0] = ParsingStruct.join(" ", p[1:])
 
     def p_statement_assignment(self, p):
         '''statement : path '=' expression'''
 
-        p[0] = self.ParsingStruct()  # No expression data kept as structure, not expression
+        p[0] = ParsingStruct()  # No expression data kept as structure, not expression
 
-        # Evaluate path
-        p[1] = self.evaluate_path(p[1])
-
-        p[0].compiled = " ".join(map(str, p[1:]))
+        p[0] = ParsingStruct.join(" ", p[1:])
 
         # Save variable name and type
         self.lang.assign(p[1].possible_paths[0][0], p[3].possible_paths)  # Path of language then dest
@@ -379,8 +362,7 @@ class PythonParser(Parser):
         '''statement : '=' expression '=' '''
         print(f"\033[95mTesting on line {self.lexer.lineno}: {p[2]} is of type {p[2].possible_paths}\033[0m")
 
-        p[0] = self.ParsingStruct()
-        p[0].compiled = ""
+        p[0] = ParsingStruct()
 
     """Expressions - `data` means w/o operations, whereas `expression` means with"""
 
@@ -397,18 +379,16 @@ class PythonParser(Parser):
         """data : STRING"""
 
         # Terminal node of data start (but literal) - new data struct
-        result = self.ParsingStruct()
+        result = ParsingStruct(p[1], self.lexer.lexpos)
         result.possible_paths = self.get_literal("STRING")  # Turn lists into tuples and format
-        result.compiled = p[1]
         p[0] = result
 
     def p_data_literal_number(self, p):
         """data : NUMBER"""
 
         # Terminal node of data start (but literal) - new data struct
-        result = self.ParsingStruct()
+        result = ParsingStruct(p[1], self.lexer.lexpos)
         result.possible_paths = self.get_literal("NUMBER")  # Turn lists into tuples and format
-        result.compiled = p[1]
         p[0] = result
 
     # Main property hierarchy for linking to language env
@@ -416,8 +396,7 @@ class PythonParser(Parser):
         """path : ID"""
 
         # Terminal node of data start - new data struct
-        result = self.ParsingStruct()
-        result.compiled = ""  # To add later
+        result = ParsingStruct("", self.lexer.lexpos)  # Get position of lexer
 
         result.possible_paths = self.lang.get_properties(p[1])  # Property p[1] from ROOT
 
@@ -426,17 +405,15 @@ class PythonParser(Parser):
             # Not defined - pass through unchanged anyway (in case is unindexed module var)
             # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
             result.possible_paths.append(((p[1],), [p[1], None, None, self.literal_paths["_UNKNOWN"]]))
-        else:
-            pass  # Wait later for compilation
+
+        # Add path node
+        result += result.possible_paths[0][0][-1]  # Last part
 
         p[0] = result
 
     def p_path_data_branch(self, p):
         """path : data '.' ID"""
         paths = p[1].possible_paths
-        for i in range(len(paths)):
-            # Reset path of each path so only part after data is added
-            paths[i] = (tuple(), paths[i][1])
         self.p_path_branch(p)
 
     def p_path_branch(self, p):
@@ -456,30 +433,30 @@ class PythonParser(Parser):
             for path in old_poss_paths:
                 # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
                 result.possible_paths.append((path[0] + (p[3],), [p[3], None, None, self.literal_paths["_UNKNOWN"]]))
-        else:
-            pass  # Wait later for compilation
+
+        # Add path node
+        result += "." + ParsingStruct(result.possible_paths[0][0][-1], self.lexer.lexpos)  # Last part
 
         p[0] = result
 
-    def evaluate_path(self, path: ParsingStruct):
-        """Choose an arbitrary option of the possible paths and add it to the compiled result of a path Struct"""
-
-        # Choose arbitrary
-        chosen = path.possible_paths[0]  # Arbitrary
-        chosen_path = chosen[0]
-
-        path.possible_paths = [chosen]
-
-        if (len(path.compiled) > 0):
-            path.compiled += "."  # After current compiled data
-        path.compiled += ".".join(chosen_path)
-
-        return path
+    # def evaluate_path(self, path: ParsingStruct):
+    #     """Choose an arbitrary option of the possible paths and add it to the compiled result of a path Struct"""
+    #
+    #     # Choose arbitrary
+    #     chosen = path.possible_paths[0]  # Arbitrary
+    #     chosen_path = chosen[0]
+    #
+    #     path.possible_paths = [chosen]
+    #
+    #     if (len(path.compiled) > 0):
+    #         path += "."  # After current compiled data
+    #     path += ".".join(chosen_path)
+    #
+    #     return path
 
     def p_data_path(self, p):
         """data : path"""
-        # Need to compile now
-        p[0] = self.evaluate_path(p[1])
+        p[0] = p[1]
 
     # Expression-based syntaxes - no need to validate as Python does this
 
@@ -492,10 +469,10 @@ class PythonParser(Parser):
         for poss_path in result.possible_paths:
             poss_path[1][2] = None  # Data > params
 
-        result.compiled += "".join(map(str, p[2:]))
+        result += ParsingStruct.join("", p[2:])
         p[0] = result
 
-    # Operators - TODO
+    # Operators
     def p_op_bool(self, p):
         """expression : bool OP_BOOL bool
                       | OP_BOOL_UNARY bool
@@ -530,7 +507,7 @@ class PythonParser(Parser):
     def p_data_paren(self, p):  # Parentheses
         """data : '(' expression ')' """
         result = p[2]
-        result.compiled = "(" + result.compiled + ")"
+        result = "(" + result + ")"
         p[0] = result
 
     """Processing operators"""
@@ -548,19 +525,17 @@ class PythonParser(Parser):
             # print(f"[{type}]", list(map(lambda path: path[0], p[0].possible_paths)))
 
         # Add to compiled result
-        p[0].compiled = " ".join(map(str, p[1:]))
+        p[0] = ParsingStruct.join(" ", p[1:])
 
 
     def op_unary(self, operator, operand, type):
         """Get the type of the result once a unary operator has been applied."""
-        print(f"[Unary operator] [{type}: {operator}] {operand}")
         return operand
 
     def op_binary(self, operator, operand_1, operand_2, type): # TODO: Working on
         """Get the type of the result once a binary operator has been applied."""
-        print(f"[Binary operator] {operand_1} [{type}: {operator}] {operand_2}")
 
-        result = self.ParsingStruct()
+        result = ParsingStruct()
 
         # Operators which return booleans
         if(type == "OP_BOOL" or type == "OP_COMP"):
@@ -585,13 +560,13 @@ class PythonParser(Parser):
         """Create an iterable hiddentype with the correct item types using the commaseparated items, the type of structure needed and the result ParsingStruct to save it in."""
         # Add sub-items' possible paths
         item_poss_paths = []
-        for item in item_struct.commaseparated_items:
+        for item in item_struct.attr["commaseparated_items"]:
             poss_paths = item.possible_paths
             for poss_path in poss_paths:
                 if (not poss_path in item_poss_paths):
                     item_poss_paths.append(poss_path)
 
-        print("[process_iterable] A", structure_type, "of", " or ".join(map(lambda item: ".".join(item[0]), item_poss_paths)))
+        # print("[process_iterable] A", structure_type, "of", " or ".join(map(lambda item: ".".join(item[0]), item_poss_paths)))
 
         # Change to base classes by removing data and leaving path
         for i in range(len(item_poss_paths)):
@@ -601,7 +576,7 @@ class PythonParser(Parser):
         this_id = self.lang.hiddentype_request_ID(structure_type)
         this_type = (this_id[-1], {}, None, self.literal_paths[structure_type])  # Dynamic
         this_type[1][".item"] = [".item", {}, None, item_poss_paths]  # Inner > Hidden local item
-        print(this_type)
+
         self.lang.hiddentype_save(this_id, this_type)
 
         # Extend from hiddentype
@@ -611,22 +586,22 @@ class PythonParser(Parser):
         """data : '[' commaseparated ']' """
 
         # Terminal node of data start (but literal) - new data struct
-        result = self.ParsingStruct()
+        result = ParsingStruct()
 
         self.process_iterable(p[2], "LIST", result)
 
-        result.compiled = "".join(map(str, p[1:]))
+        result = ParsingStruct.join("", p[1:])
         p[0] = result
 
     def p_data_literal_tuple(self, p):
         """data : '(' commaseparated ')' """
 
         # Terminal node of data start (but literal) - new data struct
-        result = self.ParsingStruct()
+        result = ParsingStruct()
 
         self.process_iterable(p[2], "TUPLE", result)
 
-        result.compiled = "".join(map(str, p[1:]))
+        result = ParsingStruct.join("", p[1:])
         p[0] = result
 
     # Common syntax structures
@@ -639,17 +614,15 @@ class PythonParser(Parser):
         # Create result from first
         if (len(p) < 4):
             # From expression
-            result = self.ParsingStruct()
-            result.commaseparated_items = [p[1]]
+            if (p[1] is None):
+                result = ParsingStruct()
+            else:
+                result = ParsingStruct.join("", p[1:])
+            result.attr["commaseparated_items"] = [p[1]]
         else:
             # Adding on to prev.
-            result = p[1]
-            result.commaseparated_items.append(p[3])
-
-        if (p[1] == None):
-            result.compiled = ""
-        else:
-            result.compiled = "".join(map(str, p[1:]))
+            result = ParsingStruct.join("", p[1:])
+            result.attr["commaseparated_items"].append(p[3])
 
         p[0] = result
 

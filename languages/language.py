@@ -217,7 +217,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
     def assign(self, iden_path, src, translated=None, simplify=True, override=True, params=None, scope=-1): # Local by default
         """Assign the value src to the destination iden_path, in the local scope"""
-        print(f"[Assign] {iden_path} = {src}")
+        # print(f"[Assign] {iden_path} = {src}")
         if(simplify):
             new_src = []
             src_queue = deque(src)
@@ -237,7 +237,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
             # print("\tSrc: ", src)
             src = new_src
-            print("\tNew Src: ", src)
+            # print("\tNew Src: ", src)
 
         # print("[Assign]", iden_path, "=", src)
         if (len(src) == 0 or iden_path != src[0][0]):
@@ -250,7 +250,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                 if (not node in properties):
                     properties[node] = [node, {}, None, []] # Translated name; properties; parameters; base classes
                 dest = properties[node]
-                print("\t", node, dest)
+                # print("\t", node, dest)
 
             if(override):
                 # New type
@@ -272,7 +272,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                 # Add parameters
                 dest[2] = params
 
-            print(iden_path, dest)
+            # print(iden_path, dest)
 
                 # print("\t", dest)
 

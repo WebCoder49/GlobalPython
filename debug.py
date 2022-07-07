@@ -1,23 +1,50 @@
 """Debug running programs"""
-
+import inspect
 import json, os
+
+import traceback
+
+import importlib.machinery
+import importlib.util
 
 from _io import TextIOWrapper
 import sys
 
+from languages.language import LanguageEnv
 
+
+# TODO: Add support for many files
 class Debugger:
-    def __init__(self, compiled_file: str, debug_file: str):
+    def __init__(self, compiled_file: str, source_file:str, debug_file: str, language_code:str):
+        self.language_code = language_code
+        self._lang = None # Lazily-loaded LanguageEnv
+
+        self.source_file = source_file
+        self.compiled_file = compiled_file
+
         # Read debug file
         self.load_debug_file(debug_file)
         # print(self.get_translated_pos(100))  # on line: frase_para_escribir = nombre + ", Tienes un" - around 77
         # print(self.get_translated_pos(0))  # on line: frase_para_escribir = nombre + ", Tienes un" - around 77
 
-        sys.stderr = ErrorWrapper(sys.stderr, self.process_error)
-
         print("Loading...")
-        compiled_file_escaped = compiled_file.replace('"', '\\"')
-        os.system(f'python "{compiled_file_escaped}"')  # TODO: Find better way of running python file
+
+        # Import file by filename - https://csatlas.com/python-import-file-module/
+        loader = importlib.machinery.SourceFileLoader(compiled_file.split("/")[-1].split(".")[0], compiled_file)
+        spec = importlib.util.spec_from_loader(compiled_file.split("/")[-1].split(".")[0], loader)
+        module = importlib.util.module_from_spec(spec)
+        try:
+            loader.exec_module(module)
+        except:
+            # Get error info (type, value, traceback) and handle
+            err = sys.exc_info()
+            self.process_error(err)
+
+    def get_lang(self):
+        """lazily load a LanguageEnv"""
+        if(self._lang is None):
+            self._lang = LanguageEnv(self.language_code)
+        return self._lang
 
     def get_translated_pos(self, compiled_pos: int):
         """Get the previous character-number position from a compiled-file position"""
@@ -39,42 +66,54 @@ class Debugger:
         """Load a debug file by path into the debugger"""
         with open(debug_file, "r", encoding='utf8') as reader:
             self.debug_info = json.load(reader)
-            self.mappings = list(map(
-                lambda pair: tuple(map(int, pair.split("/"))),  # Translated pos, compiled pos
-                self.debug_info["mappings"].split(",")  # Separate Pairs
-            ))
+            self.mappings = self.debug_info["mappings"]
 
-    def process_error(self, text):
-        # print("Error: ", text)
+    def process_error(self, err):
+        """Return the translated error from the error info (type, value, traceback)."""
+        # Output phrase format
+        message = ""
+        lang = self.get_lang()
 
-        message = "There's a " + text[-4] + " because " + text[-2] + "\n"
+        # Error type
+        path = err[0].__qualname__.split(".")
+        translated_data = lang.raw_path_to_data(path)
+        translated_type = translated_data[0]
+        if(translated_type == "<name>"): translated_type = f"!{err[0]}"
 
-        for i in range(1, len(text) - 7, 4):
-            message += text[i][0:-1] + " --> " + text[i + 2] + "\n"
+        # Translate message
+        translated_msg = lang.translate_err(err[1], path, translated_data)
 
-        return message
+        # Get traceback + lineno
+        tb = err[2].tb_next.tb_next.tb_next # Skip 3 levels of importing
+        translated_tb = ""
 
+        while tb is not None:
+            # Get traceback info
+            lineno = tb.tb_lineno
+            translated_lineno = int(self.debug_info["line_mappings"][lineno]) # 1-indexed
 
-class ErrorWrapper(TextIOWrapper):
-    def __init__(self, stderr: TextIOWrapper, redirect):
-        """Redirect all errors through the redirect function before outputting"""
-        self.stderr = stderr  # Standard error output
-        self.redirect = redirect
+            frame_info = inspect.getframeinfo(tb.tb_frame)
+            if frame_info.function == "<module>":
+                loc_name = f"{frame_info.filename}, línea {translated_lineno}"  # Top-level
+            else:
+                loc_name = f"({frame_info.function}) {frame_info.filename}, línea {translated_lineno}"
 
-        self.msg = []
+            if(frame_info.filename == self.compiled_file):
+                line = self.get_line(self.source_file, translated_lineno)
+                translated_tb += f"\n\t{loc_name} | {line}"
+            else:
+                # From un-translated library
+                translated_tb += f"\n\t{loc_name}"
 
-    def write(self, text):
-        """Write an error to the console (redirected args)"""
-        if (text != ""):
-            self.msg.append(text)
+            tb = tb.tb_next
 
-    def flush(self):
-        """Flush and write an error to the console (redirected args)"""
-        if (self.msg != []):
-            self.stderr.write(self.redirect(self.msg))
-            self.stderr.flush()
+        # Write as error
+        sys.stderr.write(f"{translated_type}: {translated_msg} {translated_tb}\n")
 
-            self.msg = []
+    def get_line(self, filename:str, lineno:int):
+        """Get the line in a Python file at the 1-indexed lineno"""
+        with open(filename, "r", encoding="utf8") as reader:
+            line = reader.readlines()[lineno-1].strip()  # Remove whitespace
+        return line
 
-
-debugger = Debugger('out.py', "debug.json")
+debugger = Debugger('out.py', 'source.py', "debug.json", "languages/es")

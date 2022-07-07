@@ -109,7 +109,6 @@ class ParsingStruct():
     self.mappings = []  # Mappings of (non-compiled pointers, compiled pointers)
     if (translated_pos != None):
       self.mappings.append((translated_pos, len(compiled)))  # At the end
-      print(compiled, translated_pos)
 
   def __str__(self):
     """To convert to a string, return compiled code"""

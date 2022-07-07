@@ -1,6 +1,6 @@
 import json, os, time
+import re
 from collections import deque
-
 
 class LanguageEnv:
     """Class for loading language files into an environment and keeping variable names"""
@@ -44,7 +44,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 [Compiled Path (English): {" > ".join(path)}]
 """
 
-    def __init__(self, data_dir):  # Programming language, e.g. py
+    def __init__(self, data_dir):  # Language, e.g. es
         """Initialise environment for language files and load builtins
 @param data_dir path identifier language files are stored in"""
         # Initialise root directory and saved translation strings
@@ -219,6 +219,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         """Assign the value src to the destination iden_path, in the local scope"""
         # print(f"[Assign] {iden_path} = {src}")
         if(simplify):
+            # Keep simplifying by adding all terminal type nodes to one level
             new_src = []
             src_queue = deque(src)
 
@@ -337,7 +338,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             raise Exception(f"Package {translated_package} could not be found.")
 
         package_location = (".PKG", package)
-        if(self.hiddentype_exists(package_location)):
+        if(not self.hiddentype_exists(package_location)): # Don't save twice
             # Add package (hidden with .) to global scope
             self.hiddentype_save(package_location, self.load_lib(package))
         else:
@@ -349,3 +350,36 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         self.assign(alias, [[imported_location, []]], translated_package if auto_alias else None, simplify=False, scope=1)  # 1 possible path; no data needed; keep translated name if no alias
 
         return (package,) + library[1:]
+
+    """Debugging and errors"""
+    def translate_err(self, err, err_path, err_data):
+        """Translate the error to this language"""
+        msg = str(err) # English error
+        messages = self.get_properties(".messages", [[err_path, err_data]], raw=True) # data - regular expressions
+
+        for message_list in messages:
+            # Different inherited message lists
+            message_list = message_list[1] # data
+            for msg_regex in message_list:
+                msg_match = re.fullmatch(msg_regex, msg)
+                if msg_match:
+                    # Is this error message? - return this if yes
+                    translated_msg = message_list[msg_regex]
+
+                    parameter = re.search("{(\\d+)(\\w?)}", translated_msg)
+                    while(parameter is not None):
+                        # Add parameter into message from error message
+                        param_id = int(str(parameter.group(1)))
+                        param_type = str(parameter.group(2))
+
+                        param = msg_match.group(param_id)
+                        if param_type == "i":
+                            # Identifier
+                            pass # TODO: Add translation
+
+                        translated_msg = translated_msg[:parameter.start()] + param + translated_msg[parameter.end():]
+                        parameter = re.search("{(\\d+)(\\w?)}", translated_msg)
+
+                    return translated_msg
+
+        return str(err) # Couldn't translate

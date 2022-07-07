@@ -1,4 +1,5 @@
 import copy
+from typing import List
 
 from ply import lex, yacc
 from ply.lex import LexToken
@@ -291,7 +292,8 @@ class PythonParser(Parser):
 
         params = []
         for param in p[4].attr["commaseparated_items"]:
-            params.append(param.compiled)
+            if(param is not None):
+                params.append(param.compiled)
 
         self.lang.scope_pop()  # Scope pop
 
@@ -339,9 +341,11 @@ class PythonParser(Parser):
         alias = p[4].possible_paths[0][0] if len(
             p) >= 5 else None  # Default import alias is package name - dictated by languageEnv
 
-        translated_pkg = self.lang.import_lib(library, alias)
-        # print(translated_pkg)
-        p[2].possible_paths[0] = (translated_pkg, p[2].possible_paths[0][1])
+        # Get package name
+        compiled_pkg = self.lang.import_lib(library, alias)
+        p[2].compiled = ".".join(compiled_pkg)
+
+        p[2].possible_paths[0] = (compiled_pkg, p[2].possible_paths[0][1])
         p[0] = ParsingStruct.join(" ", p[1:])
 
     def p_statement_assignment(self, p):
@@ -352,7 +356,7 @@ class PythonParser(Parser):
         p[0] = ParsingStruct.join(" ", p[1:])
 
         # Save variable name and type
-        self.lang.assign(p[1].possible_paths[0][0], p[3].possible_paths)  # Path of language then dest
+        self.lang.assign(p[1].possible_paths[0][0], p[3].possible_paths)  # Path of variable then dest
 
     def p_statement_expression(self, p):
         '''statement : expression'''
@@ -401,7 +405,6 @@ class PythonParser(Parser):
         result.possible_paths = self.lang.get_properties(p[1])  # Property p[1] from ROOT
 
         if (len(result.possible_paths) == 0):
-            print(f"⚠️{(p[1],)} not defined.")
             # Not defined - pass through unchanged anyway (in case is unindexed module var)
             # Add unchanged - Translated name, properties, args (None if not callable), (Inherits from / returns)?
             result.possible_paths.append(((p[1],), [p[1], None, None, self.literal_paths["_UNKNOWN"]]))
@@ -556,8 +559,8 @@ class PythonParser(Parser):
         return result
 
     # Structured Literals
-    def process_iterable(self, item_struct:ParsingStruct, structure_type:str, result:ParsingStruct):
-        """Create an iterable hiddentype with the correct item types using the commaseparated items, the type of structure needed and the result ParsingStruct to save it in."""
+    def process_iterable(self, syntax_structs:List[ParsingStruct], item_struct:ParsingStruct, structure_type:str):
+        """Create an iterable hiddentype with the correct item types using the commaseparated items, the type of structure needed and return the result ParsingStruct."""
         # Add sub-items' possible paths
         item_poss_paths = []
         for item in item_struct.attr["commaseparated_items"]:
@@ -579,30 +582,23 @@ class PythonParser(Parser):
 
         self.lang.hiddentype_save(this_id, this_type)
 
+        # Get compiled text
+        result = ParsingStruct.join("", syntax_structs)
+
         # Extend from hiddentype
         result.possible_paths = [[this_id, this_type]]  # 1 possible path - path then data
+
+        return result
 
     def p_data_literal_list(self, p):
         """data : '[' commaseparated ']' """
 
-        # Terminal node of data start (but literal) - new data struct
-        result = ParsingStruct()
-
-        self.process_iterable(p[2], "LIST", result)
-
-        result = ParsingStruct.join("", p[1:])
-        p[0] = result
+        p[0] = self.process_iterable(p[1:], p[2], "LIST")
 
     def p_data_literal_tuple(self, p):
         """data : '(' commaseparated ')' """
 
-        # Terminal node of data start (but literal) - new data struct
-        result = ParsingStruct()
-
-        self.process_iterable(p[2], "TUPLE", result)
-
-        result = ParsingStruct.join("", p[1:])
-        p[0] = result
+        p[0] = self.process_iterable(p[1:], p[2], "TUPLE")
 
     # Common syntax structures
     def p_commaseparated(self, p):

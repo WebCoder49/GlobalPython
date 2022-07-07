@@ -43,25 +43,19 @@ def compile(lang_dir: str, source_file: str, dest_file: str, debug_file: str):
     with open(source_file, "r", encoding='utf8') as reader:
         src = reader.read()
     result = parser.parse(src)
-    print(annotate_mappings(result, src))
     # Write compiled code
     with open(dest_file, "w", encoding='utf8') as writer:
         writer.write(str(result))
 
     # Write debug code
     """Format:
-    "mappings": "translated_index/compiled_index,...",
-    "line_mappings: "translated_line,..." """  # For each compiled line, 1-indexed
+    "mappings": [[translated_index,compiled_index],...]",
+    "line_mappings: [translated_line,...] """  # For each compiled line, 1-indexed
     if (debug_file is not None):
         debug_data = {}
 
         # Encode mappings
-        mappings = ",".join(
-            map(
-                lambda pair: (str(pair[0]) + "/" + str(pair[1])),
-                result.mappings
-            )
-        )
+        mappings = result.mappings
 
         # Get line mappings
         lines = [None] + result.compiled.split("\n")
@@ -72,17 +66,15 @@ def compile(lang_dir: str, source_file: str, dest_file: str, debug_file: str):
         len_translated_lines = len(translated_lines)
         translated_line = 1  # 1-indexed
         translated_i = 0
-        line_mappings = "0"  # Line 0 > 0
+        line_mappings = [0]  # Line 0 > 0
         for mapping in result.mappings:
             if (mapping[1] >= next_i):
                 # Update translated line
                 while (translated_i < mapping[0] and translated_line < len_translated_lines):
-                    # print(translated_line, translated_i)
                     translated_line += 1
                     translated_i += len(translated_lines[translated_line - 1])
-                print(line, translated_line)
                 # Add mapping
-                line_mappings += f",{translated_line - 1}"  # Look for previous line
+                line_mappings.append(translated_line - 1)  # Look for previous line
                 # Update next_i - only 1 for each compiled line
                 if (line < len_lines):
                     next_i += len(lines[line])

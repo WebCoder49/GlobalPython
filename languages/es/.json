@@ -2,7 +2,7 @@
   "",
   {
     "ArithmeticError": [
-      "<name>",
+      "ErrorAritmético",
       {},
       [
         "args",
@@ -28,8 +28,12 @@
       ]
     ],
     "AttributeError": [
-      "<name>",
-      {},
+      "ErrorDeAtributo",
+      {
+        ".messages": {
+          "module\\ '(\\w*)'\\ has\\ no\\ attribute\\ '(\\w*)'": "el módulo '{1m}' no tiene el atributo '{2}'"
+        }
+      },
       [
         "args",
         "kwargs"
@@ -597,8 +601,12 @@
       ]
     ],
     "NameError": [
-      "<name>",
-      {},
+      "ErrorDeNombre",
+      {
+        ".messages": {
+          "name\\ '(\\w*)'\\ is\\ not\\ defined": "'{1}' no es definido"
+        }
+      },
       [
         "args",
         "kwargs"
@@ -1325,8 +1333,12 @@
       ]
     ],
     "ZeroDivisionError": [
-      "<name>",
-      {},
+      "ErrorDivisiónPorCero",
+      {
+        ".messages": {
+          "division\\ by\\ (\\w+)": "división por cero"
+        }
+      },
       [
         "args",
         "kwargs"

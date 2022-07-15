@@ -2,14 +2,11 @@
 import importlib, json, os, inspect, copy
 
 
-def index(obj, level, this_pkg_name, dependencies, imported_modules={}, base_classes=[]):
+def index(obj, level, dependencies, imported_modules={}, base_classes=[]):
   """Index a package/module/class to return a dict of properties, removing props from specific base classes if necessary
   obj: Package to index
   level: 0, used in recursion
-  this_pkg_name: name of package to index
   dependencies: dependency array which will be filled with other required modules"""
-  if base_classes is None:
-    base_classes = []
   output = {}
 
   # Tuple of: Translated name, properties, args (None if not callable), (Inherits from / returns)?
@@ -56,7 +53,13 @@ def index(obj, level, this_pkg_name, dependencies, imported_modules={}, base_cla
           # Get base classes
           base_class_names = []
           for base_class in base_classes:
-            base_class_names.append(base_class.__qualname__.split("."))
+
+            path = base_class.__qualname__.split(".")
+            path.insert(0, base_class.__module__)  # @x = module x
+            path.insert(0, ".PKG")
+
+
+            base_class_names.append(path)
             # print(base_class.__qualname__, base_class.__qualname__.split("."))
 
           # Return
@@ -68,7 +71,7 @@ def index(obj, level, this_pkg_name, dependencies, imported_modules={}, base_cla
           if(not module_id in imported_modules):
             # Import module
             imported_modules[module_id] = value.__name__.split(".") # Absolute path
-            imported_modules[module_id][0] = "." + imported_modules[module_id][0]  # From package (begins w/ .), not variable
+            imported_modules[module_id].insert(0, ".PKG")  # From package, not variable
 
             print(" "*level, f"{property} ({value.__name__}) needs to be imported")
             pkg = value.__name__.split(".")[0]
@@ -83,18 +86,13 @@ def index(obj, level, this_pkg_name, dependencies, imported_modules={}, base_cla
             else:
               # Local package - keep indexing
               output[property] = ("<name>", index(value, level+1, dependencies)) # Compiled name, Properties, Parameters, type
-          else:
-            # Inherit from already-imported module
-            module_id = id(value)  # Can be indentified uniquely
-            inherit_property = imported_modules[module_id]
-            print(f"{property} ({value.__name__}) can be inherited from {inherit_property}")
-
-            output[property] = ("<name>", None, None, [inherit_property])  # Compiled name, Properties, Parameters, type
-
         else:
           # Other data - inherits type
-          output[property] = ("<name>", None, None, [type(value).__qualname__.split(".")]) # Compiled name, Properties, Parameters, Type
-
+          t = type(value)
+          path = t.__qualname__.split(".")
+          path.insert(0, t.__module__) # module x
+          path.insert(0, ".PKG")  # module x
+          output[property] = ("<name>", None, None, [path]) # Compiled name, Properties, Parameters, Type
     
   return output
 
@@ -103,16 +101,17 @@ language = input("Language: ")
 if(not os.path.exists(f"languages/{language}")):
   os.mkdir(f"languages/{language}")
 pkg_name = input("Package: ")
+
 if(pkg_name == ""):
-  pkg = __builtins__
-else:
-  pkg = importlib.import_module(pkg_name) # From PyPI
+  pkg_name = "builtins"
+
+pkg = importlib.import_module(pkg_name) # From PyPI
 
 print("Loading", pkg)
 print(f"To find more descriptions and docs for this package, see https://pypi.org/project/{pkg_name}/ (for third-party) or https://docs.python.org/3/library/{pkg_name}.html (for built-in)")
 
 dependencies = []
-data = (pkg_name, index(pkg, 0, pkg_name, dependencies))
+data = (pkg_name, index(pkg, 0, dependencies))
 print(dependencies)
 
 with open(f"languages/{language}/{pkg_name}.json", "w") as writer:

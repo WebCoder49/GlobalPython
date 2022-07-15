@@ -85,12 +85,19 @@ def compile(lang_dir: str, source_file: str, dest_file: str, debug_file: str):
 
         debug_data["mappings"] = mappings
         debug_data["line_mappings"] = line_mappings
+        # Imported modules
+        if("imported" in result.attr):
+            debug_data["imported"] = result.attr["imported"]  # [[translated_module_path, location_path]...]
+        else:
+            debug_data["imported"] = []
 
         with open(debug_file, "w", encoding='utf8') as writer:
             json.dump(debug_data, writer)
 
-
+start = time.time()
 compile("languages/es", "source.py", "out.py", "debug.json")
+end = time.time()
+print(f"Took {end-start}s")
 
 """class Translator:
 

@@ -51,13 +51,17 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         self.data_dir = data_dir
 
         # Load built-in files and keywords
+
         # Globals
-        self.scope_stack[0] = self.load_lib("")  # Built-in > Globals
+        self.scope_stack[0] = ["heap", {}, None, []]  # No args; no base classes
 
         # print(f"Globals: {self.scope_stack[0]}")
         self.kw = self.load_lib(".kw")  # Keywords
         self.pkgs = self.load_lib(".pkgs")  # Package names
         self.literals = self.load_lib(".literals")  # Literals
+
+        # Builtins > Globals
+        self.import_lib(("builtins",), [], ) # Reference in base
 
     def load_lib(self, filename):
         """Get the parsed JSON data from the language folder with the specific filename (don't include the .json)."""
@@ -74,6 +78,10 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
     def raw_path_to_data(self, path:tuple):
         """From a raw (English) path, get the translation data (automatic scope)"""
+        if(path[0] == ".PKG"):
+            # Unimported hiddentype package - import
+            self.import_pkg_raw(path[1])
+
         scopes = self.scope_stack[::-1] # Local scopes up tree
         # print("Scopes:", scopes)
         for scope in scopes:
@@ -212,7 +220,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             # Closed module
             with open(f"compilation_dump.json", "w", encoding="utf8") as writer:
                 print("Dumping Data")
-                json.dump(self.scope_stack[1], writer, indent=2)
+                json.dump({"module": self.scope_stack[1], "packages": list(self.scope_stack[0][1][".PKG"][1].keys())}, writer, indent=2)
         self.scope_stack.pop()
 
     def assign(self, iden_path, src, translated=None, simplify=True, override=True, params=None, scope=-1): # Local by default
@@ -245,6 +253,10 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             # Assign a variable name (so type can be remembered)
 
             dest = self.scope_stack[scope]
+
+            # Handle package importing
+            if len(iden_path) >= 1 and iden_path[0] == ".PKG":
+                self.import_pkg_raw(iden_path[1])
 
             for node in iden_path:
                 properties = dest[1]
@@ -291,7 +303,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
         return ["." + prefix, str(id)] # e.g. [".list", "0"]
 
-    def hiddentype_save(self, id, data, scope=1):
+    def hiddentype_save(self, id, data, scope=0): # Global by default
         # Find node
         dest = self.scope_stack[scope][1] # Save in module scope by default - inner
         for node in id[:-1]: # Excluding last
@@ -306,7 +318,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         # Save data
         dest[id[-1]] = data
 
-    def hiddentype_exists(self, id, scope=1):
+    def hiddentype_exists(self, id, scope=0): # Global level by default
         # Find node
         dest = self.scope_stack[scope][1] # Save in module scope by default - inner
         for node in id:
@@ -322,7 +334,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
     """Importing packages"""
     def import_lib(self, library, alias):
-        """Import a library path and give a reference to it in alias"""
+        """Import a translated library path and give a reference to it in alias"""
 
         # Import package (first part) hidden in globals
         translated_package = library[0]
@@ -337,19 +349,23 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
             print(self.pkgs)
             raise Exception(f"Package {translated_package} could not be found.")
 
-        package_location = (".PKG", package)
-        if(not self.hiddentype_exists(package_location)): # Don't save twice
-            # Add package (hidden with .) to global scope
-            self.hiddentype_save(package_location, self.load_lib(package))
-        else:
-            print(f"Package {package} exists.")
-            pass
+        package_location = self.import_pkg_raw(package)
 
         # Assign whole path to alias
         imported_location = package_location + library[1:]
-        self.assign(alias, [[imported_location, []]], translated_package if auto_alias else None, simplify=False, scope=1)  # 1 possible path; no data needed; keep translated name if no alias
+        self.assign(alias, [[imported_location, []]], translated_package if auto_alias else None, simplify=False, scope=-1)  # 1 possible path; no data needed; keep translated name if no alias
 
         return (package,) + library[1:]
+
+    def import_pkg_raw(self, package):
+        """Import a package as a hiddentype by its English name, returning its hiddentype path"""
+        package_location = (".PKG", package)
+        if(not self.hiddentype_exists(package_location)): # Don't save twice
+            print("Importing package " + package)
+            # Add package (hidden with .) to global scope
+            self.hiddentype_save(package_location, self.load_lib(package))
+
+        return package_location
 
     """Debugging and errors"""
     def translate_err(self, err, err_path, err_data):
@@ -373,9 +389,19 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                         param_type = str(parameter.group(2))
 
                         param = msg_match.group(param_id)
-                        if param_type == "i":
+                        if param_type == "m":
+                            # Module
+                            for translated_pkg in self.pkgs:
+                                if(self.pkgs[translated_pkg] == param):
+                                    param = translated_pkg
+                                    break
+                        elif param_type == "i":
                             # Identifier
-                            pass # TODO: Add translation
+                            path = param.split(".")
+                            translated_data = self.raw_path_to_data(path)
+                            param = translated_data[0]
+
+                            # TODO: Check works for long paths
 
                         translated_msg = translated_msg[:parameter.start()] + param + translated_msg[parameter.end():]
                         parameter = re.search("{(\\d+)(\\w?)}", translated_msg)

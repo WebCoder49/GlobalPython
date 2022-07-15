@@ -1,11 +1,11 @@
 ## TO DO:
 ### Working On / Current Bugs
-* Once-compiled tools:
-  * Error translation
+
 ### The Queue
-* Clean up
+* Add basic Spanish support
 
 `PROTOTYPE RELEASE ⭐`
+* Clean up
 
 * Add support for **more syntaxes and data types**, including:
   * (Less important for first prototype)

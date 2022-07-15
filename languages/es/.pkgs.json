@@ -1,4 +1,5 @@
 {
+  "builtins": "builtins",
   "tortuga": "turtle",
   "tiempo": "time"
 }

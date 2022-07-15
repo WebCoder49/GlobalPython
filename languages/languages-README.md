@@ -73,7 +73,7 @@ Localized identifiers, as well as keywords, are kept in language-code-named fold
 ##### Special Properties
 * Special properties are properties used by the compiler, but do not exist in Python. They are placed in the inner properties part of a JSON file, but are preceded by a `.`, and don't need to follow the normal format.
 
-| Property    | Property of...                | Purpose                     | Format                                     |
-|-------------|-------------------------------|-----------------------------|--------------------------------------------|
-| `.item`     | Iterable objects (e.g. lists) | Datatype of items in object | Ordinary datatype format                   |
-| `.messages` | Errors                        | Error message translation   | `{"[English message regular expression]"}` |
+| Property    | Property of...                | Purpose                     | Format                                                                                                                                                                                                        |
+|-------------|-------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `.item`     | Iterable objects (e.g. lists) | Datatype of items in object | Ordinary datatype format                                                                                                                                                                                      |
+| `.messages` | Errors                        | Error message translation   | `{"English\\ (\\w+)\\ regular\\ expression\\ with\\ iden\\ (\\w+)": "Result text with arguments like this: {1} (no change) is first then {2i} (identifier translated), etc., or {0} for whole message", ...}` |

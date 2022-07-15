@@ -1,5 +1,5 @@
 [
-  "",
+  "turtle",
   {
     "Canvas": [
       "<name>",
@@ -9,7 +9,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_above": [
@@ -17,7 +21,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_all": [
@@ -25,7 +33,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_below": [
@@ -33,7 +45,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_closest": [
@@ -41,7 +57,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_enclosed": [
@@ -49,7 +69,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_overlapping": [
@@ -57,7 +81,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_withtag": [
@@ -65,87 +93,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "after": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "after_cancel": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "after_idle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "anchor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bbox": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bell": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bind": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bind_all": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bind_class": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bindtags": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "canvasx": [
@@ -153,7 +105,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "canvasy": [
@@ -161,63 +117,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "cget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clipboard_append": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clipboard_clear": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clipboard_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "columnconfigure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "config": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "configure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "coords": [
@@ -225,7 +129,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_arc": [
@@ -233,7 +141,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_bitmap": [
@@ -241,7 +153,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_image": [
@@ -249,7 +165,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_line": [
@@ -257,7 +177,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_oval": [
@@ -265,7 +189,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_polygon": [
@@ -273,7 +201,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_rectangle": [
@@ -281,7 +213,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_text": [
@@ -289,7 +225,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_window": [
@@ -297,7 +237,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "dchars": [
@@ -305,7 +249,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "delete": [
@@ -313,23 +261,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "deletecommand": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "destroy": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "dtag": [
@@ -337,39 +273,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "event_add": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "event_delete": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "event_generate": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "event_info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find": [
@@ -377,7 +285,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_above": [
@@ -385,7 +297,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_all": [
@@ -393,7 +309,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_below": [
@@ -401,7 +321,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_closest": [
@@ -409,7 +333,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_enclosed": [
@@ -417,7 +345,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_overlapping": [
@@ -425,7 +357,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_withtag": [
@@ -433,87 +369,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "focus": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_displayof": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_force": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_lastfor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_set": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "forget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getboolean": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getdouble": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getint": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "gettags": [
@@ -521,159 +381,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "getvar": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_current": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_release": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_set": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_set_global": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_status": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_anchor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_bbox": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_columnconfigure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_configure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_forget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_location": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_propagate": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_remove": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_rowconfigure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_size": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_slaves": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "icursor": [
@@ -681,23 +393,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "image_names": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "image_types": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "index": [
@@ -705,15 +405,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "insert": [
@@ -721,7 +417,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "itemcget": [
@@ -729,7 +429,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "itemconfig": [
@@ -737,7 +441,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "itemconfigure": [
@@ -745,47 +453,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "keys": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "lift": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "location": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "lower": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "mainloop": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "move": [
@@ -793,7 +465,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "moveto": [
@@ -801,135 +477,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "nametowidget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "option_add": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "option_clear": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "option_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "option_readfile": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_configure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_forget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_propagate": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_slaves": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place_configure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place_forget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place_info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place_slaves": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "postscript": [
@@ -937,39 +489,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "propagate": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "quit": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "register": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "rowconfigure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "scale": [
@@ -977,7 +501,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "scan_dragto": [
@@ -985,7 +513,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "scan_mark": [
@@ -993,7 +525,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_adjust": [
@@ -1001,7 +537,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_clear": [
@@ -1009,7 +549,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_from": [
@@ -1017,7 +561,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_item": [
@@ -1025,7 +573,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_to": [
@@ -1033,79 +585,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "selection_clear": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "selection_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "selection_handle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "selection_own": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "selection_own_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "send": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setvar": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "size": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "slaves": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tag_bind": [
@@ -1113,7 +597,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tag_lower": [
@@ -1121,7 +609,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tag_raise": [
@@ -1129,7 +621,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tag_unbind": [
@@ -1137,63 +633,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "tk_bisque": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_focusFollowsMouse": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_focusNext": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_focusPrev": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_setPalette": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_strictMotif": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tkraise": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "type": [
@@ -1201,519 +645,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "unbind": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "unbind_all": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "unbind_class": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "update": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "update_idletasks": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "wait_variable": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "wait_visibility": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "wait_window": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "waitvar": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_atom": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_atomname": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_cells": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_children": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_class": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_colormapfull": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_containing": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_depth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_exists": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_fpixels": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_geometry": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_height": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_id": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_interps": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_ismapped": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_manager": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_name": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_parent": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pathname": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pixels": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pointerx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pointerxy": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pointery": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_reqheight": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_reqwidth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_rgb": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_rootx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_rooty": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screencells": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screendepth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenheight": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenmmheight": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenmmwidth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenvisual": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenwidth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_server": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_toplevel": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_viewable": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_visual": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_visualid": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_visualsavailable": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_vrootheight": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_vrootwidth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_vrootx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_vrooty": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_width": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_x": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_y": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "xview": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "xview_moveto": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "xview_scroll": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "yview": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "yview_moveto": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "yview_scroll": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -1724,692 +660,25 @@
       ],
       [
         [
+          ".PKG",
+          "tkinter",
           "Widget"
         ],
         [
+          ".PKG",
+          "tkinter",
           "XView"
         ],
         [
+          ".PKG",
+          "tkinter",
           "YView"
         ]
       ]
     ],
     "Pen": [
       "<name>",
-      {
-        "DEFAULT_ANGLEOFFSET": [
-          "<name>",
-          null,
-          null,
-          [
-            "int"
-          ]
-        ],
-        "DEFAULT_ANGLEORIENT": [
-          "<name>",
-          null,
-          null,
-          [
-            "int"
-          ]
-        ],
-        "DEFAULT_MODE": [
-          "<name>",
-          null,
-          null,
-          [
-            "str"
-          ]
-        ],
-        "START_ORIENTATION": [
-          "<name>",
-          null,
-          null,
-          [
-            "dict"
-          ]
-        ],
-        "back": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "backward": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "begin_fill": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "begin_poly": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bk": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "circle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clear": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clearstamp": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clearstamps": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clone": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "color": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "degrees": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "distance": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "dot": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "down": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "end_fill": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "end_poly": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "fd": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "fillcolor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "filling": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "forward": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "get_poly": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "get_shapepoly": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getpen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getscreen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "goto": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "heading": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "hideturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "home": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ht": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "isdown": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "isvisible": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "left": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "lt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "onclick": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ondrag": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "onrelease": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pd": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pencolor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pendown": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pensize": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "penup": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pos": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "position": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pu": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "radians": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "reset": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "resizemode": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "right": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "rt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "screens": [
-          "<name>",
-          null,
-          null,
-          [
-            "list"
-          ]
-        ],
-        "seth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setheading": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setpos": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setposition": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "settiltangle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setundobuffer": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "sety": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "shape": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "shapesize": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "shapetransform": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "shearfactor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "showturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "speed": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "st": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "stamp": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tilt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tiltangle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "towards": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "turtlesize": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "undo": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "undobufferentries": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "up": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "width": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "write": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "xcor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ycor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ]
-      },
+      {},
       [
         "shape",
         "undobuffersize",
@@ -2417,6 +686,8 @@
       ],
       [
         [
+          ".PKG",
+          "turtle",
           "RawTurtle"
         ]
       ]
@@ -2424,60 +695,16 @@
     "RawPen": [
       "<name>",
       {
-        "DEFAULT_ANGLEOFFSET": [
-          "<name>",
-          null,
-          null,
-          [
-            "int"
-          ]
-        ],
-        "DEFAULT_ANGLEORIENT": [
-          "<name>",
-          null,
-          null,
-          [
-            "int"
-          ]
-        ],
-        "DEFAULT_MODE": [
-          "<name>",
-          null,
-          null,
-          [
-            "str"
-          ]
-        ],
-        "START_ORIENTATION": [
-          "<name>",
-          null,
-          null,
-          [
-            "dict"
-          ]
-        ],
-        "back": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "backward": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
         "begin_fill": [
           "<name>",
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "begin_poly": [
@@ -2485,23 +712,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "bk": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "circle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clear": [
@@ -2509,7 +724,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clearstamp": [
@@ -2517,7 +736,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clearstamps": [
@@ -2525,7 +748,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clone": [
@@ -2533,31 +760,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "color": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "degrees": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "distance": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "dot": [
@@ -2565,15 +772,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "down": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "end_fill": [
@@ -2581,7 +784,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "end_poly": [
@@ -2589,23 +796,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "fd": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "fillcolor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "filling": [
@@ -2613,15 +808,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "forward": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "get_poly": [
@@ -2629,7 +820,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "get_shapepoly": [
@@ -2637,7 +832,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "getpen": [
@@ -2645,7 +844,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "getscreen": [
@@ -2653,7 +856,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "getturtle": [
@@ -2661,79 +868,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "goto": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "heading": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "hideturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "home": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ht": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "isdown": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "isvisible": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "left": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "lt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onclick": [
@@ -2741,7 +880,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "ondrag": [
@@ -2749,7 +892,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onrelease": [
@@ -2757,119 +904,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "pd": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pencolor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pendown": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pensize": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "penup": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pos": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "position": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pu": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "radians": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "reset": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "resizemode": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "right": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "rt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "screens": [
@@ -2877,39 +916,11 @@
           null,
           null,
           [
-            "list"
-          ]
-        ],
-        "seth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setheading": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setpos": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setposition": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "list"
+            ]
           ]
         ],
         "settiltangle": [
@@ -2917,7 +928,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "setundobuffer": [
@@ -2925,23 +940,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "setx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "sety": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "shape": [
@@ -2949,7 +952,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "shapesize": [
@@ -2957,7 +964,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "shapetransform": [
@@ -2965,7 +976,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "shearfactor": [
@@ -2973,31 +988,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "showturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "speed": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "st": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "stamp": [
@@ -3005,7 +1000,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tilt": [
@@ -3013,7 +1012,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tiltangle": [
@@ -3021,15 +1024,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "towards": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "turtlesize": [
@@ -3037,7 +1036,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "undo": [
@@ -3045,7 +1048,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "undobufferentries": [
@@ -3053,23 +1060,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "up": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "width": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "write": [
@@ -3077,23 +1072,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "xcor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ycor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -3105,9 +1088,13 @@
       ],
       [
         [
+          ".PKG",
+          "turtle",
           "TPen"
         ],
         [
+          ".PKG",
+          "turtle",
           "TNavigator"
         ]
       ]
@@ -3115,60 +1102,16 @@
     "RawTurtle": [
       "<name>",
       {
-        "DEFAULT_ANGLEOFFSET": [
-          "<name>",
-          null,
-          null,
-          [
-            "int"
-          ]
-        ],
-        "DEFAULT_ANGLEORIENT": [
-          "<name>",
-          null,
-          null,
-          [
-            "int"
-          ]
-        ],
-        "DEFAULT_MODE": [
-          "<name>",
-          null,
-          null,
-          [
-            "str"
-          ]
-        ],
-        "START_ORIENTATION": [
-          "<name>",
-          null,
-          null,
-          [
-            "dict"
-          ]
-        ],
-        "back": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "backward": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
         "begin_fill": [
           "<name>",
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "begin_poly": [
@@ -3176,23 +1119,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "bk": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "circle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clear": [
@@ -3200,7 +1131,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clearstamp": [
@@ -3208,7 +1143,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clearstamps": [
@@ -3216,7 +1155,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clone": [
@@ -3224,31 +1167,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "color": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "degrees": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "distance": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "dot": [
@@ -3256,15 +1179,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "down": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "end_fill": [
@@ -3272,7 +1191,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "end_poly": [
@@ -3280,23 +1203,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "fd": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "fillcolor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "filling": [
@@ -3304,15 +1215,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "forward": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "get_poly": [
@@ -3320,7 +1227,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "get_shapepoly": [
@@ -3328,7 +1239,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "getpen": [
@@ -3336,7 +1251,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "getscreen": [
@@ -3344,7 +1263,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "getturtle": [
@@ -3352,79 +1275,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "goto": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "heading": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "hideturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "home": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ht": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "isdown": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "isvisible": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "left": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "lt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onclick": [
@@ -3432,7 +1287,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "ondrag": [
@@ -3440,7 +1299,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onrelease": [
@@ -3448,119 +1311,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "pd": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pencolor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pendown": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pensize": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "penup": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pos": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "position": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pu": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "radians": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "reset": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "resizemode": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "right": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "rt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "screens": [
@@ -3568,39 +1323,11 @@
           null,
           null,
           [
-            "list"
-          ]
-        ],
-        "seth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setheading": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setpos": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setposition": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "list"
+            ]
           ]
         ],
         "settiltangle": [
@@ -3608,7 +1335,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "setundobuffer": [
@@ -3616,23 +1347,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "setx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "sety": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "shape": [
@@ -3640,7 +1359,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "shapesize": [
@@ -3648,7 +1371,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "shapetransform": [
@@ -3656,7 +1383,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "shearfactor": [
@@ -3664,31 +1395,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "showturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "speed": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "st": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "stamp": [
@@ -3696,7 +1407,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tilt": [
@@ -3704,7 +1419,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tiltangle": [
@@ -3712,15 +1431,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "towards": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "turtlesize": [
@@ -3728,7 +1443,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "undo": [
@@ -3736,7 +1455,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "undobufferentries": [
@@ -3744,23 +1467,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "up": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "width": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "write": [
@@ -3768,23 +1479,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "xcor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ycor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -3796,9 +1495,13 @@
       ],
       [
         [
+          ".PKG",
+          "turtle",
           "TPen"
         ],
         [
+          ".PKG",
+          "turtle",
           "TNavigator"
         ]
       ]
@@ -3808,7 +1511,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "ScrolledCanvas": [
@@ -3819,7 +1526,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_above": [
@@ -3827,7 +1538,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_all": [
@@ -3835,7 +1550,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_below": [
@@ -3843,7 +1562,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_closest": [
@@ -3851,7 +1574,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_enclosed": [
@@ -3859,7 +1586,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_overlapping": [
@@ -3867,7 +1598,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "addtag_withtag": [
@@ -3875,7 +1610,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "adjustScrolls": [
@@ -3883,87 +1622,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "after": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "after_cancel": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "after_idle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "anchor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bbox": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bell": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bind": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bind_all": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bind_class": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bindtags": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "canvasx": [
@@ -3971,7 +1634,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "canvasy": [
@@ -3979,63 +1646,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "cget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clipboard_append": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clipboard_clear": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clipboard_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "columnconfigure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "config": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "configure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "coords": [
@@ -4043,7 +1658,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_arc": [
@@ -4051,7 +1670,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_bitmap": [
@@ -4059,7 +1682,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_image": [
@@ -4067,7 +1694,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_line": [
@@ -4075,7 +1706,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_oval": [
@@ -4083,7 +1718,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_polygon": [
@@ -4091,7 +1730,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_rectangle": [
@@ -4099,7 +1742,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_text": [
@@ -4107,7 +1754,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "create_window": [
@@ -4115,7 +1766,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "dchars": [
@@ -4123,7 +1778,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "delete": [
@@ -4131,23 +1790,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "deletecommand": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "destroy": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "dtag": [
@@ -4155,39 +1802,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "event_add": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "event_delete": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "event_generate": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "event_info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find": [
@@ -4195,7 +1814,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_above": [
@@ -4203,7 +1826,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_all": [
@@ -4211,7 +1838,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_below": [
@@ -4219,7 +1850,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_closest": [
@@ -4227,7 +1862,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_enclosed": [
@@ -4235,7 +1874,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_overlapping": [
@@ -4243,7 +1886,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "find_withtag": [
@@ -4251,87 +1898,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "focus": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_displayof": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_force": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_lastfor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "focus_set": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "forget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getboolean": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getdouble": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getint": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "gettags": [
@@ -4339,159 +1910,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "getvar": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_current": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_release": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_set": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_set_global": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grab_status": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_anchor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_bbox": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_columnconfigure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_configure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_forget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_location": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_propagate": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_remove": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_rowconfigure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_size": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "grid_slaves": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "icursor": [
@@ -4499,23 +1922,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "image_names": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "image_types": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "index": [
@@ -4523,15 +1934,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "insert": [
@@ -4539,7 +1946,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "itemcget": [
@@ -4547,7 +1958,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "itemconfig": [
@@ -4555,7 +1970,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "itemconfigure": [
@@ -4563,47 +1982,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "keys": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "lift": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "location": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "lower": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "mainloop": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "move": [
@@ -4611,7 +1994,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "moveto": [
@@ -4619,15 +2006,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "nametowidget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onResize": [
@@ -4635,127 +2018,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "option_add": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "option_clear": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "option_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "option_readfile": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_configure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_forget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_propagate": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pack_slaves": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place_configure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place_forget": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place_info": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "place_slaves": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "postscript": [
@@ -4763,31 +2030,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "propagate": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "quit": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "register": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "reset": [
@@ -4795,15 +2042,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "rowconfigure": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "scale": [
@@ -4811,7 +2054,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "scan_dragto": [
@@ -4819,7 +2066,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "scan_mark": [
@@ -4827,7 +2078,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_adjust": [
@@ -4835,7 +2090,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_clear": [
@@ -4843,7 +2102,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_from": [
@@ -4851,7 +2114,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_item": [
@@ -4859,7 +2126,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "select_to": [
@@ -4867,79 +2138,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "selection_clear": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "selection_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "selection_handle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "selection_own": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "selection_own_get": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "send": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setvar": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "size": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "slaves": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tag_bind": [
@@ -4947,7 +2150,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tag_lower": [
@@ -4955,7 +2162,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tag_raise": [
@@ -4963,7 +2174,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tag_unbind": [
@@ -4971,63 +2186,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "tk_bisque": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_focusFollowsMouse": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_focusNext": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_focusPrev": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_setPalette": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tk_strictMotif": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tkraise": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "type": [
@@ -5035,471 +2198,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "unbind": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "unbind_all": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "unbind_class": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "update": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "update_idletasks": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "wait_variable": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "wait_visibility": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "wait_window": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "waitvar": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_atom": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_atomname": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_cells": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_children": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_class": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_colormapfull": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_containing": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_depth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_exists": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_fpixels": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_geometry": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_height": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_id": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_interps": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_ismapped": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_manager": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_name": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_parent": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pathname": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pixels": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pointerx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pointerxy": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_pointery": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_reqheight": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_reqwidth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_rgb": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_rootx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_rooty": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screencells": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screendepth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenheight": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenmmheight": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenmmwidth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenvisual": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_screenwidth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_server": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_toplevel": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_viewable": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_visual": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_visualid": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_visualsavailable": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_vrootheight": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_vrootwidth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_vrootx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_vrooty": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_width": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_x": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "winfo_y": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "xview": [
@@ -5507,7 +2210,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "xview_moveto": [
@@ -5515,7 +2222,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "xview_scroll": [
@@ -5523,7 +2234,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "yview": [
@@ -5531,7 +2246,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "yview_moveto": [
@@ -5539,7 +2258,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "yview_scroll": [
@@ -5547,7 +2270,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -5560,6 +2287,8 @@
       ],
       [
         [
+          ".PKG",
+          "tkinter",
           "Frame"
         ]
       ]
@@ -5572,7 +2301,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -5582,6 +2315,8 @@
       ],
       [
         [
+          ".PKG",
+          "builtins",
           "object"
         ]
       ]
@@ -5592,7 +2327,8 @@
       null,
       [
         [
-          ".tkinter"
+          ".PKG",
+          "tkinter"
         ]
       ]
     ],
@@ -5604,7 +2340,11 @@
           null,
           null,
           [
-            "int"
+            [
+              ".PKG",
+              "builtins",
+              "int"
+            ]
           ]
         ],
         "DEFAULT_ANGLEORIENT": [
@@ -5612,7 +2352,11 @@
           null,
           null,
           [
-            "int"
+            [
+              ".PKG",
+              "builtins",
+              "int"
+            ]
           ]
         ],
         "DEFAULT_MODE": [
@@ -5620,7 +2364,11 @@
           null,
           null,
           [
-            "str"
+            [
+              ".PKG",
+              "builtins",
+              "str"
+            ]
           ]
         ],
         "START_ORIENTATION": [
@@ -5628,7 +2376,11 @@
           null,
           null,
           [
-            "dict"
+            [
+              ".PKG",
+              "builtins",
+              "dict"
+            ]
           ]
         ],
         "back": [
@@ -5636,7 +2388,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "backward": [
@@ -5644,7 +2400,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "bk": [
@@ -5652,7 +2412,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "circle": [
@@ -5660,7 +2424,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "degrees": [
@@ -5668,7 +2436,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "distance": [
@@ -5676,7 +2448,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "fd": [
@@ -5684,15 +2460,23 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "forward": [
-          "<name>",
+          "avanzar",
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "goto": [
@@ -5700,7 +2484,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "heading": [
@@ -5708,7 +2496,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "home": [
@@ -5716,15 +2508,23 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "left": [
-          "<name>",
+          "girar_izquierda",
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "lt": [
@@ -5732,7 +2532,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "pos": [
@@ -5740,7 +2544,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "position": [
@@ -5748,7 +2556,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "radians": [
@@ -5756,7 +2568,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "reset": [
@@ -5764,15 +2580,23 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "right": [
-          "<name>",
+          "girar_derecha",
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "rt": [
@@ -5780,7 +2604,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "seth": [
@@ -5788,7 +2616,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "setheading": [
@@ -5796,7 +2628,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "setpos": [
@@ -5804,7 +2640,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "setposition": [
@@ -5812,7 +2652,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "setx": [
@@ -5820,7 +2664,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "sety": [
@@ -5828,7 +2676,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "speed": [
@@ -5836,7 +2688,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "towards": [
@@ -5844,7 +2700,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "xcor": [
@@ -5852,7 +2712,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "ycor": [
@@ -5860,7 +2724,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -5869,6 +2737,8 @@
       ],
       [
         [
+          ".PKG",
+          "builtins",
           "object"
         ]
       ]
@@ -5881,7 +2751,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "down": [
@@ -5889,7 +2763,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "fillcolor": [
@@ -5897,7 +2775,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "hideturtle": [
@@ -5905,7 +2787,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "ht": [
@@ -5913,7 +2799,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "isdown": [
@@ -5921,7 +2811,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "isvisible": [
@@ -5929,7 +2823,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "pd": [
@@ -5937,7 +2835,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "pen": [
@@ -5945,7 +2847,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "pencolor": [
@@ -5953,7 +2859,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "pendown": [
@@ -5961,7 +2871,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "pensize": [
@@ -5969,7 +2883,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "penup": [
@@ -5977,7 +2895,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "pu": [
@@ -5985,7 +2907,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "resizemode": [
@@ -5993,7 +2919,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "showturtle": [
@@ -6001,7 +2931,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "speed": [
@@ -6009,7 +2943,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "st": [
@@ -6017,7 +2955,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "up": [
@@ -6025,7 +2967,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "width": [
@@ -6033,7 +2979,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -6042,6 +2992,8 @@
       ],
       [
         [
+          ".PKG",
+          "builtins",
           "object"
         ]
       ]
@@ -6054,7 +3006,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "pop": [
@@ -6062,7 +3018,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "push": [
@@ -6070,7 +3030,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "reset": [
@@ -6078,7 +3042,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -6087,716 +3055,30 @@
       ],
       [
         [
+          ".PKG",
+          "builtins",
           "object"
         ]
       ]
     ],
     "Terminator": [
       "<name>",
-      {
-        "args": [
-          "<name>",
-          null,
-          null,
-          [
-            "getset_descriptor"
-          ]
-        ],
-        "with_traceback": [
-          "<name>",
-          null,
-          null,
-          [
-            "method_descriptor"
-          ]
-        ]
-      },
+      {},
       [
         "args",
         "kwargs"
       ],
       [
         [
+          ".PKG",
+          "builtins",
           "Exception"
         ]
       ]
     ],
     "Turtle": [
-      "<name>",
-      {
-        "DEFAULT_ANGLEOFFSET": [
-          "<name>",
-          null,
-          null,
-          [
-            "int"
-          ]
-        ],
-        "DEFAULT_ANGLEORIENT": [
-          "<name>",
-          null,
-          null,
-          [
-            "int"
-          ]
-        ],
-        "DEFAULT_MODE": [
-          "<name>",
-          null,
-          null,
-          [
-            "str"
-          ]
-        ],
-        "START_ORIENTATION": [
-          "<name>",
-          null,
-          null,
-          [
-            "dict"
-          ]
-        ],
-        "back": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "backward": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "begin_fill": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "begin_poly": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "bk": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "circle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clear": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clearstamp": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clearstamps": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "clone": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "color": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "degrees": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "distance": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "dot": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "down": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "end_fill": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "end_poly": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "fd": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "fillcolor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "filling": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "forward": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "get_poly": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "get_shapepoly": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getpen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getscreen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "getturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "goto": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "heading": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "hideturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "home": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ht": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "isdown": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "isvisible": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "left": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "lt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "onclick": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ondrag": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "onrelease": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pd": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pen": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pencolor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pendown": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pensize": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "penup": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pos": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "position": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "pu": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "radians": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "reset": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "resizemode": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "right": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "rt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "screens": [
-          "<name>",
-          null,
-          null,
-          [
-            "list"
-          ]
-        ],
-        "seth": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setheading": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setpos": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setposition": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "settiltangle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setundobuffer": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "setx": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "sety": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "shape": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "shapesize": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "shapetransform": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "shearfactor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "showturtle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "speed": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "st": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "stamp": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tilt": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "tiltangle": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "towards": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "turtlesize": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "undo": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "undobufferentries": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "up": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "width": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "write": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "xcor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ],
-        "ycor": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
-          ]
-        ]
-      },
+      "Tortuga",
+      {},
       [
         "shape",
         "undobuffersize",
@@ -6804,36 +3086,23 @@
       ],
       [
         [
+          ".PKG",
+          "turtle",
           "RawTurtle"
         ]
       ]
     ],
     "TurtleGraphicsError": [
       "<name>",
-      {
-        "args": [
-          "<name>",
-          null,
-          null,
-          [
-            "getset_descriptor"
-          ]
-        ],
-        "with_traceback": [
-          "<name>",
-          null,
-          null,
-          [
-            "method_descriptor"
-          ]
-        ]
-      },
+      {},
       [
         "args",
         "kwargs"
       ],
       [
         [
+          ".PKG",
+          "builtins",
           "Exception"
         ]
       ]
@@ -6846,7 +3115,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "bgcolor": [
@@ -6854,7 +3127,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "bgpic": [
@@ -6862,7 +3139,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clear": [
@@ -6870,7 +3151,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "clearscreen": [
@@ -6878,7 +3163,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "colormode": [
@@ -6886,7 +3175,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "delay": [
@@ -6894,7 +3187,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "getcanvas": [
@@ -6902,7 +3199,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "getshapes": [
@@ -6910,7 +3211,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "listen": [
@@ -6918,15 +3223,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "mainloop": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "mode": [
@@ -6934,15 +3235,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "numinput": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onclick": [
@@ -6950,7 +3247,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onkey": [
@@ -6958,7 +3259,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onkeypress": [
@@ -6966,7 +3271,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onkeyrelease": [
@@ -6974,7 +3283,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "onscreenclick": [
@@ -6982,7 +3295,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "ontimer": [
@@ -6990,7 +3307,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "register_shape": [
@@ -6998,7 +3319,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "reset": [
@@ -7006,7 +3331,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "resetscreen": [
@@ -7014,7 +3343,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "screensize": [
@@ -7022,7 +3355,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "setworldcoordinates": [
@@ -7030,15 +3367,11 @@
           null,
           null,
           [
-            "function"
-          ]
-        ],
-        "textinput": [
-          "<name>",
-          null,
-          null,
-          [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "tracer": [
@@ -7046,7 +3379,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "turtles": [
@@ -7054,7 +3391,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "update": [
@@ -7062,7 +3403,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "window_height": [
@@ -7070,7 +3415,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "window_width": [
@@ -7078,7 +3427,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -7090,6 +3443,8 @@
       ],
       [
         [
+          ".PKG",
+          "turtle",
           "TurtleScreenBase"
         ]
       ]
@@ -7102,7 +3457,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "numinput": [
@@ -7110,7 +3469,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ],
         "textinput": [
@@ -7118,7 +3481,11 @@
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -7127,6 +3494,8 @@
       ],
       [
         [
+          ".PKG",
+          "builtins",
           "object"
         ]
       ]
@@ -7134,28 +3503,16 @@
     "Vec2D": [
       "<name>",
       {
-        "count": [
-          "<name>",
-          null,
-          null,
-          [
-            "method_descriptor"
-          ]
-        ],
-        "index": [
-          "<name>",
-          null,
-          null,
-          [
-            "method_descriptor"
-          ]
-        ],
         "rotate": [
           "<name>",
           null,
           null,
           [
-            "function"
+            [
+              ".PKG",
+              "builtins",
+              "function"
+            ]
           ]
         ]
       },
@@ -7165,6 +3522,8 @@
       ],
       [
         [
+          ".PKG",
+          "builtins",
           "tuple"
         ]
       ]
@@ -7174,7 +3533,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "back": [
@@ -7182,7 +3545,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "backward": [
@@ -7190,7 +3557,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "begin_fill": [
@@ -7198,7 +3569,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "begin_poly": [
@@ -7206,7 +3581,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "bgcolor": [
@@ -7214,7 +3593,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "bgpic": [
@@ -7222,15 +3605,23 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "bk": [
-      "regresar",
+      "<name>",
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "bye": [
@@ -7238,7 +3629,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "circle": [
@@ -7246,7 +3641,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "clear": [
@@ -7254,7 +3653,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "clearscreen": [
@@ -7262,7 +3665,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "clearstamp": [
@@ -7270,7 +3677,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "clearstamps": [
@@ -7278,7 +3689,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "clone": [
@@ -7286,7 +3701,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "color": [
@@ -7294,7 +3713,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "colormode": [
@@ -7302,7 +3725,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "config_dict": [
@@ -7310,7 +3737,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "deepcopy": [
@@ -7318,7 +3749,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "degrees": [
@@ -7326,7 +3761,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "delay": [
@@ -7334,7 +3773,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "distance": [
@@ -7342,7 +3785,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "done": [
@@ -7350,7 +3797,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "dot": [
@@ -7358,7 +3809,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "down": [
@@ -7366,7 +3821,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "end_fill": [
@@ -7374,7 +3833,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "end_poly": [
@@ -7382,7 +3845,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "exitonclick": [
@@ -7390,15 +3857,23 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "fd": [
-      "avanzar",
+      "<name>",
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "fillcolor": [
@@ -7406,7 +3881,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "filling": [
@@ -7414,15 +3893,23 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "forward": [
-      "<name>",
+      "avanzar",
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "get_poly": [
@@ -7430,7 +3917,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "get_shapepoly": [
@@ -7438,7 +3929,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "getcanvas": [
@@ -7446,7 +3941,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "getmethparlist": [
@@ -7454,7 +3953,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "getpen": [
@@ -7462,7 +3965,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "getscreen": [
@@ -7470,7 +3977,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "getshapes": [
@@ -7478,7 +3989,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "getturtle": [
@@ -7486,7 +4001,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "goto": [
@@ -7494,7 +4013,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "heading": [
@@ -7502,7 +4025,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "hideturtle": [
@@ -7510,7 +4037,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "home": [
@@ -7518,7 +4049,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "ht": [
@@ -7526,7 +4061,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "inspect": [
@@ -7535,7 +4074,8 @@
       null,
       [
         [
-          ".inspect"
+          ".PKG",
+          "inspect"
         ]
       ]
     ],
@@ -7544,7 +4084,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "isfile": [
@@ -7552,7 +4096,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "isvisible": [
@@ -7560,7 +4108,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "join": [
@@ -7568,15 +4120,23 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "left": [
-      "girarizquierda",
+      "girar_izquierda",
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "listen": [
@@ -7584,7 +4144,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "lt": [
@@ -7592,7 +4156,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "mainloop": [
@@ -7600,7 +4168,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "math": [
@@ -7609,7 +4181,8 @@
       null,
       [
         [
-          ".math"
+          ".PKG",
+          "math"
         ]
       ]
     ],
@@ -7618,7 +4191,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "numinput": [
@@ -7626,7 +4203,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "onclick": [
@@ -7634,7 +4215,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "ondrag": [
@@ -7642,7 +4227,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "onkey": [
@@ -7650,7 +4239,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "onkeypress": [
@@ -7658,7 +4251,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "onkeyrelease": [
@@ -7666,7 +4263,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "onrelease": [
@@ -7674,7 +4275,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "onscreenclick": [
@@ -7682,7 +4287,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "ontimer": [
@@ -7690,7 +4299,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "pd": [
@@ -7698,7 +4311,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "pen": [
@@ -7706,7 +4323,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "pencolor": [
@@ -7714,7 +4335,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "pendown": [
@@ -7722,7 +4347,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "pensize": [
@@ -7730,7 +4359,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "penup": [
@@ -7738,7 +4371,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "pos": [
@@ -7746,7 +4383,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "position": [
@@ -7754,7 +4395,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "pu": [
@@ -7762,7 +4407,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "radians": [
@@ -7770,7 +4419,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "read_docstrings": [
@@ -7778,7 +4431,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "readconfig": [
@@ -7786,7 +4443,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "register_shape": [
@@ -7794,7 +4455,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "reset": [
@@ -7802,7 +4467,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "resetscreen": [
@@ -7810,7 +4479,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "resizemode": [
@@ -7818,23 +4491,35 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "right": [
+      "girar_derecha",
+      null,
+      null,
+      [
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
+      ]
+    ],
+    "rt": [
       "<name>",
       null,
       null,
       [
-        "function"
-      ]
-    ],
-    "rt": [
-      "girarderecha",
-      null,
-      null,
-      [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "screensize": [
@@ -7842,7 +4527,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "seth": [
@@ -7850,7 +4539,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "setheading": [
@@ -7858,7 +4551,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "setpos": [
@@ -7866,7 +4563,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "setposition": [
@@ -7874,7 +4575,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "settiltangle": [
@@ -7882,7 +4587,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "setundobuffer": [
@@ -7890,7 +4599,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "setup": [
@@ -7898,7 +4611,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "setworldcoordinates": [
@@ -7906,7 +4623,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "setx": [
@@ -7914,7 +4635,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "sety": [
@@ -7922,7 +4647,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "shape": [
@@ -7930,7 +4659,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "shapesize": [
@@ -7938,7 +4671,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "shapetransform": [
@@ -7946,7 +4683,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "shearfactor": [
@@ -7954,7 +4695,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "showturtle": [
@@ -7962,7 +4707,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "simpledialog": [
@@ -7971,7 +4720,8 @@
       null,
       [
         [
-          ".tkinter",
+          ".PKG",
+          "tkinter",
           "simpledialog"
         ]
       ]
@@ -7981,7 +4731,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "split": [
@@ -7989,7 +4743,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "st": [
@@ -7997,7 +4755,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "stamp": [
@@ -8005,7 +4767,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "sys": [
@@ -8014,7 +4780,8 @@
       null,
       [
         [
-          ".sys"
+          ".PKG",
+          "sys"
         ]
       ]
     ],
@@ -8023,7 +4790,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "tilt": [
@@ -8031,7 +4802,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "tiltangle": [
@@ -8039,16 +4814,21 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "time": [
-      "<name>",
+      "tiempo",
       null,
       null,
       [
         [
-          ".time"
+          ".PKG",
+          "time"
         ]
       ]
     ],
@@ -8057,7 +4837,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "towards": [
@@ -8065,7 +4849,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "tracer": [
@@ -8073,7 +4861,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "turtles": [
@@ -8081,7 +4873,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "turtlesize": [
@@ -8089,7 +4885,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "types": [
@@ -8098,7 +4898,8 @@
       null,
       [
         [
-          ".types"
+          ".PKG",
+          "types"
         ]
       ]
     ],
@@ -8107,7 +4908,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "undobufferentries": [
@@ -8115,7 +4920,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "up": [
@@ -8123,7 +4932,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "update": [
@@ -8131,7 +4944,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "width": [
@@ -8139,7 +4956,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "window_height": [
@@ -8147,7 +4968,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "window_width": [
@@ -8155,7 +4980,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "write": [
@@ -8163,7 +4992,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "write_docstringdict": [
@@ -8171,7 +5004,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "xcor": [
@@ -8179,7 +5016,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ],
     "ycor": [
@@ -8187,7 +5028,11 @@
       null,
       null,
       [
-        "function"
+        [
+          ".PKG",
+          "builtins",
+          "function"
+        ]
       ]
     ]
   }

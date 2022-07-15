@@ -1,26 +1,26 @@
 {
   "STRING": [
-    ["str"]
+    [".PKG","builtins","str"]
   ],
   "NUMBER": [
-    ["int"],
-    ["float"]
+    [".PKG","builtins","int"],
+    [".PKG","builtins","float"]
   ],
   "LIST": [
-    ["list"]
+    [".PKG","builtins","list"]
   ],
   "TUPLE": [
-    ["tuple"]
+    [".PKG","builtins","tuple"]
   ],
 
   "BOOL": [
-    ["bool"]
+    [".PKG","builtins","bool"]
   ],
   "INT": [
-    ["int"]
+    [".PKG","builtins","int"]
   ],
 
   "_UNKNOWN": [
-    ["object"]
+    [".PKG","builtins","object"]
   ]
 }

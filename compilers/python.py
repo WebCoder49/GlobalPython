@@ -348,6 +348,13 @@ class PythonParser(Parser):
         p[2].possible_paths[0] = (compiled_pkg, p[2].possible_paths[0][1])
         p[0] = ParsingStruct.join(" ", p[1:])
 
+        # Add to imported libraries
+        imported_data = [compiled_pkg, compiled_pkg if alias is None else alias]
+        if("imported" in p[0].attr):
+            p[0].attr["imported"].append(imported_data)
+        else:
+            p[0].attr["imported"] = [imported_data]
+
     def p_statement_assignment(self, p):
         '''statement : path '=' expression'''
 

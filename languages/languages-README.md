@@ -45,7 +45,7 @@ Localized identifiers, as well as keywords, are kept in language-code-named fold
   ...
 }
 ```
-#### Module Mappings (`.json`/`<module-name>.json`)
+#### Module Mappings (`<module-name>.json`)
 ```json
 // Each obj is structured like this, starting from the root:
 <obj> = [
@@ -66,7 +66,7 @@ Localized identifiers, as well as keywords, are kept in language-code-named fold
       ["str"],
       ["english", "path", "to", "class"],
       ...
-    ]
+    ] 
 ]
 ```
 

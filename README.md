@@ -1,6 +1,6 @@
 ## TO DO:
 ### Working On / Current Bugs
-
+* Identifier translation in error messages
 ### The Queue
 * Add basic Spanish support
 

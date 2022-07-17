@@ -53,7 +53,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         # Load built-in files and keywords
 
         # Globals
-        self.scope_stack[0] = ["heap", {}, None, []]  # No args; no base classes
+        self.scope_stack[0] = ["heap", {}, None, [[".PKG", "builtins"]]]  # No args; no base classes
 
         # print(f"Globals: {self.scope_stack[0]}")
         self.kw = self.load_lib(".kw")  # Keywords
@@ -61,7 +61,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
         self.literals = self.load_lib(".literals")  # Literals
 
         # Builtins > Globals
-        self.import_lib(("builtins",), [], ) # Reference in base
+        self.import_pkg_raw("builtins") # Reference in base
 
     def load_lib(self, filename):
         """Get the parsed JSON data from the language folder with the specific filename (don't include the .json)."""
@@ -97,36 +97,14 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
     def raw_path_to_data_scoped(self, path: tuple, scope):
         """From a raw (English) path, get the translation data (for specific scope)"""
-        possible_paths = deque([path])
+        parents = [[tuple(), scope]]
 
-        # Global
-        while (len(possible_paths) > 0):
-            # Get compilation data by path
-            # scope = self.scope_stack[-1]  # Local
+        for prop in path:
+            parents = self.get_properties_raw(prop, parents)
 
-            data = scope
-
-            path = possible_paths.popleft()
-
-            # Try to find property
-            for prop in path:
-                # Get inner props
-                props = data[1] if len(data) >= 2 else []
-                # print("Prop", prop, props)
-                if prop in props:
-                    # Found property
-                    data = props[prop]
-                else:
-                    break # Try base class
-            else:
-                return data
-
-            # Not found - look in base classes
-            if (len(data) >= 4 and not type(data[3]) is None):
-                for base in data[3]:
-                    possible_paths.append(base)
-
-        return None  # Not found, most likely custom
+        if(len(parents) < 1):
+            return None
+        return parents[0][1] # First > Data
 
     def get_properties(self, property:str, parents:list=None, raw=False):  # Automatically scope for parents = root
         """Get a property from a translated (or raw - compiled) name and list of possible parents"""
@@ -170,8 +148,8 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                 continue
         return results
 
-    def get_properties_raw(self, property:str, parents:list=None):  # Automatically scope for parents = root
-        """Get a property from a raw (compiled) name and list of possible parents"""
+    def get_properties_raw(self, property:str, parents:list=None, max_num:int=float("inf")):  # Automatically scope for parents = root
+        """Get possible values of a property from a raw (compiled) name and list of possible parents"""
 
         if(parents == None):
             # Path then data
@@ -187,13 +165,17 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
 
             # Parent = reference to object
             if (parent != None):
+
                 # Append the property data associated w/ it
                 props = parent[1] if len(parent) >= 2 and (not parent[1] is None) else []
 
                 # Get property
                 if (property in props):
                     # Found property
+
                     results.append((tuple(p_path) + (property,), props[property]))
+                    if(len(results) >= max_num):
+                        return results
                     break
 
                 # Add base classes to queue

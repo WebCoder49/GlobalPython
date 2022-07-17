@@ -94,10 +94,12 @@ def compile(lang_dir: str, source_file: str, dest_file: str, debug_file: str):
         with open(debug_file, "w", encoding='utf8') as writer:
             json.dump(debug_data, writer)
 
+# MAIN
 start = time.time()
 compile("languages/es", "source.py", "out.py", "debug.json")
 end = time.time()
 print(f"Took {end-start}s")
+
 
 """class Translator:
 

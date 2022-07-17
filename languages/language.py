@@ -377,11 +377,11 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                                 if(self.pkgs[translated_pkg] == param):
                                     param = translated_pkg
                                     break
-                        elif param_type == "i":
-                            # Identifier
-                            path = param.split(".")
-                            translated_data = self.raw_path_to_data(path)
-                            # param = translated_data[0]
+                        # elif param_type == "i":
+                        #     # Identifier
+                        #     path = param.split(".")
+                        #     translated_data = self.raw_path_to_data(path)
+                        #     # param = translated_data[0]
 
                             # TODO: Check works for long paths
 

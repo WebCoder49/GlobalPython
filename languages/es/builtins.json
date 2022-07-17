@@ -35,7 +35,8 @@
       "ErrorDeAtributo",
       {
         ".messages": {
-          "module\\ '(\\w*)'\\ has\\ no\\ attribute\\ '(\\w*)'": "el módulo '{1m}' no tiene el atributo '{2}'"
+          "module\\ '(\\w*)'\\ has\\ no\\ attribute\\ '(\\w*)'": "el módulo '{1m}' no tiene el atributo '{2}'",
+          "'(\\w*)'\\ object\\ has\\ no\\ attribute\\ '(\\w*)'": "este objeto no tiene el atributo '{2}'"
         }
       },
       {},

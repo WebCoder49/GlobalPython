@@ -381,7 +381,7 @@ Inherits from: {", ".join(inherits_from) if len(inherits_from) > 0 else None}
                             # Identifier
                             path = param.split(".")
                             translated_data = self.raw_path_to_data(path)
-                            param = translated_data[0]
+                            # param = translated_data[0]
 
                             # TODO: Check works for long paths
 

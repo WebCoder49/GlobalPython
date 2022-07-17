@@ -1,8 +1,10 @@
 ## TO DO:
 ### Working On / Current Bugs
-* Identifier translation in error messages
-### The Queue
 * Add basic Spanish support
+### The Queue
+* Contact teacher re. whether they think completed is useful / right direction - option to wait until Sept.
+  * DM101
+* Share publicly
 
 `PROTOTYPE RELEASE ⭐`
 * Clean up

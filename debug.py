@@ -90,17 +90,23 @@ class Debugger:
         while tb is not None:
             # Get traceback info
             lineno = tb.tb_lineno
-            translated_lineno = int(self.debug_info["line_mappings"][lineno]) # 1-indexed
-
             frame_info = inspect.getframeinfo(tb.tb_frame)
-            if frame_info.function == "<module>":
-                loc_name = f"{frame_info.filename}, línea {translated_lineno}"  # Top-level
-            else:
-                loc_name = f"({frame_info.function}) {frame_info.filename}, línea {translated_lineno}"
 
-            if(frame_info.filename == self.compiled_file):
+            if (frame_info.filename == self.compiled_file):
+                translated_lineno = int(self.debug_info["line_mappings"][lineno]) # 1-indexed
+                filename = self.source_file
+            else:
+                filename = frame_info.filename
+
+            if frame_info.function == "<module>":
+                loc_name = f"{filename}, línea {translated_lineno}"  # Top-level
+            else:
+                loc_name = f"({frame_info.function}) {filename}, línea {translated_lineno}"
+            loc_link = "file:///" + os.path.join(os.getcwd(), filename).replace("\\", "/") + ":" + str(translated_lineno)
+
+            if (frame_info.filename == self.compiled_file):
                 line = self.get_line(self.source_file, translated_lineno)
-                translated_tb += f"\n\t{loc_name} | {line}"
+                translated_tb += f"\n\t{loc_name} | {line} [{loc_link}]"
             else:
                 # From un-translated library
                 translated_tb += f"\n\t{loc_name}"

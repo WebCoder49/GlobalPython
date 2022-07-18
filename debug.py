@@ -119,7 +119,9 @@ class Debugger:
     def get_line(self, filename:str, lineno:int):
         """Get the line in a Python file at the 1-indexed lineno"""
         with open(filename, "r", encoding="utf8") as reader:
-            line = reader.readlines()[lineno-1].strip()  # Remove whitespace
+            lines = reader.readlines()
+            if(lineno <= len(lines)):
+                line = lines[lineno-1].strip() # Remove whitespace
+            else:
+                line = lines[-1].strip() # Last line
         return line
-
-debugger = Debugger('out.py', 'source.py', "debug.json", "languages/es")

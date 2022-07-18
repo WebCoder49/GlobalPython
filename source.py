@@ -11,6 +11,6 @@ para i en rango(lados):
     t.girar_derecha(360 / lados)
     tiempo.esperar(3 / lados)
 
-escribir(" ".unir("Tiene", lados, "lados"))
+escribir(" ".unir(["Tiene", str(lados), "lados"]))
 
 t.parar()

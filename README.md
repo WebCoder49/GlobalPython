@@ -1,3 +1,11 @@
+# Status: Unmaintained and Incomplete
+
+Similar projects are [UniversalPython](https://github.com/UniversalPython/UniversalPython) and [UniRust](https://github.com/charyan/unirust).
+
+This code is copyright 2022 Oliver Geer and licensed GPL-3.0-or-later, but other free and open source licenses are negotiable if you want to merge it with an existing project.
+
+---
+
 ## TO DO:
 ### Working On / Current Bugs
 * Add basic Spanish support
